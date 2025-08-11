@@ -23,6 +23,10 @@ struct QuizView: View {
     @State private var correctIDs = Set<String>()
     @State private var openIDs = Set<String>()
     
+    // NEW: track which words have been seen at least once (by ID)
+    @State private var seenIDs = Set<String>()
+    private var allSeen: Bool { !sessionWords.isEmpty && seenIDs.count == sessionWords.count }
+    
     @State private var showWordList = false
     
     private let speechSynth = AVSpeechSynthesizer()
@@ -38,14 +42,26 @@ struct QuizView: View {
                 SizePicker(
                     customSize: $customSize,
                     stage: $stage,
-                    onPick: { n in startSession(size: n) }  // ✅ Linking the start
+                    onPick: { n in startSession(size: n) }
                 )
-            case .inQuiz: quizScreen
-            case .summary: summaryScreen
+            case .inQuiz:
+                quizScreen
+            case .summary:
+                SummaryView(
+                    sessionWords: sessionWords,
+                    correctIDs: correctIDs,
+                    openIDs: openIDs,
+                    onClose: { stage = .pickDirection } // reset flow when done
+                )
+                .environmentObject(appState)
             }
         }
         .navigationTitle("Quiz")
         .sheet(isPresented: $showWordList) { wordListSheet }
+        // Ensure the very first card counts as "seen"
+        .onChange(of: stage) { _, newValue in
+            if newValue == .inQuiz, let cur = current { markSeen(cur) }
+        }
     }
 }
 
@@ -62,6 +78,7 @@ private extension QuizView {
                 Button(action: { showWordList = true }) {
                     Image(systemName: "list.bullet")
                 }
+                .accessibilityLabel("Open word list")
             }
             .padding(.horizontal)
             
@@ -78,6 +95,11 @@ private extension QuizView {
                     onBack: { goBack() },
                     expectedAnswers: expectedAnswers(for: word, direction: direction)
                 )
+                // Count as seen whenever this view re-renders for this word
+                .onAppear { markSeen(word) }
+                
+                // Small hint about finishing
+
                 
                 answerField(direction: direction)
                 
@@ -98,6 +120,19 @@ private extension QuizView {
                         .buttonStyle(.bordered)
                 }
                 .padding(.top, 8)
+                
+                // NEW: Separate finish action; only enabled when allSeen
+                Button {
+                    stage = .summary
+                } label: {
+                    Label("Finish & Review", systemImage: "checkmark.circle.fill")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(!allSeen)
+                .padding(.top, 4)
+                
             } else {
                 ProgressView()
             }
@@ -132,7 +167,7 @@ private extension QuizView {
                 
                 HStack {
                     Text(displayText)
-                        .foregroundColor(idx <= currentIndex ? .primary : .secondary.opacity(0.5))
+                        .foregroundColor(seenIDs.contains(w.id) ? .primary : .secondary.opacity(0.5))
                     Spacer()
                     if correctIDs.contains(w.id) {
                         Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
@@ -143,7 +178,9 @@ private extension QuizView {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     currentIndex = idx
+                    markSeen(sessionWords[idx]) // NEW: mark as seen when jumping via list
                     showWordList = false
+                    resetQuestionUI()
                 }
             }
             .navigationTitle("Quiz Words")
@@ -156,41 +193,6 @@ private extension QuizView {
     }
 }
 
-// MARK: - Summary
-private extension QuizView {
-    var summaryScreen: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                let correctWords = sessionWords.filter { correctIDs.contains($0.id) }
-                let openWords = sessionWords.filter { openIDs.contains($0.id) }
-                Text("Session summary").font(.title2).bold()
-                HStack {
-                    summaryStat(title: "Correct", value: correctWords.count, color: .green)
-                    summaryStat(title: "Open", value: openWords.count, color: .orange)
-                }
-                if !correctWords.isEmpty {
-                    Text("✅ Correct").font(.headline)
-                    ForEach(correctWords) { w in summaryRow(left: w.german, right: w.vietnamese) }
-                }
-                if !openWords.isEmpty {
-                    Text("🟠 Open").font(.headline)
-                    ForEach(openWords) { w in summaryRow(left: w.german, right: w.vietnamese) }
-                }
-                NavigationLink(destination: ContentView().environmentObject(appState)) {
-                    Text("Close quiz")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .bold()
-                        .background(.blue)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                }
-            }
-            .padding()
-        }
-    }
-}
-
 // MARK: - Actions & Helpers
 private extension QuizView {
     func startSession(size: Int) {
@@ -199,18 +201,42 @@ private extension QuizView {
         currentIndex = 0
         correctIDs.removeAll()
         openIDs.removeAll()
+        seenIDs.removeAll()             // NEW: reset seen
         resetQuestionUI()
         stage = .inQuiz
+        if let cur = current { markSeen(cur) } // count first word as seen
     }
     
     func advance() {
-        if let word = current, !correctIDs.contains(word.id) { openIDs.insert(word.id) }
-        if currentIndex + 1 >= sessionWords.count { stage = .summary }
-        else { currentIndex += 1; resetQuestionUI() }
+        // If leaving a word unlearned, mark as open
+        if let word = current, !correctIDs.contains(word.id) {
+            openIDs.insert(word.id)
+        }
+        
+        // Move forward if possible
+        if currentIndex + 1 < sessionWords.count {
+            currentIndex += 1
+            if let cur = current { markSeen(cur) } // NEW: mark new word as seen
+            resetQuestionUI()
+        } else {
+            // We're at the last index. Do NOT auto-finish.
+            // If some words are unseen, jump to the first unseen to force coverage.
+            if let idx = sessionWords.firstIndex(where: { !seenIDs.contains($0.id) }) {
+                currentIndex = idx
+                if let cur = current { markSeen(cur) }
+                resetQuestionUI()
+            } else {
+                // All seen: stay on last card; user must tap the Finish button.
+            }
+        }
     }
     
     func goBack() {
-        if currentIndex > 0 { currentIndex -= 1; resetQuestionUI() }
+        if currentIndex > 0 {
+            currentIndex -= 1
+            if let cur = current { markSeen(cur) } // harmless if already seen
+            resetQuestionUI()
+        }
     }
     
     func resetQuestionUI() {
@@ -250,27 +276,19 @@ private extension QuizView {
         utterance.rate = 0.45
         speechSynth.speak(utterance)
     }
+    
+    // NEW: seen tracking
+    func markSeen(_ word: Word) {
+        seenIDs.insert(word.id)
+    }
 }
 
-// MARK: - UI Components
+// MARK: - UI Components still used here
 private extension QuizView {
     func rowCard(label: String) -> some View {
         HStack { Text(label).font(.headline); Spacer(); Image(systemName: "chevron.right") }
             .padding().background(.thinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-    
-    func summaryStat(title: String, value: Int, color: Color) -> some View {
-        VStack { Text("\(value)").font(.title2).bold().foregroundStyle(color); Text(title).font(.caption) }
-            .frame(maxWidth: .infinity).padding()
-            .background(.thinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-    }
-    
-    func summaryRow(left: String, right: String) -> some View {
-        HStack { Text(left).bold(); Spacer(); Text(right).foregroundStyle(.secondary) }
-            .padding(10).background(Color.gray.opacity(0.08))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 

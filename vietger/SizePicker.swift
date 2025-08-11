@@ -12,12 +12,12 @@ struct SizePicker: View {
             Text("Choose amount of words")
                 .font(.title2)
                 .bold()
-                .multilineTextAlignment(.center) // ✅ Horizontal center
-                .frame(maxWidth: .infinity, alignment: .center) // ✅ Ensures centering
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
                         
             ForEach(presetSizes, id: \.self) { n in
                 Button("\(n) words") {
-                    onPick(n)  // ✅ Calls parent’s startSession
+                    onPick(n)
                 }
                 .buttonStyle(.borderedProminent)
             }
@@ -36,12 +36,12 @@ struct SizePicker: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
-            
-            Button("Back") {
-                stage = .pickDirection
-            }
-            .buttonStyle(.bordered)
         }
         .padding()
     }
+}
+
+#Preview {
+    SizePicker(customSize: .constant(""), stage: .constant(.pickSize)) { _ in }
+        .padding()
 }
