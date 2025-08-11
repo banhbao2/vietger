@@ -45,7 +45,7 @@ enum Category: String, CaseIterable, Hashable {
 // MARK: - Model
 
 /// Supports multiple acceptable answers both ways.
-/// Now includes `category` so views don’t need to guess it.
+/// Includes `category` so views don’t need to guess it.
 struct Word: Identifiable, Hashable {
     let german: String
     let germanAlt: [String]
@@ -68,38 +68,32 @@ enum WordsRepository {
     /// Move entries between these arrays to change a word’s category.
     static let byCategory: [Category: [Word]] = [
         .pronouns: [
-            .init(german: "ich", germanAlt: ["ich"], vietnamese: "tôi", vietnameseAlt: [], category: .pronouns),
+            .init(german: "ich", germanAlt: ["ich", "mich", "mir"], vietnamese: "tôi", vietnameseAlt: [], category: .pronouns),
             .init(german: "du", germanAlt: ["du"], vietnamese: "bạn", vietnameseAlt: [], category: .pronouns),
             .init(german: "er", germanAlt: ["er"], vietnamese: "anh ấy", vietnameseAlt: [], category: .pronouns),
             .init(german: "sie", germanAlt: ["sie"], vietnamese: "cô ấy", vietnameseAlt: ["họ"], category: .pronouns),
             .init(german: "es", germanAlt: ["es"], vietnamese: "nó", vietnameseAlt: [], category: .pronouns),
-            .init(german: "wir", germanAlt: ["wir"], vietnamese: "chúng tôi", vietnameseAlt: [], category: .pronouns),
-            .init(german: "ihr", germanAlt: ["ihr"], vietnamese: "các bạn", vietnameseAlt: [], category: .pronouns),
-            .init(german: "Sie", germanAlt: ["Sie"], vietnamese: "ngài", vietnameseAlt: ["ông bà"], category: .pronouns),
-            .init(german: "mich", germanAlt: ["mich"], vietnamese: "tôi", vietnameseAlt: [], category: .pronouns),
-            .init(german: "mir", germanAlt: ["mir"], vietnamese: "tôi", vietnameseAlt: [], category: .pronouns),
+            .init(german: "wir", germanAlt: ["wir", "uns"], vietnamese: "chúng tôi", vietnameseAlt: [], category: .pronouns),
+            .init(german: "ihr", germanAlt: ["ihr", "euch"], vietnamese: "các bạn", vietnameseAlt: [], category: .pronouns),
             .init(german: "dich", germanAlt: ["dich"], vietnamese: "bạn", vietnameseAlt: [], category: .pronouns),
             .init(german: "ihm", germanAlt: ["ihm"], vietnamese: "anh ấy", vietnameseAlt: [], category: .pronouns),
-            .init(german: "uns", germanAlt: ["uns"], vietnamese: "chúng tôi", vietnameseAlt: ["chúng ta"], category: .pronouns),
-            .init(german: "euch", germanAlt: ["euch"], vietnamese: "các bạn", vietnameseAlt: [], category: .pronouns),
-            .init(german: "sich", germanAlt: ["sich"], vietnamese: "mình", vietnameseAlt: [], category: .pronouns),
         ],
         .coreVerbs: [
             .init(german: "sein", germanAlt: ["sein"], vietnamese: "là", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "haben", germanAlt: ["haben"], vietnamese: "có", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "werden", germanAlt: ["werden"], vietnamese: "trở thành", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "können", germanAlt: ["können"], vietnamese: "có thể", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "können", germanAlt: ["vielleicht"], vietnamese: "có thể", vietnameseAlt: [], category: .coreVerbs), // consider removing "vielleicht"
             .init(german: "müssen", germanAlt: ["müssen"], vietnamese: "phải", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "wollen", germanAlt: ["wollen"], vietnamese: "muốn", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "sollen", germanAlt: ["sollen"], vietnamese: "nên", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "mögen", germanAlt: ["mögen"], vietnamese: "thích", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "machen", germanAlt: ["tun", "erstellen"], vietnamese: "làm", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "gehen", germanAlt: ["laufen", "verlassen"], vietnamese: "đi", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "kommen", germanAlt: ["ankommen"], vietnamese: "đến", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "sehen", germanAlt: ["anschauen"], vietnamese: "nhìn", vietnameseAlt: ["xem"], category: .coreVerbs),
-            .init(german: "wissen", germanAlt: ["kennen"], vietnamese: "biết", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "sagen", germanAlt: ["mitteilen"], vietnamese: "nói", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "geben", germanAlt: ["überreichen"], vietnamese: "đưa", vietnameseAlt: ["cho"], category: .coreVerbs),
+            .init(german: "mögen", germanAlt: ["mögen", "mag"], vietnamese: "thích", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "machen", germanAlt: ["tun", "erstellen", "machen"], vietnamese: "làm", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "gehen", germanAlt: ["laufen", "verlassen", "gehen"], vietnamese: "đi", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "kommen", germanAlt: ["ankommen", "bis"], vietnamese: "đến", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "sehen", germanAlt: ["anschauen", "schauen", "gucken"], vietnamese: "nhìn", vietnameseAlt: ["xem"], category: .coreVerbs),
+            .init(german: "wissen", germanAlt: ["kennen", "wissen"], vietnamese: "biết", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "sagen", germanAlt: ["mitteilen", "reden"], vietnamese: "nói", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "geben", germanAlt: ["überreichen", "übergeben"], vietnamese: "đưa", vietnameseAlt: ["cho"], category: .coreVerbs),
             .init(german: "nehmen", germanAlt: ["greifen"], vietnamese: "lấy", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "finden", germanAlt: ["entdecken"], vietnamese: "tìm thấy", vietnameseAlt: ["phát hiện"], category: .coreVerbs),
             .init(german: "bleiben", germanAlt: ["verweilen"], vietnamese: "ở lại", vietnameseAlt: ["lưu lại"], category: .coreVerbs),
@@ -118,8 +112,8 @@ enum WordsRepository {
             .init(german: "trinken", germanAlt: ["trinken"], vietnamese: "uống", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "schreiben", germanAlt: ["schreiben"], vietnamese: "viết", vietnameseAlt: [], category: .coreVerbs),
             .init(german: "lesen", germanAlt: ["lesen"], vietnamese: "đọc", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "brauchen", germanAlt: ["brauchen"], vietnamese: "cần", vietnameseAlt: [], category: .coreVerbs),
-            .init(german: "versuchen", germanAlt: ["probieren"], vietnamese: "thử", vietnameseAlt: ["cố gắng"], category: .coreVerbs),
+            .init(german: "brauchen", germanAlt: ["brauchen", "benötigen"], vietnamese: "cần", vietnameseAlt: [], category: .coreVerbs),
+            .init(german: "versuchen", germanAlt: ["probieren", "ausprobieren"], vietnamese: "thử", vietnameseAlt: ["cố gắng"], category: .coreVerbs),
         ],
         .nouns: [
             .init(german: "der Mann", germanAlt: ["Mann", "Ehemann"], vietnamese: "người đàn ông", vietnameseAlt: [], category: .nouns),
@@ -165,7 +159,7 @@ enum WordsRepository {
             .init(german: "der Schlüssel", germanAlt: ["Schlüssel"], vietnamese: "chìa khóa", vietnameseAlt: [], category: .commonThings),
             .init(german: "das Handy", germanAlt: ["Handy", "Mobiltelefon"], vietnamese: "điện thoại", vietnameseAlt: [], category: .commonThings),
             .init(german: "der Computer", germanAlt: ["Computer", "Rechner"], vietnamese: "máy tính", vietnameseAlt: [], category: .commonThings),
-            .init(german: "die Tasche", germanAlt: ["Tasche", "Beutel"], vietnamese: "túi", vietnameseAlt: [], category: .commonThings),
+            .init(german: "die Tasche", germanAlt: ["Tasche", "Beutel", "Tüte"], vietnamese: "túi", vietnameseAlt: [], category: .commonThings),
             .init(german: "das Buch", germanAlt: ["Buch"], vietnamese: "sách", vietnameseAlt: [], category: .commonThings),
             .init(german: "der Brief", germanAlt: ["Brief"], vietnamese: "thư", vietnameseAlt: [], category: .commonThings),
             .init(german: "die Zeitung", germanAlt: ["Zeitung"], vietnamese: "báo", vietnameseAlt: [], category: .commonThings),
@@ -177,7 +171,7 @@ enum WordsRepository {
         ],
         .adjectives: [
             .init(german: "gut", germanAlt: ["gut"], vietnamese: "tốt", vietnameseAlt: [], category: .adjectives),
-            .init(german: "schlecht", germanAlt: ["schlecht"], vietnamese: "xấu", vietnameseAlt: [], category: .adjectives),
+            .init(german: "schlecht", germanAlt: ["hässlich"], vietnamese: "xấu", vietnameseAlt: [], category: .adjectives),
             .init(german: "groß", germanAlt: ["groß"], vietnamese: "to", vietnameseAlt: ["lớn"], category: .adjectives),
             .init(german: "klein", germanAlt: ["klein"], vietnamese: "nhỏ", vietnameseAlt: [], category: .adjectives),
             .init(german: "lang", germanAlt: ["lang"], vietnamese: "dài", vietnameseAlt: [], category: .adjectives),
@@ -186,7 +180,6 @@ enum WordsRepository {
             .init(german: "alt", germanAlt: ["alt"], vietnamese: "cũ", vietnameseAlt: ["già"], category: .adjectives),
             .init(german: "jung", germanAlt: ["jung"], vietnamese: "trẻ", vietnameseAlt: [], category: .adjectives),
             .init(german: "schön", germanAlt: ["schön", "hübsch"], vietnamese: "đẹp", vietnameseAlt: [], category: .adjectives),
-            .init(german: "hässlich", germanAlt: ["hässlich"], vietnamese: "xấu xí", vietnameseAlt: [], category: .adjectives),
             .init(german: "warm", germanAlt: ["warm"], vietnamese: "ấm", vietnameseAlt: [], category: .adjectives),
             .init(german: "kalt", germanAlt: ["kalt"], vietnamese: "lạnh", vietnameseAlt: [], category: .adjectives),
             .init(german: "heiß", germanAlt: ["heiß"], vietnamese: "nóng", vietnameseAlt: [], category: .adjectives),
@@ -212,7 +205,7 @@ enum WordsRepository {
             .init(german: "morgen", germanAlt: ["morgen"], vietnamese: "ngày mai", vietnameseAlt: [], category: .timeFrequency),
             .init(german: "gestern", germanAlt: ["gestern"], vietnamese: "hôm qua", vietnameseAlt: [], category: .timeFrequency),
             .init(german: "immer", germanAlt: ["immer"], vietnamese: "luôn luôn", vietnameseAlt: [], category: .timeFrequency),
-            .init(german: "oft", germanAlt: ["oft", "häufig"], vietnamese: "thường", vietnameseAlt: [], category: .timeFrequency),
+            .init(german: "oft", germanAlt: ["oft", "häufig", "normal"], vietnamese: "thường", vietnameseAlt: [], category: .timeFrequency),
             .init(german: "manchmal", germanAlt: ["manchmal"], vietnamese: "thỉnh thoảng", vietnameseAlt: [], category: .timeFrequency),
             .init(german: "selten", germanAlt: ["selten"], vietnamese: "hiếm khi", vietnameseAlt: [], category: .timeFrequency),
             .init(german: "nie", germanAlt: ["nie"], vietnamese: "không bao giờ", vietnameseAlt: [], category: .timeFrequency),
@@ -293,9 +286,130 @@ enum WordsRepository {
         ]
     ]
 
+    // MARK: - Public lists
+
     /// Flat list used everywhere else (counters, quiz, etc.)
     static var a1: [Word] {
         // Keep UI section order when flattening (nice-to-have)
         Category.ordered.flatMap { byCategory[$0] ?? [] }
+    }
+
+    /// Deduplicated list (by Vietnamese **and** German forms). Each surface form appears once.
+    static var a1Unique: [Word] {
+        mergeBySurfaceFormsKeepingFirst(a1)
+    }
+
+    /// Quick counts (handy for debugging UI counters)
+    static var countOriginal: Int { a1.count }
+    static var countUnique: Int { a1Unique.count }
+
+    // MARK: - Merge logic
+
+    /// Which side(s) to use as duplicate keys.
+    private enum KeySide { case german, vietnamese }
+
+    /// Merge words so that each **surface form** (VN or DE) appears only once.
+    /// - Keeps the category and canonical forms of the first occurrence.
+    /// - Merges all alt forms across duplicates.
+    private static func mergeBySurfaceFormsKeepingFirst(
+        _ words: [Word],
+        keys: [KeySide] = [.vietnamese, .german]
+    ) -> [Word] {
+        // Map normalized key -> index of canonical word in `result`
+        var indexByKey: [String: Int] = [:]
+        var result: [Word] = []
+        result.reserveCapacity(words.count)
+
+        for word in words {
+            let keySet = normalizedKeys(for: word, sides: keys)
+
+            // Find if any key already exists
+            var existingIndex: Int? = nil
+            for key in keySet {
+                if let idx = indexByKey[key] {
+                    existingIndex = idx
+                    break
+                }
+            }
+
+            if let idx = existingIndex {
+                // Merge into existing canonical entry
+                let merged = merge(base: result[idx], with: word)
+                result[idx] = merged
+
+                // Update mapping with any newly-added keys
+                let mergedKeys = normalizedKeys(for: merged, sides: keys)
+                for k in mergedKeys { indexByKey[k] = idx }
+            } else {
+                // New canonical entry
+                result.append(word)
+                let idx = result.count - 1
+                for k in keySet { indexByKey[k] = idx }
+            }
+        }
+
+        return result
+    }
+
+    /// Merge two Word entries (same concept). Keeps:
+    /// - Category & canonical DE/VN from the `base` (first occurrence).
+    /// - Adds any new alternates from `other`.
+    private static func merge(base: Word, with other: Word) -> Word {
+        // German: keep base.german as canonical, merge alts and other's canonical
+        let germanAll = orderedUnique(base.allGerman + other.allGerman)
+        let canonicalGerman = base.german
+        let germanAlt = germanAll.filter { $0 != canonicalGerman }
+
+        // Vietnamese: keep base.vietnamese as canonical, merge alts and other's canonical
+        let vnAll = orderedUnique(base.allVietnamese + other.allVietnamese)
+        let canonicalVN = base.vietnamese
+        let vnAlt = vnAll.filter { $0 != canonicalVN }
+
+        return Word(
+            german: canonicalGerman,
+            germanAlt: germanAlt,
+            vietnamese: canonicalVN,
+            vietnameseAlt: vnAlt,
+            category: base.category // keep first category for stability/ordering
+        )
+    }
+
+    // MARK: - Helpers
+
+    /// Build normalized key set for duplicate detection.
+    private static func normalizedKeys(for w: Word, sides: [KeySide]) -> Set<String> {
+        var keys = Set<String>()
+        for side in sides {
+            switch side {
+            case .german:
+                for s in w.allGerman { keys.insert(normalize(s)) }
+            case .vietnamese:
+                for s in w.allVietnamese { keys.insert(normalize(s)) }
+            }
+        }
+        return keys
+    }
+
+    /// Normalize for duplicate detection: lowercase + trim + collapse inner spaces.
+    /// (Keep diacritics — important for Vietnamese.)
+    private static func normalize(_ s: String) -> String {
+        let trimmed = s.trimmingCharacters(in: .whitespacesAndNewlines)
+        let collapsed = trimmed.replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
+        return collapsed.lowercased()
+    }
+
+    /// Ordered uniqueness that preserves the first occurrence's original casing/spaces for display,
+    /// while deduping using the same normalize() logic.
+    private static func orderedUnique(_ arr: [String]) -> [String] {
+        var seen: Set<String> = []
+        var out: [String] = []
+        out.reserveCapacity(arr.count)
+        for s in arr {
+            let key = normalize(s)
+            if seen.insert(key).inserted {
+                out.append(s)
+            }
+        }
+        return out
     }
 }

@@ -1,13 +1,7 @@
 import SwiftUI
 import AVFoundation
 
-enum QuizDirection: String, CaseIterable, Identifiable {
-    case deToVi = "German → Vietnamese"
-    case viToDe = "Vietnamese → German"
-    var id: String { rawValue }
-}
-
-private enum QuizStage { case pickDirection, pickSize, inQuiz, summary }
+enum QuizStage { case pickDirection, pickSize, inQuiz, summary }
 
 struct QuizView: View {
     @EnvironmentObject var appState: AppState
@@ -36,8 +30,16 @@ struct QuizView: View {
     var body: some View {
         VStack {
             switch stage {
-            case .pickDirection: directionPicker
-            case .pickSize: sizePicker
+            case .pickDirection:
+                DirectionPicker(selected: $chosenDirection) {
+                    stage = .pickSize
+                }
+            case .pickSize:
+                SizePicker(
+                    customSize: $customSize,
+                    stage: $stage,
+                    onPick: { n in startSession(size: n) }  // ✅ Linking the start
+                )
             case .inQuiz: quizScreen
             case .summary: summaryScreen
             }
@@ -47,47 +49,6 @@ struct QuizView: View {
     }
 }
 
-// MARK: - Direction Picker
-private extension QuizView {
-    var directionPicker: some View {
-        VStack(spacing: 20) {
-            Text("Choose direction").font(.title2).bold().padding(.top)
-            ForEach(QuizDirection.allCases) { dir in
-                Button {
-                    chosenDirection = dir
-                    stage = .pickSize
-                } label: { rowCard(label: dir.rawValue) }
-            }
-            Spacer()
-        }
-        .padding()
-    }
-}
-
-// MARK: - Size Picker
-private extension QuizView {
-    var sizePicker: some View {
-        VStack(spacing: 16) {
-            Text("How many words?").font(.title2).bold().padding(.top)
-            ForEach(presetSizes, id: \.self) { n in
-                Button { startSession(size: n) } label: { rowCard(label: "\(n) words") }
-            }
-            HStack {
-                TextField("Custom", text: $customSize)
-                    .keyboardType(.numberPad)
-                    .padding(12)
-                    .background(Color.gray.opacity(0.12))
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                Button("Start") { startSession(size: Int(customSize) ?? 1) }
-                    .buttonStyle(.borderedProminent)
-                    .disabled(Int(customSize) ?? 0 <= 0)
-            }
-            Button("Back") { stage = .pickDirection }.buttonStyle(.bordered)
-            Spacer()
-        }
-        .padding()
-    }
-}
 
 // MARK: - Quiz Screen
 private extension QuizView {
