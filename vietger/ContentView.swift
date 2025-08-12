@@ -6,11 +6,23 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Background gradient
-                LinearGradient(colors: [Color(hex: "#6C63FF"), Color(hex: "#8E7CFF")],
-                               startPoint: .topLeading,
-                               endPoint: .bottomTrailing)
+                // Background gradient with balanced brightness & readability
+                ZStack {
+                    LinearGradient(
+                        colors: [
+                            Color(hex: "#94D5F7"), // slightly brighter top blue
+                            Color(hex: "#5FB5E4")  // softer medium blue bottom
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
                     .ignoresSafeArea()
+
+                    // Lighter overlay for softer contrast
+                    Color.black.opacity(0.08)
+                        .ignoresSafeArea()
+                }
+
 
                 ScrollView {
                     // App Name (fancy logo style)
