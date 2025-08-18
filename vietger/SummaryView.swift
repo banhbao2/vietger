@@ -2,41 +2,48 @@ import SwiftUI
 
 struct SummaryView: View {
     @EnvironmentObject var appState: AppState
-    
+    @Environment(\.dismiss) private var dismiss
+
     let sessionWords: [Word]
     let correctIDs: Set<String>
-    let openIDs: Set<String>
-    let onClose: () -> Void
+    let openIDs: Set<String>   // kept for compatibility, but not used for display
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                // Always compute from the session: OPEN = all − correct
                 let correctWords = sessionWords.filter { correctIDs.contains($0.id) }
-                let openWords = sessionWords.filter { openIDs.contains($0.id) }
-                
-                Text("Session summary").font(.title2).bold()
-                
+                let openWords    = sessionWords.filter { !correctIDs.contains($0.id) }
+
+                Text("Session summary")
+                    .font(.title2).bold()
+
                 HStack {
                     summaryStat(title: "Correct", value: correctWords.count, color: .green)
-                    summaryStat(title: "Open", value: openWords.count, color: .orange)
+                    summaryStat(title: "Open",    value: openWords.count,    color: .orange)
                 }
-                
+
                 if !correctWords.isEmpty {
                     Text("✅ Correct").font(.headline)
                     ForEach(correctWords) { w in
                         summaryRow(left: w.german, right: w.vietnamese)
                     }
                 }
-                
+
                 if !openWords.isEmpty {
                     Text("🟠 Open").font(.headline)
                     ForEach(openWords) { w in
                         summaryRow(left: w.german, right: w.vietnamese)
                     }
+                } else if !sessionWords.isEmpty {
+                    // Optional: tiny friendly message if everything was learned
+                    Text("🎉 Great job! Everything in this session is learned.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
-                
+
                 Button {
-                    onClose()
+                    dismiss()   // back to Home
                 } label: {
                     Text("Close quiz")
                         .frame(maxWidth: .infinity)
@@ -51,6 +58,9 @@ struct SummaryView: View {
             .padding()
         }
         .navigationTitle("Summary")
+        .navigationBarBackButtonHidden(true)   // hide back arrow
+        .toolbar(.hidden, for: .navigationBar) // (optional) hide whole bar
+        .interactiveDismissDisabled(true)      // block swipe-back gesture
     }
 }
 
@@ -65,7 +75,7 @@ private extension SummaryView {
         .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 16))
     }
-    
+
     func summaryRow(left: String, right: String) -> some View {
         HStack {
             Text(left).bold()

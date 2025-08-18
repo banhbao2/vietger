@@ -78,15 +78,7 @@ final class QuizViewModel: ObservableObject {
         if let cur = current { markSeen(cur) }
     }
 
-    func resetToSetup() {
-        stage = .setup
-        sessionWords = []
-        currentIndex = 0
-        correctIDs.removeAll()
-        openIDs.removeAll()
-        seenIDs.removeAll()
-        resetQuestionUI()
-    }
+
 
     // MARK: - Navigation
     func advance() {
