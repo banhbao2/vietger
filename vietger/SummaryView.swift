@@ -6,61 +6,87 @@ struct SummaryView: View {
 
     let sessionWords: [Word]
     let correctIDs: Set<String>
-    let openIDs: Set<String>   // kept for compatibility, but not used for display
-    
+
+    @State private var selectedTab: Tab = .open
+
+    enum Tab { case correct, open }
+
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                // Always compute from the session: OPEN = all − correct
-                let correctWords = sessionWords.filter { correctIDs.contains($0.id) }
-                let openWords    = sessionWords.filter { !correctIDs.contains($0.id) }
+        VStack(spacing: 16) {
+            // MARK: - Progress bar
+            let progress = sessionWords.isEmpty ? 0 :
+                Double(correctIDs.count) / Double(sessionWords.count)
 
-                Text("Session summary")
-                    .font(.title2).bold()
+            ProgressView(value: progress)
+                .progressViewStyle(.linear)
+                .tint(.blue)
+                .padding(.horizontal)
 
-                HStack {
-                    summaryStat(title: "Correct", value: correctWords.count, color: .green)
-                    summaryStat(title: "Open",    value: openWords.count,    color: .orange)
-                }
+            // Always compute from session
+            let correctWords = sessionWords.filter { correctIDs.contains($0.id) }
+            let openWords    = sessionWords.filter { !correctIDs.contains($0.id) }
 
-                if !correctWords.isEmpty {
-                    Text("✅ Correct").font(.headline)
-                    ForEach(correctWords) { w in
-                        summaryRow(left: w.german, right: w.vietnamese)
-                    }
-                }
+            Text("Session Summary")
+                .font(.title2).bold()
 
-                if !openWords.isEmpty {
-                    Text("🟠 Open").font(.headline)
-                    ForEach(openWords) { w in
-                        summaryRow(left: w.german, right: w.vietnamese)
-                    }
-                } else if !sessionWords.isEmpty {
-                    // Optional: tiny friendly message if everything was learned
-                    Text("🎉 Great job! Everything in this session is learned.")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-
-                Button {
-                    dismiss()   // back to Home
-                } label: {
-                    Text("Close quiz")
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .bold()
-                        .background(Color.blue)
-                        .foregroundStyle(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                }
-                .padding(.top, 8)
+            // Stats cards
+            HStack {
+                summaryStat(title: "Correct", value: correctWords.count, color: .green)
+                    .onTapGesture { selectedTab = .correct }
+                summaryStat(title: "Open", value: openWords.count, color: .orange)
+                    .onTapGesture { selectedTab = .open }
             }
-            .padding()
+
+            // MARK: - Word lists
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    if selectedTab == .correct {
+                        if correctWords.isEmpty {
+                            Text("No correct words yet.")
+                                .foregroundStyle(.secondary)
+                        } else {
+                            Text("✅ Correct").font(.headline)
+                            ForEach(correctWords) { w in
+                                summaryRow(left: w.german, right: w.vietnamese)
+                            }
+                        }
+                    } else {
+                        if openWords.isEmpty {
+                            // Congratulations if everything is learned
+                            Text("🎉 Great job! Everything in this session is learned.")
+                                .font(.headline)
+                                .foregroundStyle(.green)
+                                .padding(.top)
+                        } else {
+                            Text("🟠 To Review").font(.headline)
+                            ForEach(openWords) { w in
+                                summaryRow(left: w.german, right: w.vietnamese)
+                            }
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
+
+            // MARK: - Always visible Close button
+            Button {
+                dismiss()
+            } label: {
+                Text("Close quiz")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .bold()
+                    .background(Color.blue)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 12)
         }
         .navigationTitle("Summary")
-        .navigationBarBackButtonHidden(true)   // hide back arrow
-        .toolbar(.hidden, for: .navigationBar) // (optional) hide whole bar
-        .interactiveDismissDisabled(true)      // block swipe-back gesture
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .navigationBar)
+        .interactiveDismissDisabled(true)
     }
 }
 
@@ -72,8 +98,17 @@ private extension SummaryView {
             Text(title).font(.caption)
         }
         .frame(maxWidth: .infinity).padding()
-        .background(.thinMaterial)
+        .background(selectedTabBackground(title: title))
         .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+
+    func selectedTabBackground(title: String) -> some ShapeStyle {
+        if (title == "Correct" && selectedTab == .correct) ||
+           (title == "Open" && selectedTab == .open) {
+            return Color.blue.opacity(0.15)
+        } else {
+            return Color(.systemBackground).opacity(0.5)
+        }
     }
 
     func summaryRow(left: String, right: String) -> some View {

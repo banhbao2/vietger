@@ -22,10 +22,10 @@ struct QuizView: View {
             case .summary:
                 SummaryView(
                     sessionWords: vm.sessionWords,
-                    correctIDs: vm.correctIDs,
-                    openIDs: vm.openIDs,
+                    correctIDs: vm.correctIDs
                 )
                 .environmentObject(appState)
+
             }
         }
         .navigationTitle("Quiz")
