@@ -1,5 +1,5 @@
 import SwiftUI
-
+//START SCREEN
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
 
