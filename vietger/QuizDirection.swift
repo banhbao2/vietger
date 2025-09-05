@@ -6,11 +6,17 @@ enum QuizDirection: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    // UI label with flags (so views don’t hardcode)
     var title: String {
         switch self {
         case .deToVi: return "🇩🇪 German → 🇻🇳 Vietnamese"
         case .viToDe: return "🇻🇳 Vietnamese → 🇩🇪 German"
+        }
+    }
+
+    var isGermanToVietnamese: Bool {
+        switch self {
+        case .deToVi: return true
+        case .viToDe: return false
         }
     }
 }

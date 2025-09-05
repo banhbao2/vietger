@@ -6,7 +6,7 @@ enum QuizStage { case setup, inQuiz, summary }
 @MainActor
 final class QuizViewModel: ObservableObject {
     // Dependencies
-    private var appState: AppState?            // injected later
+    private var appState: AppState?
     private let engine: QuizEngine
     private let speech: SpeechService
 
@@ -14,9 +14,12 @@ final class QuizViewModel: ObservableObject {
     @Published var stage: QuizStage = .setup
 
     // Setup inputs
+    @Published var chosenDeck: QuizDeck? = nil
     @Published var chosenDirection: QuizDirection? = nil
-    @Published var selectedSize: Int? = nil
+    @Published var selectedSize: Int? = nil     // -1 means "All"
     @Published var customSize: String = ""
+
+    var useAllWords: Bool { selectedSize == -1 }
 
     // Session
     @Published var sessionWords: [Word] = []
@@ -28,7 +31,7 @@ final class QuizViewModel: ObservableObject {
     @Published var reveal: Bool = false
     @Published var isCorrect: Bool? = nil
 
-    // Progress tracking
+    // Progress tracking (per-session)
     @Published var correctIDs: Set<String> = []
     @Published var openIDs: Set<String> = []
     @Published var seenIDs: Set<String> = []
@@ -36,51 +39,70 @@ final class QuizViewModel: ObservableObject {
     // Derived
     var totalCount: Int { sessionWords.count }
     var oneBasedIndex: Int { min(currentIndex + 1, max(totalCount, 1)) }
-    var progressFraction: Double {
-        guard totalCount > 0 else { return 0 }
-        return Double(currentIndex) / Double(totalCount)
-    }
+    var progressFraction: Double { totalCount == 0 ? 0 : Double(currentIndex) / Double(totalCount) }
     var allSeen: Bool { !sessionWords.isEmpty && seenIDs.count == sessionWords.count }
-    var canStart: Bool { chosenDirection != nil && resolvedSize() > 0 }
 
-    // Init without AppState (we'll inject later)
+    // Start is enabled when we have deck + direction + a non-empty pool
+    var canStart: Bool {
+        guard chosenDeck != nil, chosenDirection != nil else { return false }
+        return !poolForSelection().isEmpty && (useAllWords || resolvedSize() > 0)
+    }
+
     init(engine: QuizEngine = QuizEngine(), speech: SpeechService = DefaultSpeechService()) {
         self.engine = engine
         self.speech = speech
     }
 
-    // Inject AppState after the view appears
-    func configure(appState: AppState) {
-        self.appState = appState
-    }
+    func configure(appState: AppState) { self.appState = appState }
 
-    // MARK: - Setup helpers
+    // MARK: - Helpers
+
     func resolvedSize() -> Int {
-        if let n = selectedSize { return n }
+        if useAllWords { return Int.max }
+        if let n = selectedSize, n > 0 { return n }
         if let m = Int(customSize), m > 0 { return m }
         return 0
     }
 
+    private func poolForSelection() -> [Word] {
+        guard let appState, let deck = chosenDeck else { return [] }
+
+        switch deck {
+        case .core:
+            // For core deck, prefer unlearned words if available.
+            return appState.unlearnedWords.isEmpty ? appState.allWords : appState.unlearnedWords
+        case .vyvu:
+            return WordsSource.loadVyvuFromBundle() ?? []
+        }
+    }
+
     // MARK: - Session lifecycle
+
     func startSession() {
-        guard let appState else { return }
-        let size = resolvedSize()
-        guard size > 0 else { return }
-        let poolBase = appState.unlearnedWords.isEmpty ? appState.allWords : appState.unlearnedWords
-        let pool = poolBase.shuffled()
-        sessionWords = Array(pool.prefix(max(1, min(size, pool.count))))
+        guard chosenDeck != nil, chosenDirection != nil else { return }
+        var pool = poolForSelection()
+        guard !pool.isEmpty else { return }
+
+        if useAllWords {
+            pool = pool.shuffled()
+        } else {
+            let size = resolvedSize()
+            guard size > 0 else { return }
+            pool = Array(pool.shuffled().prefix(min(size, pool.count)))
+        }
+
+        sessionWords = pool
         currentIndex = 0
-        correctIDs.removeAll()
-        openIDs.removeAll()
-        seenIDs.removeAll()
+        correctIDs = []
+        openIDs = []
+        seenIDs = []
         resetQuestionUI()
         stage = .inQuiz
         if let cur = current { markSeen(cur) }
     }
 
-
-
     // MARK: - Navigation
+
     func advance() {
         if let w = current, !correctIDs.contains(w.id) {
             openIDs.insert(w.id)
@@ -89,10 +111,8 @@ final class QuizViewModel: ObservableObject {
             currentIndex += 1
             if let cur = current { markSeen(cur) }
             resetQuestionUI()
-        } else if let idx = sessionWords.firstIndex(where: { !seenIDs.contains($0.id) }) {
-            currentIndex = idx
-            if let cur = current { markSeen(cur) }
-            resetQuestionUI()
+        } else {
+            stage = .summary
         }
     }
 
@@ -104,16 +124,15 @@ final class QuizViewModel: ObservableObject {
     }
 
     // MARK: - Answering
-    func resetQuestionUI() {
-        answer = ""; reveal = false; isCorrect = nil
-    }
+
+    func resetQuestionUI() { answer = ""; reveal = false; isCorrect = nil }
 
     func evaluate(auto: Bool = false) {
         guard let word = current, let dir = chosenDirection else { return }
         if engine.isCorrect(input: answer, word: word, direction: dir) {
             isCorrect = true
             reveal = true
-            markAsLearned(word)
+            markAsLearnedIfNeeded(word)
         } else if !auto {
             isCorrect = false
         }
@@ -125,31 +144,36 @@ final class QuizViewModel: ObservableObject {
     }
 
     // MARK: - Progress integration
+
     func isCurrentLearned(_ word: Word) -> Bool {
         guard let appState else { return false }
         return appState.learnedIDs.contains(word.id) || correctIDs.contains(word.id)
     }
 
-    func markAsLearned(_ word: Word) {
-        appState?.markLearned(word)
+    private func markAsLearnedIfNeeded(_ word: Word) {
+        // Persist learned progress only for the core deck.
+        if chosenDeck == .core {
+            appState?.markLearned(word)
+        }
         correctIDs.insert(word.id)
         openIDs.remove(word.id)
     }
 
     func markSeen(_ word: Word) { seenIDs.insert(word.id) }
 
-    // MARK: - TTS helpers (DE + VI)
+    // MARK: - TTS helpers
+
     private var ttsRate: Float { appState?.settings.ttsRate ?? 0.45 }
 
     func speakSource(_ text: String) {
         guard let dir = chosenDirection else { return }
-        let lang: SpeechLanguage = (dir == .deToVi) ? .german : .vietnamese
+        let lang: SpeechLanguage = dir.isGermanToVietnamese ? .german : .vietnamese
         speech.speak(text, lang: lang, rate: ttsRate)
     }
 
     func speakTarget(_ text: String) {
         guard let dir = chosenDirection else { return }
-        let lang: SpeechLanguage = (dir == .deToVi) ? .vietnamese : .german
+        let lang: SpeechLanguage = dir.isGermanToVietnamese ? .vietnamese : .german
         speech.speak(text, lang: lang, rate: ttsRate)
     }
 }

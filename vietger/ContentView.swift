@@ -10,8 +10,8 @@ struct ContentView: View {
                 ZStack {
                     LinearGradient(
                         colors: [
-                            Color(hex: "#94D5F7"), // slightly brighter top blue
-                            Color(hex: "#5FB5E4")  // softer medium blue bottom
+                            Color(hex: "#84C4E6"), // slightly darker top blue
+                            Color(hex: "#4FA3D2")  // slightly darker bottom blue
                         ],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing

@@ -8,13 +8,7 @@ struct QuizView: View {
         VStack {
             switch vm.stage {
             case .setup:
-                QuizSetupView(
-                    chosenDirection: $vm.chosenDirection,
-                    selectedSize: $vm.selectedSize,
-                    customSize: $vm.customSize,
-                    canStart: vm.canStart,
-                    onStart: { vm.startSession() }
-                )
+                QuizSetupView(vm: vm)
 
             case .inQuiz:
                 quizScreen
@@ -25,19 +19,15 @@ struct QuizView: View {
                     correctIDs: vm.correctIDs
                 )
                 .environmentObject(appState)
-
             }
         }
         .navigationTitle("Quiz")
-        // HIDE the nav bar back button ONLY during the quiz
         .navigationBarBackButtonHidden(vm.stage == .inQuiz)
-        // DISABLE edge-swipe-to-go-back ONLY during the quiz
         .background(ScopedPopGestureGuard(disabled: vm.stage == .inQuiz))
         .onAppear { vm.configure(appState: appState) }
     }
 }
 
-// MARK: - Quiz Screen
 private extension QuizView {
     var quizScreen: some View {
         VStack(spacing: 16) {
@@ -70,15 +60,10 @@ private extension QuizView {
                         .buttonStyle(.bordered)
                         .disabled(vm.currentIndex == 0)
 
-                    if !vm.isCurrentLearned(word) {
+                    if vm.chosenDeck == .core && !vm.isCurrentLearned(word) {
                         Button("Mark as learned") {
-                            vm.markAsLearned(word)
-                            withAnimation(.spring(response: 0.28, dampingFraction: 0.62)) {
-                                vm.reveal = true
-                            }
-#if os(iOS)
-                            UIImpactFeedbackGenerator(style: .light).impactOccurred()
-#endif
+                            vm.evaluate(auto: true)
+                            vm.correctIDs.insert(word.id)
                         }
                         .buttonStyle(.borderedProminent)
                     }
@@ -95,7 +80,7 @@ private extension QuizView {
                         .fontWeight(.semibold)
                         .frame(maxWidth: .infinity)
                 }
-                .buttonStyle(.borderedProminent)   // ← always enabled now
+                .buttonStyle(.borderedProminent)
                 .padding(.top, 4)
             } else {
                 ProgressView()
@@ -128,37 +113,23 @@ private extension QuizView {
     }
 }
 
-// MARK: - Scoped pop-gesture guard (local to this file)
+// (Pop gesture helper unchanged)
 import UIKit
 struct ScopedPopGestureGuard: UIViewControllerRepresentable {
-    /// When true, disables interactive pop; when false, restores previous value.
     var disabled: Bool
-
-    func makeUIViewController(context: Context) -> Controller {
-        Controller(disabled: disabled)
-    }
-
-    func updateUIViewController(_ uiViewController: Controller, context: Context) {
-        uiViewController.apply(disabled: disabled)
-    }
-
+    func makeUIViewController(context: Context) -> Controller { Controller(disabled: disabled) }
+    func updateUIViewController(_ uiViewController: Controller, context: Context) { uiViewController.apply(disabled: disabled) }
     final class Controller: UIViewController {
         private var storedWasEnabled: Bool?
         private var currentDisabled: Bool
-
-        init(disabled: Bool) {
-            self.currentDisabled = disabled
-            super.init(nibName: nil, bundle: nil)
-        }
+        init(disabled: Bool) { self.currentDisabled = disabled; super.init(nibName: nil, bundle: nil) }
         required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             guard let nc = navigationController else { return }
             storedWasEnabled = nc.interactivePopGestureRecognizer?.isEnabled
             apply(disabled: currentDisabled)
         }
-
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
             if let nc = navigationController, let prev = storedWasEnabled {
@@ -166,15 +137,10 @@ struct ScopedPopGestureGuard: UIViewControllerRepresentable {
             }
             storedWasEnabled = nil
         }
-
         func apply(disabled: Bool) {
             currentDisabled = disabled
             guard let nc = navigationController else { return }
-            if disabled {
-                nc.interactivePopGestureRecognizer?.isEnabled = false
-            } else {
-                nc.interactivePopGestureRecognizer?.isEnabled = storedWasEnabled ?? true
-            }
+            nc.interactivePopGestureRecognizer?.isEnabled = !disabled
         }
     }
 }
