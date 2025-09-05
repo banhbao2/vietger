@@ -4,10 +4,9 @@ struct QuizSetupView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var vm: QuizViewModel
 
-    // Quick sizes; “All” is handled via vm.useAllWords (selectedSize == -1)
     private let quickSizes: [Int] = [5, 10, 20]
 
-    // Counts (prefer not-learned; fall back to total)
+    // Counts (prefer not-learned, fallback to total)
     private var coreAvailableCount: Int {
         appState.unlearnedWords.isEmpty ? appState.allWords.count : appState.unlearnedWords.count
     }
@@ -17,20 +16,33 @@ struct QuizSetupView: View {
 
     var body: some View {
         Form {
-            // 1) Direction (includes .vyvuStudy)
+            // 1) Deck
+            Section("Deck") {
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(QuizDeck.allCases) { deck in
+                        SelectableRow(
+                            title: deck.title,
+                            subtitle: deckSubtitle(for: deck),
+                            isSelected: vm.chosenDeck == deck
+                        ) { vm.chosenDeck = deck }
+                    }
+                }
+            }
+
+            // 2) Direction
             Section("Direction") {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(QuizDirection.allCases) { dir in
                         SelectableRow(
                             title: dir.title,
-                            subtitle: subtitle(for: dir),
+                            subtitle: dirSubtitle(for: dir),
                             isSelected: vm.chosenDirection == dir
                         ) { vm.chosenDirection = dir }
                     }
                 }
             }
 
-            // 2) Number of words
+            // 3) Number of words
             Section("Number of words") {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
@@ -54,9 +66,7 @@ struct QuizSetupView: View {
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
                     if !vm.customSize.isEmpty {
-                        Button {
-                            vm.customSize = ""
-                        } label: {
+                        Button { vm.customSize = "" } label: {
                             Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
                         }
                         .buttonStyle(.plain)
@@ -66,7 +76,7 @@ struct QuizSetupView: View {
                 infoNote
             }
 
-            // 3) Start
+            // Start
             Section {
                 Button {
                     vm.startSession()
@@ -83,28 +93,33 @@ struct QuizSetupView: View {
 
     // MARK: - Helpers
 
-    private func subtitle(for dir: QuizDirection) -> String {
-        switch dir {
-        case .deToVi:
-            return "You answer in Vietnamese."
-        case .viToDe:
-            return "You answer in German."
-        case .vyvuStudy:
+    private func deckSubtitle(for deck: QuizDeck) -> String {
+        switch deck {
+        case .core:
+            return "Use common words. Available now: \(coreAvailableCount) not-learned."
+        case .vyvu:
             return vyvuAvailableCount > 0
-                ? "Uses the Vyvu list (\(vyvuAvailableCount) not-learned available)."
+                ? "Uses Vyvu list (\(vyvuAvailableCount) not-learned available)."
                 : "Vyvu list is empty. Add words to vyvu_words.json."
+        }
+    }
+
+    private func dirSubtitle(for dir: QuizDirection) -> String {
+        switch dir {
+        case .deToVi: return "You answer in Vietnamese."
+        case .viToDe: return "You answer in German."
         }
     }
 
     private var infoNote: some View {
         VStack(alignment: .leading, spacing: 4) {
-            if vm.chosenDirection == .vyvuStudy {
+            if vm.chosenDeck == .vyvu {
                 Text(vyvuAvailableCount > 0
-                     ? "Selected: Vyvu • \(vyvuAvailableCount) not-learned."
+                     ? "Selected deck: Vyvu • \(vyvuAvailableCount) not-learned."
                      : "No Vyvu words found. Add entries to vyvu_words.json.")
-                .font(.footnote).foregroundStyle(.secondary)
+                    .font(.footnote).foregroundStyle(.secondary)
             } else {
-                Text("Selected: Core • \(coreAvailableCount) not-learned.")
+                Text("Selected deck: Core • \(coreAvailableCount) not-learned.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
         }
@@ -169,7 +184,6 @@ private struct SelectableRow: View {
     let app = AppState()
     let vm = QuizViewModel()
     return NavigationStack {
-        QuizSetupView(vm: vm)
-            .environmentObject(app)
+        QuizSetupView(vm: vm).environmentObject(app)
     }
 }

@@ -37,8 +37,8 @@ enum WordsSource {
     }
 
     private static func migrateIfNeeded(_ file: WordsBundleFile) -> WordsBundleFile {
-        var file = file
+        let updated = file
         // future migrations here
-        return file
+        return updated
     }
 }

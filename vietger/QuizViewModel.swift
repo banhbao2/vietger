@@ -13,9 +13,10 @@ final class QuizViewModel: ObservableObject {
     // Stage
     @Published var stage: QuizStage = .setup
 
-    // Setup inputs (direction-only UI: includes .vyvuStudy)
+    // Setup inputs (deck → direction → size)
+    @Published var chosenDeck: QuizDeck? = nil
     @Published var chosenDirection: QuizDirection? = nil
-    @Published var selectedSize: Int? = nil       // -1 means "All"
+    @Published var selectedSize: Int? = nil   // -1 = All
     @Published var customSize: String = ""
 
     var useAllWords: Bool { selectedSize == -1 }
@@ -23,9 +24,7 @@ final class QuizViewModel: ObservableObject {
     // Session
     @Published var sessionWords: [Word] = []
     @Published var currentIndex: Int = 0
-    var current: Word? {
-        sessionWords.indices.contains(currentIndex) ? sessionWords[currentIndex] : nil
-    }
+    var current: Word? { sessionWords.indices.contains(currentIndex) ? sessionWords[currentIndex] : nil }
 
     // Answer UI
     @Published var answer: String = ""
@@ -43,7 +42,7 @@ final class QuizViewModel: ObservableObject {
     var progressFraction: Double { totalCount == 0 ? 0 : Double(currentIndex) / Double(totalCount) }
 
     var canStart: Bool {
-        guard chosenDirection != nil else { return false }
+        guard chosenDeck != nil, chosenDirection != nil else { return false }
         return !availablePool().isEmpty && (useAllWords || resolvedSize() > 0)
     }
 
@@ -63,23 +62,22 @@ final class QuizViewModel: ObservableObject {
         return 0
     }
 
-    /// Build pool honoring learned flags for each deck.
     private func availablePool() -> [Word] {
-        guard let appState, let dir = chosenDirection else { return [] }
-        switch dir {
-        case .vyvuStudy:
-            // Prefer not-learned Vyvu words, else all Vyvu words
-            return appState.unlearnedVyvu.isEmpty ? appState.vyvuWords : appState.unlearnedVyvu
-        case .deToVi, .viToDe:
-            // Core deck
+        guard let appState, let deck = chosenDeck else { return [] }
+        switch deck {
+        case .core:
+            // Prefer not-learned core words; fallback to all
             return appState.unlearnedWords.isEmpty ? appState.allWords : appState.unlearnedWords
+        case .vyvu:
+            // Prefer not-learned Vyvu words; fallback to all
+            return appState.unlearnedVyvu.isEmpty ? appState.vyvuWords : appState.unlearnedVyvu
         }
     }
 
     // MARK: - Session lifecycle
 
     func startSession() {
-        guard chosenDirection != nil else { return }
+        guard chosenDeck != nil, chosenDirection != nil else { return }
         var pool = availablePool()
         guard !pool.isEmpty else { return }
 
@@ -102,9 +100,7 @@ final class QuizViewModel: ObservableObject {
     // MARK: - Navigation
 
     func advance() {
-        if let w = current, !correctIDs.contains(w.id) {
-            openIDs.insert(w.id)
-        }
+        if let w = current, !correctIDs.contains(w.id) { openIDs.insert(w.id) }
         if currentIndex + 1 < sessionWords.count {
             currentIndex += 1
             if let cur = current { markSeen(cur) }
@@ -130,7 +126,7 @@ final class QuizViewModel: ObservableObject {
         if engine.isCorrect(input: answer, word: word, direction: dir) {
             isCorrect = true
             reveal = true
-            markAsLearned(word) // persist for correct deck
+            markAsLearned(word)
         } else if !auto {
             isCorrect = false
         }
@@ -144,13 +140,14 @@ final class QuizViewModel: ObservableObject {
     // MARK: - Progress integration
 
     func isCurrentLearned(_ word: Word) -> Bool {
-        guard let appState, let dir = chosenDirection else { return false }
-        return appState.isLearned(word, forVyvu: dir == .vyvuStudy) || correctIDs.contains(word.id)
+        guard let appState, let deck = chosenDeck else { return false }
+        let learned = appState.isLearned(word, forVyvu: deck == .vyvu)
+        return learned || correctIDs.contains(word.id)
     }
 
     func markAsLearned(_ word: Word) {
-        guard let dir = chosenDirection else { return }
-        appState?.markLearned(word, forVyvu: dir == .vyvuStudy)
+        guard let appState, let deck = chosenDeck else { return }
+        appState.markLearned(word, forVyvu: deck == .vyvu)
         correctIDs.insert(word.id)
         openIDs.remove(word.id)
     }
