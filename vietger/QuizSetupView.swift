@@ -4,44 +4,33 @@ struct QuizSetupView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var vm: QuizViewModel
 
+    // Quick sizes; “All” is handled via vm.useAllWords (selectedSize == -1)
     private let quickSizes: [Int] = [5, 10, 20]
 
+    // Counts (prefer not-learned; fall back to total)
     private var coreAvailableCount: Int {
         appState.unlearnedWords.isEmpty ? appState.allWords.count : appState.unlearnedWords.count
     }
-    private var vyvuCount: Int {
-        WordsSource.loadVyvuFromBundle()?.count ?? 0
+    private var vyvuAvailableCount: Int {
+        appState.unlearnedVyvu.isEmpty ? appState.vyvuWords.count : appState.unlearnedVyvu.count
     }
 
     var body: some View {
         Form {
-            // 1) Choose deck
-            Section("Deck") {
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(QuizDeck.allCases) { deck in
-                        SelectableRow(
-                            title: deck.title,
-                            subtitle: deckSubtitle(for: deck),
-                            isSelected: vm.chosenDeck == deck
-                        ) { vm.chosenDeck = deck }
-                    }
-                }
-            }
-
-            // 2) Direction
+            // 1) Direction (includes .vyvuStudy)
             Section("Direction") {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(QuizDirection.allCases) { dir in
                         SelectableRow(
                             title: dir.title,
-                            subtitle: dirSubtitle(for: dir),
+                            subtitle: subtitle(for: dir),
                             isSelected: vm.chosenDirection == dir
                         ) { vm.chosenDirection = dir }
                     }
                 }
             }
 
-            // 3) Number of words
+            // 2) Number of words
             Section("Number of words") {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
@@ -77,7 +66,7 @@ struct QuizSetupView: View {
                 infoNote
             }
 
-            // Start
+            // 3) Start
             Section {
                 Button {
                     vm.startSession()
@@ -94,33 +83,28 @@ struct QuizSetupView: View {
 
     // MARK: - Helpers
 
-    private func deckSubtitle(for deck: QuizDeck) -> String? {
-        switch deck {
-        case .core:
-            return "Use common words. Available now: \(coreAvailableCount) not-learned."
-        case .vyvu:
-            return vyvuCount > 0
-                ? "Uses Vyvu deck (\(vyvuCount) words)."
-                : "Vyvu deck is empty. Add words to vyvu_words.json."
-        }
-    }
-
-    private func dirSubtitle(for dir: QuizDirection) -> String? {
+    private func subtitle(for dir: QuizDirection) -> String {
         switch dir {
-        case .deToVi: return "You answer in Vietnamese."
-        case .viToDe: return "You answer in German."
+        case .deToVi:
+            return "You answer in Vietnamese."
+        case .viToDe:
+            return "You answer in German."
+        case .vyvuStudy:
+            return vyvuAvailableCount > 0
+                ? "Uses the Vyvu list (\(vyvuAvailableCount) not-learned available)."
+                : "Vyvu list is empty. Add words to vyvu_words.json."
         }
     }
 
     private var infoNote: some View {
         VStack(alignment: .leading, spacing: 4) {
-            if vm.chosenDeck == .vyvu {
-                Text(vyvuCount > 0
-                     ? "Selected deck: Vyvu (\(vyvuCount) words)."
+            if vm.chosenDirection == .vyvuStudy {
+                Text(vyvuAvailableCount > 0
+                     ? "Selected: Vyvu • \(vyvuAvailableCount) not-learned."
                      : "No Vyvu words found. Add entries to vyvu_words.json.")
-                    .font(.footnote).foregroundStyle(.secondary)
+                .font(.footnote).foregroundStyle(.secondary)
             } else {
-                Text("Selected deck: Core • Available now: \(coreAvailableCount) not-learned word\(coreAvailableCount == 1 ? "" : "s").")
+                Text("Selected: Core • \(coreAvailableCount) not-learned.")
                     .font(.footnote).foregroundStyle(.secondary)
             }
         }

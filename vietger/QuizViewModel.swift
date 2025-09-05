@@ -13,10 +13,9 @@ final class QuizViewModel: ObservableObject {
     // Stage
     @Published var stage: QuizStage = .setup
 
-    // Setup inputs
-    @Published var chosenDeck: QuizDeck? = nil
+    // Setup inputs (direction-only UI: includes .vyvuStudy)
     @Published var chosenDirection: QuizDirection? = nil
-    @Published var selectedSize: Int? = nil     // -1 means "All"
+    @Published var selectedSize: Int? = nil       // -1 means "All"
     @Published var customSize: String = ""
 
     var useAllWords: Bool { selectedSize == -1 }
@@ -24,14 +23,16 @@ final class QuizViewModel: ObservableObject {
     // Session
     @Published var sessionWords: [Word] = []
     @Published var currentIndex: Int = 0
-    var current: Word? { sessionWords.indices.contains(currentIndex) ? sessionWords[currentIndex] : nil }
+    var current: Word? {
+        sessionWords.indices.contains(currentIndex) ? sessionWords[currentIndex] : nil
+    }
 
     // Answer UI
     @Published var answer: String = ""
     @Published var reveal: Bool = false
     @Published var isCorrect: Bool? = nil
 
-    // Progress tracking (per-session)
+    // Per-session tracking
     @Published var correctIDs: Set<String> = []
     @Published var openIDs: Set<String> = []
     @Published var seenIDs: Set<String> = []
@@ -40,12 +41,10 @@ final class QuizViewModel: ObservableObject {
     var totalCount: Int { sessionWords.count }
     var oneBasedIndex: Int { min(currentIndex + 1, max(totalCount, 1)) }
     var progressFraction: Double { totalCount == 0 ? 0 : Double(currentIndex) / Double(totalCount) }
-    var allSeen: Bool { !sessionWords.isEmpty && seenIDs.count == sessionWords.count }
 
-    // Start is enabled when we have deck + direction + a non-empty pool
     var canStart: Bool {
-        guard chosenDeck != nil, chosenDirection != nil else { return false }
-        return !poolForSelection().isEmpty && (useAllWords || resolvedSize() > 0)
+        guard chosenDirection != nil else { return false }
+        return !availablePool().isEmpty && (useAllWords || resolvedSize() > 0)
     }
 
     init(engine: QuizEngine = QuizEngine(), speech: SpeechService = DefaultSpeechService()) {
@@ -55,7 +54,7 @@ final class QuizViewModel: ObservableObject {
 
     func configure(appState: AppState) { self.appState = appState }
 
-    // MARK: - Helpers
+    // MARK: - Setup helpers
 
     func resolvedSize() -> Int {
         if useAllWords { return Int.max }
@@ -64,23 +63,24 @@ final class QuizViewModel: ObservableObject {
         return 0
     }
 
-    private func poolForSelection() -> [Word] {
-        guard let appState, let deck = chosenDeck else { return [] }
-
-        switch deck {
-        case .core:
-            // For core deck, prefer unlearned words if available.
+    /// Build pool honoring learned flags for each deck.
+    private func availablePool() -> [Word] {
+        guard let appState, let dir = chosenDirection else { return [] }
+        switch dir {
+        case .vyvuStudy:
+            // Prefer not-learned Vyvu words, else all Vyvu words
+            return appState.unlearnedVyvu.isEmpty ? appState.vyvuWords : appState.unlearnedVyvu
+        case .deToVi, .viToDe:
+            // Core deck
             return appState.unlearnedWords.isEmpty ? appState.allWords : appState.unlearnedWords
-        case .vyvu:
-            return WordsSource.loadVyvuFromBundle() ?? []
         }
     }
 
     // MARK: - Session lifecycle
 
     func startSession() {
-        guard chosenDeck != nil, chosenDirection != nil else { return }
-        var pool = poolForSelection()
+        guard chosenDirection != nil else { return }
+        var pool = availablePool()
         guard !pool.isEmpty else { return }
 
         if useAllWords {
@@ -93,9 +93,7 @@ final class QuizViewModel: ObservableObject {
 
         sessionWords = pool
         currentIndex = 0
-        correctIDs = []
-        openIDs = []
-        seenIDs = []
+        correctIDs = []; openIDs = []; seenIDs = []
         resetQuestionUI()
         stage = .inQuiz
         if let cur = current { markSeen(cur) }
@@ -132,7 +130,7 @@ final class QuizViewModel: ObservableObject {
         if engine.isCorrect(input: answer, word: word, direction: dir) {
             isCorrect = true
             reveal = true
-            markAsLearnedIfNeeded(word)
+            markAsLearned(word) // persist for correct deck
         } else if !auto {
             isCorrect = false
         }
@@ -146,15 +144,13 @@ final class QuizViewModel: ObservableObject {
     // MARK: - Progress integration
 
     func isCurrentLearned(_ word: Word) -> Bool {
-        guard let appState else { return false }
-        return appState.learnedIDs.contains(word.id) || correctIDs.contains(word.id)
+        guard let appState, let dir = chosenDirection else { return false }
+        return appState.isLearned(word, forVyvu: dir == .vyvuStudy) || correctIDs.contains(word.id)
     }
 
-    private func markAsLearnedIfNeeded(_ word: Word) {
-        // Persist learned progress only for the core deck.
-        if chosenDeck == .core {
-            appState?.markLearned(word)
-        }
+    func markAsLearned(_ word: Word) {
+        guard let dir = chosenDirection else { return }
+        appState?.markLearned(word, forVyvu: dir == .vyvuStudy)
         correctIDs.insert(word.id)
         openIDs.remove(word.id)
     }

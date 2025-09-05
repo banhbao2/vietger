@@ -1,90 +1,81 @@
 import Foundation
 import SwiftUI
 
-struct AppSettings: Codable {
-    var hapticsEnabled: Bool = true
-    var ttsRate: Float = 0.45
-    var dailyGoal: Int = 10
-}
-
+@MainActor
 final class AppState: ObservableObject {
-    // No fallback to WordsRepository — JSON is the source of truth
-    @Published var allWords: [Word] = []
+
+    // MARK: - Persistent learned IDs (per deck)
+    @AppStorage("learnedIDs_core") private var learnedIDsCoreData: Data = .init()
+    @AppStorage("learnedIDs_vyvu") private var learnedIDsVyvuData: Data = .init()
+
+    /// Core deck learned IDs (kept name "learnedIDs" for compatibility with old code)
     @Published private(set) var learnedIDs: Set<String> = []
+    /// Vyvu deck learned IDs
+    @Published private(set) var learnedIDsVyvu: Set<String> = []
 
-    @Published var settings: AppSettings = AppSettings() {
-        didSet { saveSettings() }
-    }
+    // MARK: - Word sources
+    /// Core deck words (kept name "allWords" for compatibility)
+    @Published private(set) var allWords: [Word] = []
+    /// Vyvu deck words
+    @Published private(set) var vyvuWords: [Word] = []
 
-    private let defaultsKey = "learnedWordIDs"
-    private let settingsKey = "appSettings"
+    // Derived lists
+    var unlearnedWords: [Word] { allWords.filter { !learnedIDs.contains($0.id) } }
+    var unlearnedVyvu: [Word]  { vyvuWords.filter { !learnedIDsVyvu.contains($0.id) } }
+
+    // Settings
+    struct Settings: Codable { var ttsRate: Float = 0.45 }
+    @Published var settings = Settings()
 
     init() {
-        // Load words from bundle JSON (required)
-        if let jsonWords = WordsSource.loadFromBundle(), !jsonWords.isEmpty {
-            allWords = jsonWords
+        // Load both decks
+        allWords  = WordsSource.loadFromBundle() ?? []
+        vyvuWords = WordsSource.loadVyvuFromBundle() ?? []
+
+        // Restore learned sets
+        learnedIDs      = Self.decodeSet(from: learnedIDsCoreData)
+        learnedIDsVyvu  = Self.decodeSet(from: learnedIDsVyvuData)
+    }
+
+    // MARK: - Public API (used by quiz + word list)
+
+    func isLearned(_ word: Word, forVyvu: Bool) -> Bool {
+        forVyvu ? learnedIDsVyvu.contains(word.id) : learnedIDs.contains(word.id)
+    }
+
+    func markLearned(_ word: Word, forVyvu: Bool) {
+        if forVyvu {
+            if learnedIDsVyvu.insert(word.id).inserted { persistVyvu() }
         } else {
-            // Make it loud in debug so you don't ship without data
-            assertionFailure("words.json missing or empty. Ensure it's in the bundle with Target Membership checked.")
-            allWords = []
+            if learnedIDs.insert(word.id).inserted { persistCore() }
         }
-
-        loadProgress()
-        loadSettings()
-    }
-
-    var unlearnedWords: [Word] {
-        allWords.filter { !learnedIDs.contains($0.id) }
-    }
-
-    // MARK: - Progress ops
-    func markLearned(_ word: Word) {
-        learnedIDs.insert(word.id)
-        saveProgress()
         objectWillChange.send()
     }
 
-    func markUnlearned(_ word: Word) {
-        learnedIDs.remove(word.id)
-        saveProgress()
+    func markUnlearned(_ word: Word, forVyvu: Bool) {
+        if forVyvu {
+            if learnedIDsVyvu.remove(word.id) != nil { persistVyvu() }
+        } else {
+            if learnedIDs.remove(word.id) != nil { persistCore() }
+        }
         objectWillChange.send()
     }
 
-    func toggleLearned(_ word: Word) {
-        if learnedIDs.contains(word.id) { learnedIDs.remove(word.id) }
-        else { learnedIDs.insert(word.id) }
-        saveProgress()
+    func resetLearned(forVyvu: Bool) {
+        if forVyvu { learnedIDsVyvu.removeAll(); persistVyvu() }
+        else       { learnedIDs.removeAll();     persistCore() }
         objectWillChange.send()
     }
 
-    func resetAllProgress() {
-        learnedIDs.removeAll()
-        saveProgress()
-        objectWillChange.send()
-    }
+    // MARK: - Persistence helpers
 
-    // MARK: - Persistence
-    private func saveProgress() {
-        let arr = Array(learnedIDs)
-        UserDefaults.standard.set(arr, forKey: defaultsKey)
-    }
+    private func persistCore() { learnedIDsCoreData = Self.encodeSet(learnedIDs) }
+    private func persistVyvu() { learnedIDsVyvuData = Self.encodeSet(learnedIDsVyvu) }
 
-    private func loadProgress() {
-        if let arr = UserDefaults.standard.stringArray(forKey: defaultsKey) {
-            learnedIDs = Set(arr)
-        }
+    private static func encodeSet(_ set: Set<String>) -> Data {
+        (try? JSONEncoder().encode(Array(set))) ?? Data()
     }
-
-    private func saveSettings() {
-        if let data = try? JSONEncoder().encode(settings) {
-            UserDefaults.standard.set(data, forKey: settingsKey)
-        }
-    }
-
-    private func loadSettings() {
-        if let data = UserDefaults.standard.data(forKey: settingsKey),
-           let s = try? JSONDecoder().decode(AppSettings.self, from: data) {
-            settings = s
-        }
+    private static func decodeSet(from data: Data) -> Set<String> {
+        (try? JSONDecoder().decode([String].self, from: data)).map(Set.init) ?? []
     }
 }

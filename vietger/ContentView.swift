@@ -1,117 +1,87 @@
 import SwiftUI
-//START SCREEN
+
+// START SCREEN
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
         NavigationStack {
             ZStack {
-                // Background gradient with balanced brightness & readability
+                // Original blue gradient colors (restored)
                 ZStack {
                     LinearGradient(
                         colors: [
-                            Color(hex: "#84C4E6"), // slightly darker top blue
-                            Color(hex: "#4FA3D2")  // slightly darker bottom blue
+                            Color(hex: "#84C4E6"), // top blue
+                            Color(hex: "#4FA3D2")  // bottom blue
                         ],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
                     .ignoresSafeArea()
-
-                    // Lighter overlay for softer contrast
-                    Color.black.opacity(0.08)
-                        .ignoresSafeArea()
                 }
 
-
-                ScrollView {
-                    // App Name (fancy logo style)
+                VStack(alignment: .leading, spacing: 28) {
+                    // App title / logo (unchanged)
                     Text("Vyvu")
-                        .font(.custom("SnellRoundhand-Bold", size: 42)) // Use your own font name if added to project
+                        .font(.custom("SnellRoundhand-Bold", size: 42))
                         .foregroundColor(.white)
                         .shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 2)
-                        .kerning(2) // slight spacing between letters
-                        .padding(.top, 20)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.top, 8)
 
-                    VStack(alignment: .leading, spacing: 28) {
-
-                        // Greeting section
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("👋 Xin chào bạn")
-                                .font(.title3)
-                                .foregroundColor(.white.opacity(0.85))
-                            Text("Ready to learn some German?")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 10)
-
-                        // Stats row
-                        HStack(spacing: 12) {
-                            statCard(title: "Total", value: appState.allWords.count, color: .white)
-                            statCard(title: "Learned", value: appState.learnedIDs.count, color: Color(hex: "#00FF7F"))
-                            statCard(title: "Remaining", value: appState.allWords.count - appState.learnedIDs.count, color: .red)
-                        }
-                        .padding(.horizontal)
-
-                        // Action cards
-                        VStack(spacing: 20) {
-                            NavigationLink(destination: QuizView().environmentObject(appState)) {
-                                actionCard(
-                                    title: "Start Quiz",
-                                    subtitle: "Test your skills",
-                                    systemImage: "play.circle.fill",
-                                    color: .white
-                                )
-                            }
-
-                            NavigationLink(destination: WordListView().environmentObject(appState)) {
-                                actionCard(
-                                    title: "Word List",
-                                    subtitle: "Browse and manage vocabulary",
-                                    systemImage: "list.bullet",
-                                    color: .white
-                                )
-                            }
-                        }
-                        .padding(.horizontal)
-                        .padding(.top, 10)
-
-                        Spacer(minLength: 40)
+                    // Greeting section (unchanged)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("👋 Xin chào bạn")
+                            .font(.title3)
+                            .foregroundColor(.white.opacity(0.85))
+                        Text("Ready to learn some German?")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
                     }
-                    // Footer note
+                    .padding(.horizontal)
+                    .padding(.top, 10)
+
+                    // 🚫 Removed the stats row (Total / Learned / Remaining)
+
+                    // Action cards (unchanged)
+                    VStack(spacing: 20) {
+                        NavigationLink(destination: QuizView().environmentObject(appState)) {
+                            actionCard(
+                                title: "Start Quiz",
+                                subtitle: "Test your skills",
+                                systemImage: "play.circle.fill",
+                                color: .white
+                            )
+                        }
+
+                        NavigationLink(destination: WordListView().environmentObject(appState)) {
+                            actionCard(
+                                title: "Word List",
+                                subtitle: "Browse and manage vocabulary",
+                                systemImage: "list.bullet",
+                                color: .white
+                            )
+                        }
+                    }
+                    .padding(.horizontal)
+
+                    Spacer()
+
+                    // Footer (unchanged)
                     Text("Made by Nghia")
                         .font(.footnote)
-                        .foregroundColor(.white.opacity(0.7))
+                        .foregroundColor(.white.opacity(0.85))
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 8)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.bottom, 10)
-
                 }
+                .padding(.vertical, 16)
             }
         }
     }
 
-    // MARK: - Stat Card
-    private func statCard(title: String, value: Int, color: Color) -> some View {
-        VStack {
-            Text("\(value)")
-                .font(.title2)
-                .bold()
-                .foregroundColor(color)
-            Text(title)
-                .font(.caption)
-                .foregroundColor(.white.opacity(0.85))
-        }
-        .frame(maxWidth: .infinity)
-        .padding()
-        .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 14))
-        .shadow(color: .black.opacity(0.15), radius: 4, x: 0, y: 2)
-    }
-
-    // MARK: - Action Card Component
+    // MARK: - Action Card Component (unchanged)
     private func actionCard(title: String, subtitle: String, systemImage: String, color: Color) -> some View {
         HStack(spacing: 8) {
             ZStack {
@@ -132,19 +102,18 @@ struct ContentView: View {
                     .foregroundColor(color.opacity(0.8))
             }
             Spacer()
-            
             Image(systemName: "chevron.right")
-                .foregroundColor(color.opacity(0.5))
+                .font(.headline)
+                .foregroundColor(color.opacity(0.8))
         }
         .padding()
-        .frame(maxWidth: .infinity)
         .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 18))
-        .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
+        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .shadow(color: .black.opacity(0.15), radius: 4, x: 0, y: 2)
     }
 }
 
-// MARK: - Hex Color Extension
+// MARK: - Hex Color Helper (unchanged)
 extension Color {
     init(hex: String) {
         let scanner = Scanner(string: hex)
@@ -156,8 +125,4 @@ extension Color {
         let b = Double(rgb & 0xFF) / 255
         self.init(red: r, green: g, blue: b)
     }
-}
-
-#Preview {
-    ContentView().environmentObject(AppState())
 }

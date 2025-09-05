@@ -60,13 +60,15 @@ private extension QuizView {
                         .buttonStyle(.bordered)
                         .disabled(vm.currentIndex == 0)
 
-                    if vm.chosenDeck == .core && !vm.isCurrentLearned(word) {
+                    // Show for BOTH decks when the word is not yet learned
+                    if !vm.isCurrentLearned(word) {
                         Button("Mark as learned") {
                             vm.evaluate(auto: true)
-                            vm.correctIDs.insert(word.id)
+                            vm.markAsLearned(word)   // persists to the correct deck based on chosenDirection
                         }
                         .buttonStyle(.borderedProminent)
                     }
+
 
                     Button("Next") { vm.advance() }
                         .buttonStyle(.bordered)
@@ -93,7 +95,9 @@ private extension QuizView {
 
     func answerField(direction: QuizDirection) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Type your answer").font(.caption).foregroundStyle(.secondary)
+            Text("Type your answer")
+                .font(.caption)
+                .foregroundStyle(.secondary)
             TextField("Enter translation…", text: $vm.answer)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
@@ -113,7 +117,7 @@ private extension QuizView {
     }
 }
 
-// (Pop gesture helper unchanged)
+// Keep your pop-gesture guard as before
 import UIKit
 struct ScopedPopGestureGuard: UIViewControllerRepresentable {
     var disabled: Bool
