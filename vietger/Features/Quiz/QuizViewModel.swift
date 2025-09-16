@@ -158,7 +158,7 @@ final class QuizSessionViewModel: ObservableObject {
     }
     
     func completeSession() {
-        let rewards = gamification?.completeSession(
+        _ = gamification?.completeSession(
             correctWords: session.correctIDs.count,
             totalWords: session.words.count
         )

@@ -37,7 +37,7 @@ struct QuizView: View {
                         showSetup = true
                         viewModel.reset()
                     },
-                    onReviewMistakes: { mistakes in  
+                    onReviewMistakes: { mistakes in
                         reviewWords = mistakes
                         showSetup = true
                         viewModel.reset()

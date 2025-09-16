@@ -13,7 +13,7 @@ final class QuizSetupViewModel: ObservableObject {
     
     // Derived
     var canStart: Bool {
-        guard let selectedDeck, let selectedDirection else { return false }
+        guard let selectedDeck, selectedDirection != nil else { return false }
         let available = availableWords(for: selectedDeck)
         if selectedSize == -1 {
             return available > 0
