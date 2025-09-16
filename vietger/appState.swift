@@ -1,81 +1,101 @@
-import Foundation
 import SwiftUI
+import Combine
 
 @MainActor
 final class AppState: ObservableObject {
-
-    // MARK: - Persistent learned IDs (per deck)
-    @AppStorage("learnedIDs_core") private var learnedIDsCoreData: Data = .init()
-    @AppStorage("learnedIDs_vyvu") private var learnedIDsVyvuData: Data = .init()
-
-    /// Core deck learned IDs (kept name "learnedIDs" for compatibility with old code)
-    @Published private(set) var learnedIDs: Set<String> = []
-    /// Vyvu deck learned IDs
-    @Published private(set) var learnedIDsVyvu: Set<String> = []
-
-    // MARK: - Word sources
-    /// Core deck words (kept name "allWords" for compatibility)
-    @Published private(set) var allWords: [Word] = []
-    /// Vyvu deck words
+    // Data
+    @Published private(set) var coreWords: [Word] = []
     @Published private(set) var vyvuWords: [Word] = []
-
-    // Derived lists
-    var unlearnedWords: [Word] { allWords.filter { !learnedIDs.contains($0.id) } }
-    var unlearnedVyvu: [Word]  { vyvuWords.filter { !learnedIDsVyvu.contains($0.id) } }
-
-    // Settings
-    struct Settings: Codable { var ttsRate: Float = 0.45 }
-    @Published var settings = Settings()
-
+    
+    // Progress
+    @Published private(set) var learnedIDsCore: Set<String> = []
+    @Published private(set) var learnedIDsVyvu: Set<String> = []
+    
+    // Services
+    private let dataService = DataService()
+    private let persistence = PersistenceService()
+    
+    // Computed properties (cached)
+    var unlearnedCore: [Word] {
+        coreWords.filter { !learnedIDsCore.contains($0.id) }
+    }
+    
+    var unlearnedVyvu: [Word] {
+        vyvuWords.filter { !learnedIDsVyvu.contains($0.id) }
+    }
+    
+    var statistics: AppStatistics {
+        AppStatistics(
+            totalWords: coreWords.count + vyvuWords.count,
+            learnedWords: learnedIDsCore.count + learnedIDsVyvu.count,
+            currentStreak: persistence.userStreak,
+            longestStreak: persistence.longestStreak,
+            totalXP: persistence.totalXP,
+            coreProgress: coreWords.isEmpty ? 0 : Double(learnedIDsCore.count) / Double(coreWords.count),
+            vyvuProgress: vyvuWords.isEmpty ? 0 : Double(learnedIDsVyvu.count) / Double(vyvuWords.count)
+        )
+    }
+    
     init() {
-        // Load both decks
-        allWords  = WordsSource.loadFromBundle() ?? []
-        vyvuWords = WordsSource.loadVyvuFromBundle() ?? []
-
-        // Restore learned sets
-        learnedIDs      = Self.decodeSet(from: learnedIDsCoreData)
-        learnedIDsVyvu  = Self.decodeSet(from: learnedIDsVyvuData)
+        loadData()
+        loadProgress()
     }
-
-    // MARK: - Public API (used by quiz + word list)
-
-    func isLearned(_ word: Word, forVyvu: Bool) -> Bool {
-        forVyvu ? learnedIDsVyvu.contains(word.id) : learnedIDs.contains(word.id)
+    
+    private func loadData() {
+        let data = dataService.preloadAllData()
+        coreWords = data.core
+        vyvuWords = data.vyvu
     }
-
-    func markLearned(_ word: Word, forVyvu: Bool) {
-        if forVyvu {
-            if learnedIDsVyvu.insert(word.id).inserted { persistVyvu() }
+    
+    private func loadProgress() {
+        learnedIDsCore = persistence.loadLearnedIDs(for: .core)
+        learnedIDsVyvu = persistence.loadLearnedIDs(for: .vyvu)
+    }
+    
+    // MARK: - Public API
+    func isLearned(_ word: Word, deck: DeckType) -> Bool {
+        let learnedSet = deck == .core ? learnedIDsCore : learnedIDsVyvu
+        return learnedSet.contains(word.id)
+    }
+    
+    func markLearned(_ word: Word, deck: DeckType) {
+        if deck == .core {
+            learnedIDsCore.insert(word.id)
+            persistence.saveLearnedIDs(learnedIDsCore, for: .core)
         } else {
-            if learnedIDs.insert(word.id).inserted { persistCore() }
+            learnedIDsVyvu.insert(word.id)
+            persistence.saveLearnedIDs(learnedIDsVyvu, for: .vyvu)
         }
-        objectWillChange.send()
+        persistence.totalWordsLearned = learnedIDsCore.count + learnedIDsVyvu.count
     }
-
-    func markUnlearned(_ word: Word, forVyvu: Bool) {
-        if forVyvu {
-            if learnedIDsVyvu.remove(word.id) != nil { persistVyvu() }
+    
+    func markUnlearned(_ word: Word, deck: DeckType) {
+        if deck == .core {
+            learnedIDsCore.remove(word.id)
+            persistence.saveLearnedIDs(learnedIDsCore, for: .core)
         } else {
-            if learnedIDs.remove(word.id) != nil { persistCore() }
+            learnedIDsVyvu.remove(word.id)
+            persistence.saveLearnedIDs(learnedIDsVyvu, for: .vyvu)
         }
-        objectWillChange.send()
+        persistence.totalWordsLearned = learnedIDsCore.count + learnedIDsVyvu.count
     }
-
-    func resetLearned(forVyvu: Bool) {
-        if forVyvu { learnedIDsVyvu.removeAll(); persistVyvu() }
-        else       { learnedIDs.removeAll();     persistCore() }
-        objectWillChange.send()
+    
+    func resetProgress(for deck: DeckType) {
+        if deck == .core {
+            learnedIDsCore.removeAll()
+            persistence.saveLearnedIDs(learnedIDsCore, for: .core)
+        } else {
+            learnedIDsVyvu.removeAll()
+            persistence.saveLearnedIDs(learnedIDsVyvu, for: .vyvu)
+        }
+        persistence.totalWordsLearned = learnedIDsCore.count + learnedIDsVyvu.count
     }
-
-    // MARK: - Persistence helpers
-
-    private func persistCore() { learnedIDsCoreData = Self.encodeSet(learnedIDs) }
-    private func persistVyvu() { learnedIDsVyvuData = Self.encodeSet(learnedIDsVyvu) }
-
-    private static func encodeSet(_ set: Set<String>) -> Data {
-        (try? JSONEncoder().encode(Array(set))) ?? Data()
+    
+    func words(for deck: DeckType) -> [Word] {
+        deck == .core ? coreWords : vyvuWords
     }
-    private static func decodeSet(from data: Data) -> Set<String> {
-        (try? JSONDecoder().decode([String].self, from: data)).map(Set.init) ?? []
+    
+    func unlearnedWords(for deck: DeckType) -> [Word] {
+        deck == .core ? unlearnedCore : unlearnedVyvu
     }
 }
