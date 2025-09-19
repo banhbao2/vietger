@@ -54,6 +54,7 @@ struct QuizCard: View {
     let onReveal: () -> Void
     let onSpeakSource: (String) -> Void
     let onSpeakTarget: (String) -> Void
+    let onShowSentence: () -> Void
     
     private var sourceText: String {
         direction.isGermanToVietnamese ? word.german : word.vietnamese
@@ -65,27 +66,27 @@ struct QuizCard: View {
     
     var body: some View {
         VStack(spacing: Theme.Spacing.m) {
-            // Source card
-            VStack(spacing: Theme.Spacing.m) {
+            // Source card - More compact design
+            VStack(spacing: Theme.Spacing.s) {
                 HStack {
                     Text(direction.sourceFlag)
-                        .font(.system(size: 28))
+                        .font(.system(size: 24))
                     
                     Spacer()
                     
                     if isLearned {
                         Image(systemName: "checkmark.seal.fill")
                             .foregroundColor(Theme.Colors.success)
-                            .font(.system(size: 20))
+                            .font(.system(size: 18))
                     }
                     
                     Button {
                         onSpeakSource(sourceText)
                     } label: {
                         Image(systemName: "speaker.wave.2.fill")
-                            .font(.system(size: 20))
+                            .font(.system(size: 18))
                             .foregroundColor(Theme.Colors.primary)
-                            .padding(Theme.Spacing.s)
+                            .padding(6)
                             .background(
                                 Circle()
                                     .fill(Theme.Colors.primary.opacity(0.1))
@@ -94,47 +95,66 @@ struct QuizCard: View {
                 }
                 
                 Text(sourceText)
-                    .font(Theme.Typography.title)
+                    .font(.system(size: 32, weight: .semibold, design: .rounded))
                     .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, minHeight: 60)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, Theme.Spacing.m)
             }
-            .padding(Theme.Spacing.l)
+            .padding(Theme.Spacing.m)
             .background(Theme.Colors.card)
             .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.Radius.card)
-                    .stroke(borderColor(), lineWidth: 3)
+                    .stroke(borderColor(), lineWidth: 2)
             )
+            .shadow(color: Theme.Shadow.subtle.color, radius: Theme.Shadow.subtle.radius, y: Theme.Shadow.subtle.y)
             
             // Target (revealed or reveal button)
             if reveal {
-                VStack(spacing: Theme.Spacing.m) {
+                VStack(spacing: Theme.Spacing.s) {
                     HStack {
                         Text(direction.targetFlag)
-                            .font(.system(size: 24))
+                            .font(.system(size: 20))
                         
                         Spacer()
                         
-                        Button {
-                            onSpeakTarget(targetText)
-                        } label: {
-                            Image(systemName: "speaker.wave.2.fill")
-                                .font(.system(size: 18))
-                                .foregroundColor(Theme.Colors.primary)
-                                .padding(6)
-                                .background(
-                                    Circle()
-                                        .fill(Theme.Colors.primary.opacity(0.1))
-                                )
+                        HStack(spacing: Theme.Spacing.s) {
+                            // Example sentence button - ALWAYS VISIBLE
+                            Button {
+                                onShowSentence()
+                            } label: {
+                                Image(systemName: "text.quote")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(Theme.Colors.primary)
+                                    .padding(6)
+                                    .background(
+                                        Circle()
+                                            .stroke(Theme.Colors.primary.opacity(0.3), lineWidth: 1)
+                                    )
+                            }
+                            
+                            Button {
+                                onSpeakTarget(targetText)
+                            } label: {
+                                Image(systemName: "speaker.wave.2.fill")
+                                    .font(.system(size: 16))
+                                    .foregroundColor(Theme.Colors.primary)
+                                    .padding(6)
+                                    .background(
+                                        Circle()
+                                            .fill(Theme.Colors.primary.opacity(0.1))
+                                    )
+                            }
                         }
                     }
                     
                     Text(targetText)
-                        .font(Theme.Typography.title2)
+                        .font(.system(size: 26, weight: .medium, design: .rounded))
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
+                        .padding(.vertical, Theme.Spacing.s)
                     
-                    // Show alternatives if any
+                    // Show alternatives if any - more compact
                     if direction.isGermanToVietnamese && !word.vietnameseAlt.isEmpty {
                         Text("Also: \(word.vietnameseAlt.joined(separator: ", "))")
                             .font(Theme.Typography.caption)
@@ -148,25 +168,35 @@ struct QuizCard: View {
                 .padding(Theme.Spacing.m)
                 .background(
                     RoundedRectangle(cornerRadius: Theme.Radius.card)
-                        .fill(Theme.Colors.success.opacity(0.1))
+                        .fill(Theme.Colors.success.opacity(0.08))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: Theme.Radius.card)
+                        .stroke(Theme.Colors.success.opacity(0.2), lineWidth: 1)
                 )
                 .transition(.asymmetric(
-                    insertion: .scale(scale: 0.8).combined(with: .opacity),
-                    removal: .scale(scale: 0.8).combined(with: .opacity)
+                    insertion: .move(edge: .bottom).combined(with: .opacity),
+                    removal: .scale(scale: 0.9).combined(with: .opacity)
                 ))
             } else {
                 Button(action: onReveal) {
-                    HStack {
+                    HStack(spacing: Theme.Spacing.s) {
                         Image(systemName: "eye")
+                            .font(.system(size: 16))
                         Text("Reveal Answer")
+                            .font(Theme.Typography.headline)
                     }
-                    .font(Theme.Typography.headline)
                     .foregroundColor(Theme.Colors.primary)
                     .frame(maxWidth: .infinity)
-                    .padding(Theme.Spacing.m)
+                    .padding(.vertical, 14)
+                    .padding(.horizontal, Theme.Spacing.m)
                     .background(
                         RoundedRectangle(cornerRadius: Theme.Radius.button)
-                            .stroke(Theme.Colors.primary, lineWidth: 2)
+                            .fill(Theme.Colors.primary.opacity(0.1))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: Theme.Radius.button)
+                            .stroke(Theme.Colors.primary.opacity(0.3), lineWidth: 1)
                     )
                 }
             }

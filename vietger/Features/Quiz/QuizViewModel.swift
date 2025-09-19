@@ -26,6 +26,7 @@ final class QuizSessionViewModel: ObservableObject {
     private var engine: QuizEngine?
     private var gamification: GamificationService?
     private var speechService: SpeechService?
+    private var dataService: DataService?  // NEW: Add DataService reference
     
     var currentWord: Word? { session.current }
     
@@ -35,6 +36,7 @@ final class QuizSessionViewModel: ObservableObject {
         self.engine = QuizEngine()
         self.gamification = environment.gamificationService
         self.speechService = environment.speechService
+        self.dataService = environment.dataService  // NEW: Store DataService reference
     }
     
     func startSession(with config: QuizConfiguration, appState: AppState) {
@@ -43,11 +45,13 @@ final class QuizSessionViewModel: ObservableObject {
         stage = .inQuiz
         resetQuestionUI()
     }
+    
     func startReviewSession(with config: QuizConfiguration, words: [Word], appState: AppState) {
         session = QuizSession(configuration: config, words: words.shuffled())
         stage = .inQuiz
         resetQuestionUI()
     }
+    
     private func selectWords(config: QuizConfiguration, appState: AppState) -> [Word] {
         var pool = appState.unlearnedWords(for: config.deck)
         if pool.isEmpty {
@@ -130,6 +134,16 @@ final class QuizSessionViewModel: ObservableObject {
         
         let rate: Float = environment?.persistenceService.settings.ttsRate ?? 0.45
         speechService.speak(text, lang: language, rate: rate)
+    }
+    
+    // NEW: Check if word has an example sentence
+    func hasSentence(for word: Word) -> Bool {
+        return dataService?.getSentence(for: word) != nil
+    }
+    
+    // NEW: Get sentence for word
+    func getSentence(for word: Word) -> Sentence? {
+        return dataService?.getSentence(for: word)
     }
     
     func advance() {
