@@ -1,0 +1,30 @@
+{
+  "dataModelVersion": 1,
+  "sentences": [
+    {
+      "wordId": "ich→tôi",
+      "german": "Ich bin Student und lerne Vietnamesisch.",
+      "vietnamese": "Tôi là sinh viên và đang học tiếng Việt."
+    },
+    {
+      "wordId": "haben→có",
+      "german": "Ich habe zwei Brüder und eine Schwester.",
+      "vietnamese": "Tôi có hai anh trai và một em gái."
+    },
+    {
+      "wordId": "essen→ăn",
+      "german": "Wir essen heute Abend im Restaurant.",
+      "vietnamese": "Tối nay chúng tôi ăn ở nhà hàng."
+    },
+    {
+      "wordId": "gehen→đi",
+      "german": "Ich gehe jeden Tag zur Arbeit.",
+      "vietnamese": "Tôi đi làm mỗi ngày."
+    },
+    {
+      "wordId": "gut→tốt",
+      "german": "Das Essen schmeckt sehr gut.",
+      "vietnamese": "Đồ ăn rất ngon."
+    }
+  ]
+}

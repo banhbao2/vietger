@@ -1,261 +1,2101 @@
 {
   "dataModelVersion": 1,
   "words": [
-    { "german": "der Taxifahrer", "germanAlt": ["Taxifahrer"], "vietnamese": "tài xế taxi", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Lehrer", "germanAlt": ["Lehrer"], "vietnamese": "giáo viên (nam)", "vietnameseAlt": ["giáo viên"], "category": "nouns" },
-    { "german": "die Lehrerin", "germanAlt": ["Lehrerin"], "vietnamese": "giáo viên (nữ)", "vietnameseAlt": ["giáo viên"], "category": "nouns" },
-    { "german": "der Architekt", "germanAlt": ["Architekt"], "vietnamese": "kiến trúc sư (nam)", "vietnameseAlt": ["kiến trúc sư"], "category": "nouns" },
-    { "german": "die Architektin", "germanAlt": ["Architektin"], "vietnamese": "kiến trúc sư (nữ)", "vietnameseAlt": ["kiến trúc sư"], "category": "nouns" },
-    { "german": "der Mechatroniker", "germanAlt": ["Mechatroniker"], "vietnamese": "kỹ thuật viên cơ điện tử", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Schauspieler", "germanAlt": ["Schauspieler"], "vietnamese": "diễn viên (nam)", "vietnameseAlt": ["diễn viên"], "category": "nouns" },
-    { "german": "die Schauspielerin", "germanAlt": ["Schauspielerin"], "vietnamese": "diễn viên (nữ)", "vietnameseAlt": ["diễn viên"], "category": "nouns" },
-    { "german": "die Sekretärin", "germanAlt": ["Sekretärin"], "vietnamese": "thư ký", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Ingenieur", "germanAlt": ["Ingenieur"], "vietnamese": "kỹ sư", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Sänger", "germanAlt": ["Sänger"], "vietnamese": "ca sĩ (nam)", "vietnameseAlt": ["ca sĩ"], "category": "nouns" },
-    { "german": "die Sängerin", "germanAlt": ["Sängerin"], "vietnamese": "ca sĩ (nữ)", "vietnameseAlt": ["ca sĩ"], "category": "nouns" },
-    { "german": "die Ärztin", "germanAlt": ["Ärztin"], "vietnamese": "bác sĩ (nữ)", "vietnameseAlt": ["bác sĩ"], "category": "nouns" },
-    { "german": "der Arzt", "germanAlt": ["Arzt"], "vietnamese": "bác sĩ (nam)", "vietnameseAlt": ["bác sĩ"], "category": "nouns" },
-    { "german": "der Fußballspieler", "germanAlt": ["Fußballspieler"], "vietnamese": "cầu thủ bóng đá", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Student", "germanAlt": ["Student"], "vietnamese": "sinh viên (nam)", "vietnameseAlt": ["sinh viên"], "category": "nouns" },
-    { "german": "die Studentin", "germanAlt": ["Studentin"], "vietnamese": "sinh viên (nữ)", "vietnameseAlt": ["sinh viên"], "category": "nouns" },
-    { "german": "der Journalist", "germanAlt": ["Journalist"], "vietnamese": "nhà báo / phóng viên (nam)", "vietnameseAlt": ["nhà báo","phóng viên"], "category": "nouns" },
-    { "german": "die Journalistin", "germanAlt": ["Journalistin"], "vietnamese": "nhà báo / phóng viên (nữ)", "vietnameseAlt": ["nhà báo","phóng viên"], "category": "nouns" },
-    { "german": "die Kellnerin", "germanAlt": ["Kellnerin"], "vietnamese": "nhân viên phục vụ (nữ)", "vietnameseAlt": ["phục vụ"], "category": "nouns" },
-    { "german": "der Kellner", "germanAlt": ["Kellner"], "vietnamese": "nhân viên phục vụ (nam)", "vietnameseAlt": ["phục vụ"], "category": "nouns" },
-    { "german": "die Krankenpflegerin", "germanAlt": ["Krankenpflegerin"], "vietnamese": "y tá / điều dưỡng (nữ)", "vietnameseAlt": ["điều dưỡng"], "category": "nouns" },
-    { "german": "der Krankenpfleger", "germanAlt": ["Krankenpfleger"], "vietnamese": "điều dưỡng (nam)", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Schüler", "germanAlt": ["Schüler"], "vietnamese": "học sinh (nam)", "vietnameseAlt": ["học sinh"], "category": "nouns" },
-    { "german": "die Schülerin", "germanAlt": ["Schülerin"], "vietnamese": "học sinh (nữ)", "vietnameseAlt": ["học sinh"], "category": "nouns" },
-    { "german": "der Verkäufer", "germanAlt": ["Verkäufer"], "vietnamese": "người bán hàng (nam)", "vietnameseAlt": ["người bán hàng"], "category": "nouns" },
-    { "german": "die Verkäuferin", "germanAlt": ["Verkäuferin"], "vietnamese": "người bán hàng (nữ)", "vietnameseAlt": ["người bán hàng"], "category": "nouns" },
-    { "german": "die Historikerin", "germanAlt": ["Historikerin"], "vietnamese": "nhà sử học (nữ)", "vietnameseAlt": ["nhà sử học"], "category": "nouns" },
-    { "german": "die Friseurin", "germanAlt": ["Friseurin"], "vietnamese": "thợ cắt tóc (nữ)", "vietnameseAlt": ["thợ cắt tóc"], "category": "nouns" },
-    { "german": "das Praktikum", "germanAlt": ["Praktikum"], "vietnamese": "thực tập", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Ausbildung", "germanAlt": ["Ausbildung"], "vietnamese": "học nghề / đào tạo", "vietnameseAlt": ["học nghề"], "category": "nouns" },
-    { "german": "arbeiten", "germanAlt": ["arbeitest","arbeite","arbeitet"], "vietnamese": "làm việc", "vietnameseAlt": [], "category": "coreVerbs" },
-    { "german": "machen", "germanAlt": ["mache","machst","macht"], "vietnamese": "làm", "vietnameseAlt": [], "category": "coreVerbs" },
-    { "german": "bei", "germanAlt": [], "vietnamese": "tại / ở (chỗ)", "vietnameseAlt": ["tại"], "category": "prepositions" },
-    { "german": "als", "germanAlt": [], "vietnamese": "như là / với vai trò", "vietnameseAlt": ["như là"], "category": "connectors" },
-    { "german": "der IT-Spezialist", "germanAlt": ["IT-Spezialist"], "vietnamese": "chuyên gia CNTT", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "zurzeit arbeitslos", "germanAlt": [], "vietnamese": "hiện tại thất nghiệp", "vietnameseAlt": [], "category": "other" },
-    { "german": "der Moderator", "germanAlt": ["Moderator"], "vietnamese": "người dẫn chương trình (nam)", "vietnameseAlt": ["MC"], "category": "nouns" },
-    { "german": "die Moderatorin", "germanAlt": ["Moderatorin"], "vietnamese": "người dẫn chương trình (nữ)", "vietnameseAlt": ["MC"], "category": "nouns" },
-    { "german": "geschieden", "germanAlt": [], "vietnamese": "ly hôn", "vietnameseAlt": [], "category": "other" },
-    { "german": "verheiratet", "germanAlt": [], "vietnamese": "kết hôn", "vietnameseAlt": [], "category": "other" },
-    { "german": "ein Kind", "germanAlt": [], "vietnamese": "một con", "vietnameseAlt": ["1 con"], "category": "other" },
-    { "german": "keine Kinder", "germanAlt": [], "vietnamese": "không con", "vietnameseAlt": [], "category": "other" },
-    { "german": "Single", "germanAlt": ["allein"], "vietnamese": "độc thân", "vietnameseAlt": [], "category": "other" },
-    { "german": "nicht verheiratet", "germanAlt": [], "vietnamese": "chưa kết hôn", "vietnameseAlt": [], "category": "other" },
-    { "german": "zusammen", "germanAlt": [], "vietnamese": "cùng nhau / sống chung", "vietnameseAlt": ["cùng nhau"], "category": "other" },
-    { "german": "die Familie", "germanAlt": ["Familie"], "vietnamese": "gia đình", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Großvater", "germanAlt": ["Opa"], "vietnamese": "ông", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Großmutter", "germanAlt": ["Oma"], "vietnamese": "bà", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der (Ehe)Mann", "germanAlt": ["der Mann","Ehemann"], "vietnamese": "chồng", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die (Ehe)Frau", "germanAlt": ["die Frau","Ehefrau"], "vietnamese": "vợ", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Mutter", "germanAlt": ["Mutter"], "vietnamese": "mẹ", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Vater", "germanAlt": ["Vater"], "vietnamese": "bố", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Sohn", "germanAlt": [], "vietnamese": "con trai", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Tochter", "germanAlt": [], "vietnamese": "con gái", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Bruder", "germanAlt": [], "vietnamese": "anh trai", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Schwester", "germanAlt": [], "vietnamese": "em gái / chị gái", "vietnameseAlt": ["em gái","chị gái"], "category": "nouns" },
-    { "german": "die Eltern", "germanAlt": [], "vietnamese": "bố mẹ", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Großeltern", "germanAlt": [], "vietnamese": "ông bà", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Geschwister", "germanAlt": [], "vietnamese": "anh chị em", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Enkelin", "germanAlt": [], "vietnamese": "cháu gái (của ông/bà)", "vietnameseAlt": ["cháu gái"], "category": "nouns" },
-    { "german": "der Enkel", "germanAlt": [], "vietnamese": "cháu trai (của ông/bà)", "vietnameseAlt": ["cháu trai"], "category": "nouns" },
-    { "german": "die Stiefmutter", "germanAlt": [], "vietnamese": "mẹ kế", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Stiefvater", "germanAlt": [], "vietnamese": "bố dượng", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Enkelkinder", "germanAlt": [], "vietnamese": "các cháu", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Kinder", "germanAlt": [], "vietnamese": "các con", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Baby", "germanAlt": [], "vietnamese": "em bé", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Tante", "germanAlt": [], "vietnamese": "cô / dì / mợ", "vietnameseAlt": ["cô","dì","mợ"], "category": "nouns" },
-    { "german": "der Onkel", "germanAlt": [], "vietnamese": "bác / chú / cậu", "vietnameseAlt": ["bác","chú","cậu"], "category": "nouns" },
-    { "german": "die Nichte", "germanAlt": [], "vietnamese": "cháu gái (con anh/chị/em)", "vietnameseAlt": ["cháu gái"], "category": "nouns" },
-    { "german": "der Neffe", "germanAlt": [], "vietnamese": "cháu trai (con anh/chị/em)", "vietnameseAlt": ["cháu trai"], "category": "nouns" },
-    { "german": "der Cousin", "germanAlt": [], "vietnamese": "anh/chị/em họ (nam)", "vietnameseAlt": ["anh họ","em họ"], "category": "nouns" },
-    { "german": "die Cousine", "germanAlt": [], "vietnamese": "anh/chị/em họ (nữ)", "vietnameseAlt": ["chị họ","em họ"], "category": "nouns" },
-    { "german": "der Freund", "germanAlt": [], "vietnamese": "bạn trai / bạn", "vietnameseAlt": ["bạn trai"], "category": "nouns" },
-    { "german": "die Freundin", "germanAlt": [], "vietnamese": "bạn gái / bạn (nữ)", "vietnameseAlt": ["bạn gái"], "category": "nouns" },
-    { "german": "das Bett", "germanAlt": [], "vietnamese": "giường", "vietnameseAlt": [], "category": "commonThings" },
-    { "german": "das Bild", "germanAlt": [], "vietnamese": "ảnh / bức tranh", "vietnameseAlt": ["bức tranh"], "category": "commonThings" },
-    { "german": "das Bücherregal", "germanAlt": [], "vietnamese": "kệ sách", "vietnameseAlt": [], "category": "commonThings" },
-    { "german": "der Sessel", "germanAlt": [], "vietnamese": "ghế bành", "vietnameseAlt": [], "category": "commonThings" },
-    { "german": "der Stuhl", "germanAlt": [], "vietnamese": "cái ghế", "vietnameseAlt": ["ghế"], "category": "commonThings" },
-    { "german": "der Tisch", "germanAlt": [], "vietnamese": "cái bàn", "vietnameseAlt": ["bàn"], "category": "commonThings" },
-    { "german": "der Schrank", "germanAlt": [], "vietnamese": "cái tủ", "vietnameseAlt": ["tủ"], "category": "commonThings" },
-    { "german": "der Teppich", "germanAlt": [], "vietnamese": "tấm thảm", "vietnameseAlt": ["thảm"], "category": "commonThings" },
-    { "german": "die Lampe", "germanAlt": [], "vietnamese": "cái đèn", "vietnameseAlt": ["đèn"], "category": "commonThings" },
-    { "german": "die Couch", "germanAlt": ["das Sofa"], "vietnamese": "ghế sô-pha", "vietnameseAlt": ["sofa"], "category": "commonThings" },
-    { "german": "groß", "germanAlt": [], "vietnamese": "to / lớn", "vietnameseAlt": ["to","lớn"], "category": "adjectives" },
-    { "german": "klein", "germanAlt": [], "vietnamese": "nhỏ", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "zu groß", "germanAlt": [], "vietnamese": "quá to", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "schlecht", "germanAlt": [], "vietnamese": "tệ / xấu", "vietnameseAlt": ["xấu"], "category": "adjectives" },
-    { "german": "gut", "germanAlt": [], "vietnamese": "tốt", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "schön", "germanAlt": [], "vietnamese": "đẹp", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "die Hilfe", "germanAlt": [], "vietnamese": "sự giúp đỡ", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "finden", "germanAlt": [], "vietnamese": "tìm / thấy", "vietnameseAlt": ["tìm thấy"], "category": "coreVerbs" },
-    { "german": "kosten", "germanAlt": [], "vietnamese": "có giá / tốn", "vietnameseAlt": ["giá"], "category": "coreVerbs" },
-    { "german": "billig", "germanAlt": [], "vietnamese": "rẻ", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "günstig", "germanAlt": [], "vietnamese": "giá tốt / phải chăng", "vietnameseAlt": ["rẻ"], "category": "adjectives" },
-    { "german": "teuer", "germanAlt": [], "vietnamese": "đắt", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "sehr", "germanAlt": [], "vietnamese": "rất", "vietnameseAlt": [], "category": "adverbsFillers" },
-    { "german": "Sonderangebot", "germanAlt": ["das Sonderangebot"], "vietnamese": "chương trình giảm giá / khuyến mãi", "vietnameseAlt": ["giảm giá"], "category": "commonThings" },
-    { "german": "wirklich", "germanAlt": [], "vietnamese": "thật sự / thực sự", "vietnameseAlt": ["thực sự"], "category": "adverbsFillers" },
-    { "german": "wirklich sehr schön", "germanAlt": [], "vietnamese": "thực sự rất đẹp", "vietnameseAlt": [], "category": "other" },
-    { "german": "hundert", "germanAlt": ["einhundert"], "vietnamese": "trăm (100)", "vietnameseAlt": ["một trăm"], "category": "other" },
-    { "german": "tausend", "germanAlt": ["eintausend"], "vietnamese": "nghìn (1000)", "vietnameseAlt": ["một nghìn"], "category": "other" },
-    { "german": "eine Million", "germanAlt": ["Million"], "vietnamese": "một triệu (1.000.000)", "vietnameseAlt": ["triệu"], "category": "other" },
-    { "german": "eine Milliarde", "germanAlt": ["Milliarde"], "vietnamese": "một tỷ (1.000.000.000)", "vietnameseAlt": ["tỷ"], "category": "other" },
-    { "german": "eine Billion", "germanAlt": ["Billion"], "vietnamese": "một nghìn tỷ (10^12)", "vietnameseAlt": ["tỳ tỷ"], "category": "other" },
-    { "german": "mein", "germanAlt": [], "vietnamese": "của tôi", "vietnameseAlt": [], "category": "other" },
-    { "german": "dein", "germanAlt": [], "vietnamese": "của bạn (một người)", "vietnameseAlt": ["của bạn"], "category": "other" },
-    { "german": "sein", "germanAlt": [], "vietnamese": "của anh ấy / của nó", "vietnameseAlt": ["của anh ấy","của nó"], "category": "other" },
-    { "german": "ihr", "germanAlt": [], "vietnamese": "của cô ấy / của họ", "vietnameseAlt": ["của cô ấy","của họ"], "category": "other" },
-    { "german": "unser", "germanAlt": [], "vietnamese": "của chúng tôi", "vietnameseAlt": [], "category": "other" },
-    { "german": "eure", "germanAlt": ["euer"], "vietnamese": "của các bạn", "vietnameseAlt": [], "category": "other" },
-    { "german": "Ihr", "germanAlt": [], "vietnamese": "của Ngài / của Quý vị (lịch sự)", "vietnameseAlt": ["của Ông/Bà"], "category": "other" },
-    { "german": "lang", "germanAlt": [], "vietnamese": "dài", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "kurz", "germanAlt": [], "vietnamese": "ngắn", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "schwer", "germanAlt": [], "vietnamese": "khó", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "leicht", "germanAlt": [], "vietnamese": "dễ", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "modern", "germanAlt": [], "vietnamese": "hiện đại", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "altmodisch", "germanAlt": ["unmodern"], "vietnamese": "lỗi thời", "vietnameseAlt": ["không hiện đại"], "category": "adjectives" },
-
-    { "german": "beschreiben", "germanAlt": [], "vietnamese": "miêu tả", "vietnameseAlt": [], "category": "verbs" },
-    { "german": "sehen", "germanAlt": [], "vietnamese": "nhìn thấy", "vietnameseAlt": ["thấy"], "category": "verbs" },
-    { "german": "glauben", "germanAlt": [], "vietnamese": "tin", "vietnameseAlt": ["tin tưởng"], "category": "verbs" },
-    { "german": "vielleicht", "germanAlt": [], "vietnamese": "có thể", "vietnameseAlt": ["có lẽ"], "category": "adverbs" },
-    { "german": "der Augenarzt", "germanAlt": [], "vietnamese": "bác sĩ nhãn khoa", "vietnameseAlt": ["bác sĩ mắt"], "category": "nouns" },
-    { "german": "die Brille", "germanAlt": [], "vietnamese": "cái kính", "vietnameseAlt": ["kính mắt"], "category": "nouns" },
-    { "german": "der Gegenstand", "germanAlt": ["die Gegenstände"], "vietnamese": "đồ vật", "vietnameseAlt": ["vật dụng"], "category": "nouns" },
-    { "german": "die Tasche", "germanAlt": [], "vietnamese": "túi xách", "vietnameseAlt": ["cái túi"], "category": "nouns" },
-    { "german": "der Kugelschreiber", "germanAlt": ["Kuli"], "vietnamese": "bút bi", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Textmarker", "germanAlt": [], "vietnamese": "bút dạ quang", "vietnameseAlt": ["bút highlight"], "category": "nouns" },
-    { "german": "die Kette", "germanAlt": [], "vietnamese": "dây chuyền", "vietnameseAlt": ["vòng"], "category": "nouns" },
-    { "german": "interessant", "germanAlt": [], "vietnamese": "thú vị", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "langweilig", "germanAlt": [], "vietnamese": "chán", "vietnameseAlt": ["nhàm chán"], "category": "adjectives" },
-    { "german": "der Becher", "germanAlt": [], "vietnamese": "cái cốc", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Federmäppchen", "germanAlt": [], "vietnamese": "túi đựng bút", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Schlüssel", "germanAlt": [], "vietnamese": "chìa khóa", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Buch", "germanAlt": [], "vietnamese": "quyển sách", "vietnameseAlt": ["sách"], "category": "nouns" },
-    { "german": "die Jacke", "germanAlt": [], "vietnamese": "áo khoác", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Bleistift", "germanAlt": [], "vietnamese": "bút chì", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Schuhe", "germanAlt": [], "vietnamese": "đôi giày", "vietnameseAlt": ["giày"], "category": "nouns" },
-    { "german": "das Post-it", "germanAlt": ["Notizzettel"], "vietnamese": "giấy nhớ", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Laptop", "germanAlt": [], "vietnamese": "máy tính xách tay", "vietnameseAlt": ["laptop"], "category": "nouns" },
-    { "german": "die Tasse", "germanAlt": [], "vietnamese": "cái tách", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die E-Mail", "germanAlt": [], "vietnamese": "email", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Feuerzeug", "germanAlt": [], "vietnamese": "bật lửa", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Handy", "germanAlt": ["Mobiltelefon"], "vietnamese": "điện thoại di động", "vietnameseAlt": ["điện thoại cầm tay"], "category": "nouns" },
-    { "german": "die Flasche", "germanAlt": [], "vietnamese": "cái chai", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die SMS", "germanAlt": [], "vietnamese": "tin nhắn SMS", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Fotoapparat", "germanAlt": ["die Kamera"], "vietnamese": "máy ảnh", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Briefmarke", "germanAlt": [], "vietnamese": "tem thư", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Rechnung", "germanAlt": [], "vietnamese": "hóa đơn", "vietnameseAlt": [], "category": "nouns" },
-
-    { "german": "das Telefon", "germanAlt": [], "vietnamese": "điện thoại bàn", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Formular", "germanAlt": [], "vietnamese": "mẫu đơn", "vietnameseAlt": ["form"], "category": "nouns" },
-    { "german": "der Drucker", "germanAlt": [], "vietnamese": "máy in", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Maus", "germanAlt": [], "vietnamese": "chuột", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Computer", "germanAlt": ["Rechner"], "vietnamese": "máy tính", "vietnameseAlt": ["máy tính bàn"], "category": "nouns" },
-    { "german": "der Stift", "germanAlt": [], "vietnamese": "bút", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Notizbuch", "germanAlt": [], "vietnamese": "sổ tay", "vietnameseAlt": ["vở ghi chú"], "category": "nouns" },
-    { "german": "der Kalender", "germanAlt": [], "vietnamese": "lịch", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Bildschirm", "germanAlt": [], "vietnamese": "màn hình", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Termin", "germanAlt": [], "vietnamese": "cuộc hẹn", "vietnameseAlt": ["lịch hẹn"], "category": "nouns" },
-    { "german": "wollen", "germanAlt": [], "vietnamese": "muốn", "vietnameseAlt": [], "category": "verbs" },
-    { "german": "der Arbeitsplatz", "germanAlt": [], "vietnamese": "nơi làm việc", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Chef", "germanAlt": ["die Chefin"], "vietnamese": "sếp", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Zeit", "germanAlt": [], "vietnamese": "thời gian", "vietnameseAlt": [], "category": "nouns" },
-
-    { "german": "hübsch", "germanAlt": ["schön"], "vietnamese": "đẹp", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "die Uhr", "germanAlt": [], "vietnamese": "đồng hồ", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Autor", "germanAlt": [], "vietnamese": "nhà văn", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Norden", "germanAlt": [], "vietnamese": "phía bắc", "vietnameseAlt": ["bắc"], "category": "nouns" },
-    { "german": "der Westen", "germanAlt": [], "vietnamese": "phía tây", "vietnameseAlt": ["tây"], "category": "nouns" },
-    { "german": "der Osten", "germanAlt": [], "vietnamese": "phía đông", "vietnameseAlt": ["đông"], "category": "nouns" },
-    { "german": "der Süden", "germanAlt": [], "vietnamese": "phía nam", "vietnameseAlt": ["nam"], "category": "nouns" },
-    { "german": "die Psychologie", "germanAlt": [], "vietnamese": "ngành tâm lý học", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "schon", "germanAlt": [], "vietnamese": "đã", "vietnameseAlt": [], "category": "adverbs" },
-    { "german": "die Männer", "germanAlt": [], "vietnamese": "đàn ông", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "toll", "germanAlt": ["wunderbar"], "vietnamese": "tuyệt vời", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "einfach", "germanAlt": [], "vietnamese": "đơn giản", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "der Flohmarkt", "germanAlt": [], "vietnamese": "chợ trời", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Markt", "germanAlt": [], "vietnamese": "chợ", "vietnameseAlt": [], "category": "nouns" },
-
-    { "german": "der Händler", "germanAlt": [], "vietnamese": "người buôn bán", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Trödel", "germanAlt": [], "vietnamese": "đồ cũ", "vietnameseAlt": ["đồ linh tinh"], "category": "nouns" },
-    { "german": "handeln", "germanAlt": [], "vietnamese": "trả giá", "vietnameseAlt": ["mặc cả"], "category": "verbs" },
-    { "german": "stöbern", "germanAlt": [], "vietnamese": "lục tìm", "vietnameseAlt": ["tìm kiếm"], "category": "verbs" },
-    { "german": "der Besucher", "germanAlt": [], "vietnamese": "người tham quan", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "alles", "germanAlt": [], "vietnamese": "tất cả", "vietnameseAlt": [], "category": "pronouns" },
-    { "german": "die Möbel", "germanAlt": [], "vietnamese": "đồ nội thất", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Kleidung", "germanAlt": [], "vietnamese": "quần áo", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "die Ware", "germanAlt": [], "vietnamese": "hàng hóa", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "der Aufbau", "germanAlt": [], "vietnamese": "dựng (lều, rạp)", "vietnameseAlt": [], "category": "nouns" },
-
-    { "german": "geöffnet", "germanAlt": [], "vietnamese": "mở cửa", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "geschlossen", "germanAlt": [], "vietnamese": "đóng cửa", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "neu", "germanAlt": [], "vietnamese": "mới", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "alt", "germanAlt": [], "vietnamese": "cũ", "vietnameseAlt": [], "category": "adjectives" },
-    { "german": "stinken", "germanAlt": [], "vietnamese": "hôi", "vietnameseAlt": [], "category": "verbs" },
-    { "german": "essen", "germanAlt": [], "vietnamese": "ăn", "vietnameseAlt": [], "category": "verbs" },
-
-    { "german": "eckig", "germanAlt": [], "vietnamese": "vuông góc", "vietnameseAlt": [], "category": "shapes" },
-    { "german": "rund", "germanAlt": [], "vietnamese": "tròn", "vietnameseAlt": [], "category": "shapes" },
-    { "german": "rechteckig", "germanAlt": [], "vietnamese": "hình chữ nhật", "vietnameseAlt": [], "category": "shapes" },
-    { "german": "gerade", "germanAlt": [], "vietnamese": "thẳng", "vietnameseAlt": [], "category": "shapes" },
-    { "german": "gekrümmt", "germanAlt": [], "vietnamese": "cong", "vietnameseAlt": [], "category": "shapes" },
-    { "german": "oval", "germanAlt": [], "vietnamese": "bầu dục", "vietnameseAlt": [], "category": "shapes" },
-    { "german": "mitbringen", "germanAlt": [], "vietnamese": "mang theo", "vietnameseAlt": [], "category": "verbs" },
-
-    { "german": "rot", "germanAlt": [], "vietnamese": "đỏ", "vietnameseAlt": [], "category": "colors" },
-    { "german": "weiß", "germanAlt": [], "vietnamese": "trắng", "vietnameseAlt": [], "category": "colors" },
-    { "german": "blau", "germanAlt": [], "vietnamese": "xanh dương", "vietnameseAlt": ["xanh nước biển"], "category": "colors" },
-    { "german": "grau", "germanAlt": [], "vietnamese": "xám", "vietnameseAlt": [], "category": "colors" },
-    { "german": "grün", "germanAlt": [], "vietnamese": "xanh lá", "vietnameseAlt": [], "category": "colors" },
-    { "german": "braun", "germanAlt": [], "vietnamese": "nâu", "vietnameseAlt": [], "category": "colors" },
-    { "german": "gelb", "germanAlt": [], "vietnamese": "vàng", "vietnameseAlt": [], "category": "colors" },
-    { "german": "orange", "germanAlt": [], "vietnamese": "cam", "vietnameseAlt": [], "category": "colors" },
-    { "german": "schwarz", "germanAlt": [], "vietnamese": "đen", "vietnameseAlt": [], "category": "colors" },
-    { "german": "rosa", "germanAlt": [], "vietnamese": "hồng nhạt", "vietnameseAlt": [], "category": "colors" },
-    { "german": "lila", "germanAlt": [], "vietnamese": "tím nhạt", "vietnameseAlt": [], "category": "colors" },
-    { "german": "pink", "germanAlt": [], "vietnamese": "hồng đậm", "vietnameseAlt": [], "category": "colors" },
-    { "german": "violett", "germanAlt": [], "vietnamese": "tím đậm", "vietnameseAlt": [], "category": "colors" },
-    { "german": "beige", "germanAlt": [], "vietnamese": "màu be", "vietnameseAlt": [], "category": "colors" },
-    { "german": "himmelblau", "germanAlt": [], "vietnamese": "xanh da trời", "vietnameseAlt": [], "category": "colors" },
-    { "german": "türkis", "germanAlt": [], "vietnamese": "xanh ngọc", "vietnameseAlt": [], "category": "colors" },
-    { "german": "weinrot", "germanAlt": [], "vietnamese": "đỏ rượu vang", "vietnameseAlt": [], "category": "colors" },
-    { "german": "silber", "germanAlt": [], "vietnamese": "bạc", "vietnameseAlt": [], "category": "colors" },
-    { "german": "gold", "germanAlt": [], "vietnamese": "vàng kim", "vietnameseAlt": [], "category": "colors" },
-    { "german": "cremefarben", "germanAlt": [], "vietnamese": "màu kem", "vietnameseAlt": [], "category": "colors" },
-    { "german": "olivgrün", "germanAlt": [], "vietnamese": "xanh ô liu", "vietnameseAlt": [], "category": "colors" },
-
-    { "german": "das Holz", "germanAlt": [], "vietnamese": "gỗ", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Glas", "germanAlt": [], "vietnamese": "thủy tinh", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Metall", "germanAlt": [], "vietnamese": "kim loại", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Papier", "germanAlt": [], "vietnamese": "giấy", "vietnameseAlt": [], "category": "materials" },
-    { "german": "der Stein", "germanAlt": [], "vietnamese": "đá", "vietnameseAlt": [], "category": "materials" },
-    { "german": "der Kunststoff", "germanAlt": ["das Plastik"], "vietnamese": "nhựa", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Eisen", "germanAlt": [], "vietnamese": "sắt", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Silber", "germanAlt": [], "vietnamese": "bạc", "vietnameseAlt": [], "category": "materials" },
-    { "german": "der Stahl", "germanAlt": [], "vietnamese": "thép", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Gold", "germanAlt": [], "vietnamese": "vàng", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Kupfer", "germanAlt": [], "vietnamese": "đồng", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Aluminium", "germanAlt": [], "vietnamese": "nhôm", "vietnameseAlt": [], "category": "materials" },
-    { "german": "die Baumwolle", "germanAlt": [], "vietnamese": "bông", "vietnameseAlt": [], "category": "materials" },
-    { "german": "die Wolle", "germanAlt": [], "vietnamese": "len", "vietnameseAlt": [], "category": "materials" },
-    { "german": "die Seide", "germanAlt": [], "vietnamese": "lụa", "vietnameseAlt": [], "category": "materials" },
-    { "german": "der Stoff", "germanAlt": [], "vietnamese": "vải", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Leder", "germanAlt": [], "vietnamese": "da", "vietnameseAlt": [], "category": "materials" },
-    { "german": "die Keramik", "germanAlt": [], "vietnamese": "gốm", "vietnameseAlt": [], "category": "materials" },
-    { "german": "das Porzellan", "germanAlt": [], "vietnamese": "sứ", "vietnameseAlt": [], "category": "materials" },
-    { "german": "der Beton", "germanAlt": [], "vietnamese": "bê tông", "vietnameseAlt": [], "category": "materials" },
-    { "german": "der Gummi", "germanAlt": [], "vietnamese": "cao su", "vietnameseAlt": [], "category": "materials" },
-
-    { "german": "der Schirm", "germanAlt": [], "vietnamese": "cái ô", "vietnameseAlt": ["cái dù"], "category": "nouns" },
-    { "german": "die Seife", "germanAlt": [], "vietnamese": "xà phòng", "vietnameseAlt": [], "category": "nouns" },
-    { "german": "das Streichholz", "germanAlt": [], "vietnamese": "diêm", "vietnameseAlt": ["que diêm"], "category": "nouns" },
-    { "german": "der Geldbeutel", "germanAlt": ["die Geldbörse", "das Portemonnaie"], "vietnamese": "ví tiền", "vietnameseAlt": [], "category": "nouns" }
+    {
+      "german": "der Taxifahrer",
+      "germanAlt": [
+        "Taxifahrer"
+      ],
+      "vietnamese": "tài xế taxi",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Lehrer",
+      "germanAlt": [
+        "Lehrer"
+      ],
+      "vietnamese": "giáo viên (nam)",
+      "vietnameseAlt": [
+        "giáo viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Lehrerin",
+      "germanAlt": [
+        "Lehrerin"
+      ],
+      "vietnamese": "giáo viên (nữ)",
+      "vietnameseAlt": [
+        "giáo viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Architekt",
+      "germanAlt": [
+        "Architekt"
+      ],
+      "vietnamese": "kiến trúc sư (nam)",
+      "vietnameseAlt": [
+        "kiến trúc sư"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Architektin",
+      "germanAlt": [
+        "Architektin"
+      ],
+      "vietnamese": "kiến trúc sư (nữ)",
+      "vietnameseAlt": [
+        "kiến trúc sư"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Mechatroniker",
+      "germanAlt": [
+        "Mechatroniker"
+      ],
+      "vietnamese": "kỹ thuật viên cơ điện tử",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Schauspieler",
+      "germanAlt": [
+        "Schauspieler"
+      ],
+      "vietnamese": "diễn viên (nam)",
+      "vietnameseAlt": [
+        "diễn viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Schauspielerin",
+      "germanAlt": [
+        "Schauspielerin"
+      ],
+      "vietnamese": "diễn viên (nữ)",
+      "vietnameseAlt": [
+        "diễn viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Sekretärin",
+      "germanAlt": [
+        "Sekretärin"
+      ],
+      "vietnamese": "thư ký",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Ingenieur",
+      "germanAlt": [
+        "Ingenieur"
+      ],
+      "vietnamese": "kỹ sư",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Sänger",
+      "germanAlt": [
+        "Sänger"
+      ],
+      "vietnamese": "ca sĩ (nam)",
+      "vietnameseAlt": [
+        "ca sĩ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Sängerin",
+      "germanAlt": [
+        "Sängerin"
+      ],
+      "vietnamese": "ca sĩ (nữ)",
+      "vietnameseAlt": [
+        "ca sĩ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Ärztin",
+      "germanAlt": [
+        "Ärztin"
+      ],
+      "vietnamese": "bác sĩ (nữ)",
+      "vietnameseAlt": [
+        "bác sĩ",
+        "bác sĩ nữ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Arzt",
+      "germanAlt": [
+        "Arzt"
+      ],
+      "vietnamese": "bác sĩ (nam)",
+      "vietnameseAlt": [
+        "bác sĩ",
+        "bác sĩ nam"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Fußballspieler",
+      "germanAlt": [
+        "Fußballspieler"
+      ],
+      "vietnamese": "cầu thủ bóng đá",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Student",
+      "germanAlt": [
+        "Student"
+      ],
+      "vietnamese": "sinh viên (nam)",
+      "vietnameseAlt": [
+        "sinh viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Studentin",
+      "germanAlt": [
+        "Studentin"
+      ],
+      "vietnamese": "sinh viên (nữ)",
+      "vietnameseAlt": [
+        "sinh viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Journalist",
+      "germanAlt": [
+        "Journalist"
+      ],
+      "vietnamese": "nhà báo / phóng viên (nam)",
+      "vietnameseAlt": [
+        "nhà báo",
+        "phóng viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Journalistin",
+      "germanAlt": [
+        "Journalistin"
+      ],
+      "vietnamese": "nhà báo / phóng viên (nữ)",
+      "vietnameseAlt": [
+        "nhà báo",
+        "phóng viên"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Kellnerin",
+      "germanAlt": [
+        "Kellnerin"
+      ],
+      "vietnamese": "nhân viên phục vụ (nữ)",
+      "vietnameseAlt": [
+        "phục vụ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Kellner",
+      "germanAlt": [
+        "Kellner"
+      ],
+      "vietnamese": "nhân viên phục vụ (nam)",
+      "vietnameseAlt": [
+        "phục vụ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Krankenpflegerin",
+      "germanAlt": [
+        "Krankenpflegerin"
+      ],
+      "vietnamese": "y tá / điều dưỡng (nữ)",
+      "vietnameseAlt": [
+        "điều dưỡng"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Krankenpfleger",
+      "germanAlt": [
+        "Krankenpfleger"
+      ],
+      "vietnamese": "điều dưỡng (nam)",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Schüler",
+      "germanAlt": [
+        "Schüler"
+      ],
+      "vietnamese": "học sinh (nam)",
+      "vietnameseAlt": [
+        "học sinh",
+        "học trò"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Schülerin",
+      "germanAlt": [
+        "Schülerin"
+      ],
+      "vietnamese": "học sinh (nữ)",
+      "vietnameseAlt": [
+        "học sinh",
+        "học trò"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Verkäufer",
+      "germanAlt": [
+        "Verkäufer"
+      ],
+      "vietnamese": "người bán hàng (nam)",
+      "vietnameseAlt": [
+        "người bán hàng"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Verkäuferin",
+      "germanAlt": [
+        "Verkäuferin"
+      ],
+      "vietnamese": "người bán hàng (nữ)",
+      "vietnameseAlt": [
+        "người bán hàng"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Historikerin",
+      "germanAlt": [
+        "Historikerin"
+      ],
+      "vietnamese": "nhà sử học (nữ)",
+      "vietnameseAlt": [
+        "nhà sử học"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Friseurin",
+      "germanAlt": [
+        "Friseurin"
+      ],
+      "vietnamese": "thợ cắt tóc (nữ)",
+      "vietnameseAlt": [
+        "thợ cắt tóc"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "das Praktikum",
+      "germanAlt": [
+        "Praktikum"
+      ],
+      "vietnamese": "thực tập",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Ausbildung",
+      "germanAlt": [
+        "Ausbildung"
+      ],
+      "vietnamese": "học nghề / đào tạo",
+      "vietnameseAlt": [
+        "học nghề",
+        "học tập",
+        "đào tạo nghề"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "arbeiten",
+      "germanAlt": [
+        "arbeitest",
+        "arbeite",
+        "arbeitet"
+      ],
+      "vietnamese": "làm việc",
+      "vietnameseAlt": [
+        "công tác",
+        "lao động"
+      ],
+      "category": "coreVerbs"
+    },
+    {
+      "german": "machen",
+      "germanAlt": [
+        "mache",
+        "machst",
+        "macht"
+      ],
+      "vietnamese": "làm",
+      "vietnameseAlt": [
+        "chế tạo",
+        "thực hiện"
+      ],
+      "category": "coreVerbs"
+    },
+    {
+      "german": "bei",
+      "germanAlt": [],
+      "vietnamese": "tại / ở (chỗ)",
+      "vietnameseAlt": [
+        "tại"
+      ],
+      "category": "prepositions"
+    },
+    {
+      "german": "als",
+      "germanAlt": [],
+      "vietnamese": "như là / với vai trò",
+      "vietnameseAlt": [
+        "như là"
+      ],
+      "category": "connectors"
+    },
+    {
+      "german": "der IT-Spezialist",
+      "germanAlt": [
+        "IT-Spezialist"
+      ],
+      "vietnamese": "chuyên gia CNTT",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "zurzeit arbeitslos",
+      "germanAlt": [],
+      "vietnamese": "hiện tại thất nghiệp",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "der Moderator",
+      "germanAlt": [
+        "Moderator"
+      ],
+      "vietnamese": "người dẫn chương trình (nam)",
+      "vietnameseAlt": [
+        "MC"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Moderatorin",
+      "germanAlt": [
+        "Moderatorin"
+      ],
+      "vietnamese": "người dẫn chương trình (nữ)",
+      "vietnameseAlt": [
+        "MC"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "geschieden",
+      "germanAlt": [],
+      "vietnamese": "ly hôn",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "verheiratet",
+      "germanAlt": [],
+      "vietnamese": "kết hôn",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "ein Kind",
+      "germanAlt": [],
+      "vietnamese": "một đứa con",
+      "vietnameseAlt": [
+        "1 con",
+        "1 đứa con",
+        "một người con"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "keine Kinder",
+      "germanAlt": [],
+      "vietnamese": "không có con",
+      "vietnameseAlt": [
+        "không con cái"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "Single",
+      "germanAlt": [
+        "allein"
+      ],
+      "vietnamese": "độc thân",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "nicht verheiratet",
+      "germanAlt": [],
+      "vietnamese": "chưa kết hôn",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "zusammen",
+      "germanAlt": [],
+      "vietnamese": "cùng nhau",
+      "vietnameseAlt": [
+        "cùng nhau",
+        "sống chung",
+        "ở cùng nhau"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "die Familie",
+      "germanAlt": [
+        "Familie"
+      ],
+      "vietnamese": "gia đình",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Großvater",
+      "germanAlt": [
+        "Opa"
+      ],
+      "vietnamese": "ông",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Großmutter",
+      "germanAlt": [
+        "Oma"
+      ],
+      "vietnamese": "bà",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der (Ehe)Mann",
+      "germanAlt": [
+        "der Mann",
+        "Ehemann"
+      ],
+      "vietnamese": "chồng",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die (Ehe)Frau",
+      "germanAlt": [
+        "die Frau",
+        "Ehefrau"
+      ],
+      "vietnamese": "vợ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Mutter",
+      "germanAlt": [
+        "Mutter"
+      ],
+      "vietnamese": "mẹ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Vater",
+      "germanAlt": [
+        "Vater"
+      ],
+      "vietnamese": "bố",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Sohn",
+      "germanAlt": [],
+      "vietnamese": "con trai",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Tochter",
+      "germanAlt": [],
+      "vietnamese": "con gái",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Bruder",
+      "germanAlt": [],
+      "vietnamese": "anh trai",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Schwester",
+      "germanAlt": [],
+      "vietnamese": "em gái / chị gái",
+      "vietnameseAlt": [
+        "chị gái",
+        "em gái"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Eltern",
+      "germanAlt": [],
+      "vietnamese": "bố mẹ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Großeltern",
+      "germanAlt": [],
+      "vietnamese": "ông bà",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Geschwister",
+      "germanAlt": [],
+      "vietnamese": "anh chị em",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Enkelin",
+      "germanAlt": [],
+      "vietnamese": "cháu gái (của ông/bà)",
+      "vietnameseAlt": [
+        "cháu gái"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Enkel",
+      "germanAlt": [],
+      "vietnamese": "cháu trai (của ông/bà)",
+      "vietnameseAlt": [
+        "cháu trai"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Stiefmutter",
+      "germanAlt": [],
+      "vietnamese": "mẹ kế",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Stiefvater",
+      "germanAlt": [],
+      "vietnamese": "bố dượng",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Enkelkinder",
+      "germanAlt": [],
+      "vietnamese": "các cháu",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Kinder",
+      "germanAlt": [],
+      "vietnamese": "các con",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Baby",
+      "germanAlt": [],
+      "vietnamese": "em bé",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Tante",
+      "germanAlt": [],
+      "vietnamese": "cô / dì / mợ",
+      "vietnameseAlt": [
+        "cô",
+        "dì",
+        "mợ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Onkel",
+      "germanAlt": [],
+      "vietnamese": "bác / chú / cậu",
+      "vietnameseAlt": [
+        "bác",
+        "chú",
+        "cậu"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Nichte",
+      "germanAlt": [],
+      "vietnamese": "cháu gái (con anh/chị/em)",
+      "vietnameseAlt": [
+        "cháu gái"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Neffe",
+      "germanAlt": [],
+      "vietnamese": "cháu trai (con anh/chị/em)",
+      "vietnameseAlt": [
+        "cháu trai"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Cousin",
+      "germanAlt": [],
+      "vietnamese": "anh/chị/em họ (nam)",
+      "vietnameseAlt": [
+        "anh họ",
+        "em họ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Cousine",
+      "germanAlt": [],
+      "vietnamese": "anh/chị/em họ (nữ)",
+      "vietnameseAlt": [
+        "chị họ",
+        "em họ"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Freund",
+      "germanAlt": [],
+      "vietnamese": "bạn trai / bạn",
+      "vietnameseAlt": [
+        "bạn trai"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Freundin",
+      "germanAlt": [],
+      "vietnamese": "bạn gái / bạn (nữ)",
+      "vietnameseAlt": [
+        "bạn gái"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "das Bett",
+      "germanAlt": [],
+      "vietnamese": "giường",
+      "vietnameseAlt": [],
+      "category": "commonThings"
+    },
+    {
+      "german": "das Bild",
+      "germanAlt": [],
+      "vietnamese": "ảnh / bức tranh",
+      "vietnameseAlt": [
+        "bức tranh",
+        "bức ảnh",
+        "tấm hình"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "das Bücherregal",
+      "germanAlt": [],
+      "vietnamese": "kệ sách",
+      "vietnameseAlt": [],
+      "category": "commonThings"
+    },
+    {
+      "german": "der Sessel",
+      "germanAlt": [],
+      "vietnamese": "ghế bành",
+      "vietnameseAlt": [],
+      "category": "commonThings"
+    },
+    {
+      "german": "der Stuhl",
+      "germanAlt": [],
+      "vietnamese": "cái ghế",
+      "vietnameseAlt": [
+        "ghế"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "der Tisch",
+      "germanAlt": [],
+      "vietnamese": "cái bàn",
+      "vietnameseAlt": [
+        "bàn"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "der Schrank",
+      "germanAlt": [],
+      "vietnamese": "cái tủ",
+      "vietnameseAlt": [
+        "tủ"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "der Teppich",
+      "germanAlt": [],
+      "vietnamese": "tấm thảm",
+      "vietnameseAlt": [
+        "thảm"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "die Lampe",
+      "germanAlt": [],
+      "vietnamese": "cái đèn",
+      "vietnameseAlt": [
+        "đèn"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "die Couch",
+      "germanAlt": [
+        "das Sofa"
+      ],
+      "vietnamese": "ghế sô-pha",
+      "vietnameseAlt": [
+        "sofa",
+        "tràng kỷ"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "groß",
+      "germanAlt": [],
+      "vietnamese": "to / lớn",
+      "vietnameseAlt": [
+        "lớn",
+        "to"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "klein",
+      "germanAlt": [],
+      "vietnamese": "nhỏ",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "zu groß",
+      "germanAlt": [],
+      "vietnamese": "quá to",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "schlecht",
+      "germanAlt": [],
+      "vietnamese": "tệ / xấu",
+      "vietnameseAlt": [
+        "xấu"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "gut",
+      "germanAlt": [],
+      "vietnamese": "tốt",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "schön",
+      "germanAlt": [],
+      "vietnamese": "đẹp",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "die Hilfe",
+      "germanAlt": [],
+      "vietnamese": "sự giúp đỡ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "finden",
+      "germanAlt": [],
+      "vietnamese": "tìm / thấy",
+      "vietnameseAlt": [
+        "tìm thấy"
+      ],
+      "category": "coreVerbs"
+    },
+    {
+      "german": "kosten",
+      "germanAlt": [],
+      "vietnamese": "có giá / tốn",
+      "vietnameseAlt": [
+        "giá"
+      ],
+      "category": "coreVerbs"
+    },
+    {
+      "german": "billig",
+      "germanAlt": [],
+      "vietnamese": "rẻ",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "günstig",
+      "germanAlt": [],
+      "vietnamese": "giá tốt / phải chăng",
+      "vietnameseAlt": [
+        "giá hợp lý",
+        "phải chăng",
+        "rẻ"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "teuer",
+      "germanAlt": [],
+      "vietnamese": "đắt",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "sehr",
+      "germanAlt": [],
+      "vietnamese": "rất",
+      "vietnameseAlt": [],
+      "category": "adverbsFillers"
+    },
+    {
+      "german": "Sonderangebot",
+      "germanAlt": [
+        "das Sonderangebot"
+      ],
+      "vietnamese": "chương trình giảm giá / khuyến mãi",
+      "vietnameseAlt": [
+        "giảm giá"
+      ],
+      "category": "commonThings"
+    },
+    {
+      "german": "wirklich",
+      "germanAlt": [],
+      "vietnamese": "thật sự / thực sự",
+      "vietnameseAlt": [
+        "thực sự"
+      ],
+      "category": "adverbsFillers"
+    },
+    {
+      "german": "wirklich sehr schön",
+      "germanAlt": [],
+      "vietnamese": "thực sự rất đẹp",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "hundert",
+      "germanAlt": [
+        "einhundert"
+      ],
+      "vietnamese": "trăm (100)",
+      "vietnameseAlt": [
+        "một trăm"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "tausend",
+      "germanAlt": [
+        "eintausend"
+      ],
+      "vietnamese": "nghìn (1000)",
+      "vietnameseAlt": [
+        "một nghìn"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "eine Million",
+      "germanAlt": [
+        "Million"
+      ],
+      "vietnamese": "một triệu (1.000.000)",
+      "vietnameseAlt": [
+        "triệu"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "eine Milliarde",
+      "germanAlt": [
+        "Milliarde"
+      ],
+      "vietnamese": "một tỷ (1.000.000.000)",
+      "vietnameseAlt": [
+        "tỷ"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "eine Billion",
+      "germanAlt": [
+        "Billion"
+      ],
+      "vietnamese": "một nghìn tỷ (10^12)",
+      "vietnameseAlt": [
+        "tỳ tỷ"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "mein",
+      "germanAlt": [],
+      "vietnamese": "của tôi",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "dein",
+      "germanAlt": [],
+      "vietnamese": "của bạn (một người)",
+      "vietnameseAlt": [
+        "của bạn"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "sein",
+      "germanAlt": [],
+      "vietnamese": "của anh ấy / của nó",
+      "vietnameseAlt": [
+        "của anh ấy",
+        "của nó"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "ihr",
+      "germanAlt": [],
+      "vietnamese": "của cô ấy / của họ",
+      "vietnameseAlt": [
+        "của cô ấy",
+        "của họ"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "unser",
+      "germanAlt": [],
+      "vietnamese": "của chúng tôi",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "eure",
+      "germanAlt": [
+        "euer"
+      ],
+      "vietnamese": "của các bạn",
+      "vietnameseAlt": [],
+      "category": "other"
+    },
+    {
+      "german": "Ihr",
+      "germanAlt": [],
+      "vietnamese": "của Ngài / của Quý vị (lịch sự)",
+      "vietnameseAlt": [
+        "của Ông/Bà"
+      ],
+      "category": "other"
+    },
+    {
+      "german": "lang",
+      "germanAlt": [],
+      "vietnamese": "dài",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "kurz",
+      "germanAlt": [],
+      "vietnamese": "ngắn",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "schwer",
+      "germanAlt": [],
+      "vietnamese": "khó",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "leicht",
+      "germanAlt": [],
+      "vietnamese": "dễ",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "modern",
+      "germanAlt": [],
+      "vietnamese": "hiện đại",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "altmodisch",
+      "germanAlt": [
+        "unmodern"
+      ],
+      "vietnamese": "lỗi thời",
+      "vietnameseAlt": [
+        "không hiện đại"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "beschreiben",
+      "germanAlt": [],
+      "vietnamese": "miêu tả",
+      "vietnameseAlt": [],
+      "category": "verbs"
+    },
+    {
+      "german": "sehen",
+      "germanAlt": [],
+      "vietnamese": "nhìn thấy",
+      "vietnameseAlt": [
+        "thấy"
+      ],
+      "category": "verbs"
+    },
+    {
+      "german": "glauben",
+      "germanAlt": [],
+      "vietnamese": "tin",
+      "vietnameseAlt": [
+        "tin tưởng"
+      ],
+      "category": "verbs"
+    },
+    {
+      "german": "vielleicht",
+      "germanAlt": [],
+      "vietnamese": "có thể",
+      "vietnameseAlt": [
+        "có lẽ"
+      ],
+      "category": "adverbs"
+    },
+    {
+      "german": "der Augenarzt",
+      "germanAlt": [],
+      "vietnamese": "bác sĩ nhãn khoa",
+      "vietnameseAlt": [
+        "bác sĩ mắt"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Brille",
+      "germanAlt": [],
+      "vietnamese": "cái kính",
+      "vietnameseAlt": [
+        "kính mắt"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Gegenstand",
+      "germanAlt": [
+        "die Gegenstände"
+      ],
+      "vietnamese": "đồ vật",
+      "vietnameseAlt": [
+        "vật dụng"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Tasche",
+      "germanAlt": [],
+      "vietnamese": "túi xách",
+      "vietnameseAlt": [
+        "cái túi",
+        "cái túi xách",
+        "túi"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Kugelschreiber",
+      "germanAlt": [
+        "Kuli"
+      ],
+      "vietnamese": "bút bi",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Textmarker",
+      "germanAlt": [],
+      "vietnamese": "bút dạ quang",
+      "vietnameseAlt": [
+        "bút highlight"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Kette",
+      "germanAlt": [],
+      "vietnamese": "dây chuyền",
+      "vietnameseAlt": [
+        "vòng"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "interessant",
+      "germanAlt": [],
+      "vietnamese": "thú vị",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "langweilig",
+      "germanAlt": [],
+      "vietnamese": "chán",
+      "vietnameseAlt": [
+        "nhàm chán"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "der Becher",
+      "germanAlt": [],
+      "vietnamese": "cái cốc",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Federmäppchen",
+      "germanAlt": [],
+      "vietnamese": "túi đựng bút",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Schlüssel",
+      "germanAlt": [],
+      "vietnamese": "chìa khóa",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Buch",
+      "germanAlt": [],
+      "vietnamese": "quyển sách",
+      "vietnameseAlt": [
+        "sách"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Jacke",
+      "germanAlt": [],
+      "vietnamese": "áo khoác",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Bleistift",
+      "germanAlt": [],
+      "vietnamese": "bút chì",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Schuhe",
+      "germanAlt": [],
+      "vietnamese": "đôi giày",
+      "vietnameseAlt": [
+        "giày"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "das Post-it",
+      "germanAlt": [
+        "Notizzettel"
+      ],
+      "vietnamese": "giấy nhớ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Laptop",
+      "germanAlt": [],
+      "vietnamese": "máy tính xách tay",
+      "vietnameseAlt": [
+        "laptop"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Tasse",
+      "germanAlt": [],
+      "vietnamese": "cái tách",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die E-Mail",
+      "germanAlt": [],
+      "vietnamese": "email",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Feuerzeug",
+      "germanAlt": [],
+      "vietnamese": "bật lửa",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Handy",
+      "germanAlt": [
+        "Mobiltelefon"
+      ],
+      "vietnamese": "điện thoại di động",
+      "vietnameseAlt": [
+        "điện thoại cầm tay"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Flasche",
+      "germanAlt": [],
+      "vietnamese": "cái chai",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die SMS",
+      "germanAlt": [],
+      "vietnamese": "tin nhắn SMS",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Fotoapparat",
+      "germanAlt": [
+        "die Kamera"
+      ],
+      "vietnamese": "máy ảnh",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Briefmarke",
+      "germanAlt": [],
+      "vietnamese": "tem thư",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Rechnung",
+      "germanAlt": [],
+      "vietnamese": "hóa đơn",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Telefon",
+      "germanAlt": [],
+      "vietnamese": "điện thoại bàn",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Formular",
+      "germanAlt": [],
+      "vietnamese": "mẫu đơn",
+      "vietnameseAlt": [
+        "form"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Drucker",
+      "germanAlt": [],
+      "vietnamese": "máy in",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Maus",
+      "germanAlt": [],
+      "vietnamese": "chuột",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Computer",
+      "germanAlt": [
+        "Rechner"
+      ],
+      "vietnamese": "máy tính",
+      "vietnameseAlt": [
+        "máy tính bàn"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Stift",
+      "germanAlt": [],
+      "vietnamese": "bút",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Notizbuch",
+      "germanAlt": [],
+      "vietnamese": "sổ tay",
+      "vietnameseAlt": [
+        "vở ghi chú"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Kalender",
+      "germanAlt": [],
+      "vietnamese": "lịch",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Bildschirm",
+      "germanAlt": [],
+      "vietnamese": "màn hình",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Termin",
+      "germanAlt": [],
+      "vietnamese": "cuộc hẹn",
+      "vietnameseAlt": [
+        "lịch hẹn"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "wollen",
+      "germanAlt": [],
+      "vietnamese": "muốn",
+      "vietnameseAlt": [],
+      "category": "verbs"
+    },
+    {
+      "german": "der Arbeitsplatz",
+      "germanAlt": [],
+      "vietnamese": "nơi làm việc",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Chef",
+      "germanAlt": [
+        "die Chefin"
+      ],
+      "vietnamese": "sếp",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Zeit",
+      "germanAlt": [],
+      "vietnamese": "thời gian",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "hübsch",
+      "germanAlt": [
+        "schön"
+      ],
+      "vietnamese": "đẹp",
+      "vietnameseAlt": [
+        "xinh",
+        "xinh đẹp"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "die Uhr",
+      "germanAlt": [],
+      "vietnamese": "đồng hồ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Autor",
+      "germanAlt": [],
+      "vietnamese": "nhà văn",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Norden",
+      "germanAlt": [],
+      "vietnamese": "phía bắc",
+      "vietnameseAlt": [
+        "bắc"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Westen",
+      "germanAlt": [],
+      "vietnamese": "phía tây",
+      "vietnameseAlt": [
+        "tây"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Osten",
+      "germanAlt": [],
+      "vietnamese": "phía đông",
+      "vietnameseAlt": [
+        "đông"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Süden",
+      "germanAlt": [],
+      "vietnamese": "phía nam",
+      "vietnameseAlt": [
+        "nam"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Psychologie",
+      "germanAlt": [],
+      "vietnamese": "ngành tâm lý học",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "schon",
+      "germanAlt": [],
+      "vietnamese": "đã",
+      "vietnameseAlt": [],
+      "category": "adverbs"
+    },
+    {
+      "german": "die Männer",
+      "germanAlt": [],
+      "vietnamese": "đàn ông",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "toll",
+      "germanAlt": [
+        "wunderbar"
+      ],
+      "vietnamese": "tuyệt vời",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "einfach",
+      "germanAlt": [],
+      "vietnamese": "đơn giản",
+      "vietnameseAlt": [
+        "dễ",
+        "dễ dàng"
+      ],
+      "category": "adjectives"
+    },
+    {
+      "german": "der Flohmarkt",
+      "germanAlt": [],
+      "vietnamese": "chợ trời",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Markt",
+      "germanAlt": [],
+      "vietnamese": "chợ",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Händler",
+      "germanAlt": [],
+      "vietnamese": "người buôn bán",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Trödel",
+      "germanAlt": [],
+      "vietnamese": "đồ cũ",
+      "vietnameseAlt": [
+        "đồ linh tinh"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "handeln",
+      "germanAlt": [],
+      "vietnamese": "trả giá",
+      "vietnameseAlt": [
+        "mặc cả"
+      ],
+      "category": "verbs"
+    },
+    {
+      "german": "stöbern",
+      "germanAlt": [],
+      "vietnamese": "lục tìm",
+      "vietnameseAlt": [
+        "tìm kiếm"
+      ],
+      "category": "verbs"
+    },
+    {
+      "german": "der Besucher",
+      "germanAlt": [],
+      "vietnamese": "người tham quan",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "alles",
+      "germanAlt": [],
+      "vietnamese": "tất cả",
+      "vietnameseAlt": [],
+      "category": "pronouns"
+    },
+    {
+      "german": "die Möbel",
+      "germanAlt": [],
+      "vietnamese": "đồ nội thất",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Kleidung",
+      "germanAlt": [],
+      "vietnamese": "quần áo",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "die Ware",
+      "germanAlt": [],
+      "vietnamese": "hàng hóa",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "der Aufbau",
+      "germanAlt": [],
+      "vietnamese": "dựng (lều, rạp)",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "geöffnet",
+      "germanAlt": [],
+      "vietnamese": "mở cửa",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "geschlossen",
+      "germanAlt": [],
+      "vietnamese": "đóng cửa",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "neu",
+      "germanAlt": [],
+      "vietnamese": "mới",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "alt",
+      "germanAlt": [],
+      "vietnamese": "cũ",
+      "vietnameseAlt": [],
+      "category": "adjectives"
+    },
+    {
+      "german": "stinken",
+      "germanAlt": [],
+      "vietnamese": "hôi",
+      "vietnameseAlt": [],
+      "category": "verbs"
+    },
+    {
+      "german": "essen",
+      "germanAlt": [],
+      "vietnamese": "ăn",
+      "vietnameseAlt": [],
+      "category": "verbs"
+    },
+    {
+      "german": "eckig",
+      "germanAlt": [],
+      "vietnamese": "góc cạnh",
+      "vietnameseAlt": [
+        "có góc",
+        "cạnh vuông"
+      ],
+      "category": "shapes"
+    },
+    {
+      "german": "rund",
+      "germanAlt": [],
+      "vietnamese": "tròn",
+      "vietnameseAlt": [],
+      "category": "shapes"
+    },
+    {
+      "german": "rechteckig",
+      "germanAlt": [],
+      "vietnamese": "hình chữ nhật",
+      "vietnameseAlt": [],
+      "category": "shapes"
+    },
+    {
+      "german": "gerade",
+      "germanAlt": [],
+      "vietnamese": "thẳng",
+      "vietnameseAlt": [],
+      "category": "shapes"
+    },
+    {
+      "german": "gekrümmt",
+      "germanAlt": [],
+      "vietnamese": "cong",
+      "vietnameseAlt": [],
+      "category": "shapes"
+    },
+    {
+      "german": "oval",
+      "germanAlt": [],
+      "vietnamese": "bầu dục",
+      "vietnameseAlt": [],
+      "category": "shapes"
+    },
+    {
+      "german": "mitbringen",
+      "germanAlt": [],
+      "vietnamese": "mang theo",
+      "vietnameseAlt": [],
+      "category": "verbs"
+    },
+    {
+      "german": "rot",
+      "germanAlt": [],
+      "vietnamese": "đỏ",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "weiß",
+      "germanAlt": [],
+      "vietnamese": "trắng",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "blau",
+      "germanAlt": [],
+      "vietnamese": "xanh dương",
+      "vietnameseAlt": [
+        "xanh nước biển"
+      ],
+      "category": "colors"
+    },
+    {
+      "german": "grau",
+      "germanAlt": [],
+      "vietnamese": "xám",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "grün",
+      "germanAlt": [],
+      "vietnamese": "xanh lá",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "braun",
+      "germanAlt": [],
+      "vietnamese": "nâu",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "gelb",
+      "germanAlt": [],
+      "vietnamese": "vàng",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "orange",
+      "germanAlt": [],
+      "vietnamese": "cam",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "schwarz",
+      "germanAlt": [],
+      "vietnamese": "đen",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "rosa",
+      "germanAlt": [],
+      "vietnamese": "hồng nhạt",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "lila",
+      "germanAlt": [],
+      "vietnamese": "tím nhạt",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "pink",
+      "germanAlt": [],
+      "vietnamese": "hồng đậm",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "violett",
+      "germanAlt": [],
+      "vietnamese": "tím đậm",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "beige",
+      "germanAlt": [],
+      "vietnamese": "màu be",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "himmelblau",
+      "germanAlt": [],
+      "vietnamese": "xanh da trời",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "türkis",
+      "germanAlt": [],
+      "vietnamese": "xanh ngọc",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "weinrot",
+      "germanAlt": [],
+      "vietnamese": "đỏ rượu vang",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "silber",
+      "germanAlt": [],
+      "vietnamese": "bạc",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "gold",
+      "germanAlt": [],
+      "vietnamese": "vàng kim",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "cremefarben",
+      "germanAlt": [],
+      "vietnamese": "màu kem",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "olivgrün",
+      "germanAlt": [],
+      "vietnamese": "xanh ô liu",
+      "vietnameseAlt": [],
+      "category": "colors"
+    },
+    {
+      "german": "das Holz",
+      "germanAlt": [],
+      "vietnamese": "gỗ",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Glas",
+      "germanAlt": [],
+      "vietnamese": "thủy tinh",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Metall",
+      "germanAlt": [],
+      "vietnamese": "kim loại",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Papier",
+      "germanAlt": [],
+      "vietnamese": "giấy",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Stein",
+      "germanAlt": [],
+      "vietnamese": "đá",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Kunststoff",
+      "germanAlt": [
+        "das Plastik"
+      ],
+      "vietnamese": "nhựa",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Eisen",
+      "germanAlt": [],
+      "vietnamese": "sắt",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Silber",
+      "germanAlt": [],
+      "vietnamese": "bạc",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Stahl",
+      "germanAlt": [],
+      "vietnamese": "thép",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Gold",
+      "germanAlt": [],
+      "vietnamese": "vàng",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Kupfer",
+      "germanAlt": [],
+      "vietnamese": "đồng",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Aluminium",
+      "germanAlt": [],
+      "vietnamese": "nhôm",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "die Baumwolle",
+      "germanAlt": [],
+      "vietnamese": "bông",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "die Wolle",
+      "germanAlt": [],
+      "vietnamese": "len",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "die Seide",
+      "germanAlt": [],
+      "vietnamese": "lụa",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Stoff",
+      "germanAlt": [],
+      "vietnamese": "vải",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Leder",
+      "germanAlt": [],
+      "vietnamese": "da",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "die Keramik",
+      "germanAlt": [],
+      "vietnamese": "gốm",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "das Porzellan",
+      "germanAlt": [],
+      "vietnamese": "sứ",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Beton",
+      "germanAlt": [],
+      "vietnamese": "bê tông",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Gummi",
+      "germanAlt": [],
+      "vietnamese": "cao su",
+      "vietnameseAlt": [],
+      "category": "materials"
+    },
+    {
+      "german": "der Schirm",
+      "germanAlt": [],
+      "vietnamese": "cái ô",
+      "vietnameseAlt": [
+        "cái dù"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "die Seife",
+      "germanAlt": [],
+      "vietnamese": "xà phòng",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    },
+    {
+      "german": "das Streichholz",
+      "germanAlt": [],
+      "vietnamese": "diêm",
+      "vietnameseAlt": [
+        "que diêm"
+      ],
+      "category": "nouns"
+    },
+    {
+      "german": "der Geldbeutel",
+      "germanAlt": [
+        "die Geldbörse",
+        "das Portemonnaie"
+      ],
+      "vietnamese": "ví tiền",
+      "vietnameseAlt": [],
+      "category": "nouns"
+    }
   ]
 }
