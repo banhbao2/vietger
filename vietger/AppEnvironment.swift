@@ -11,23 +11,23 @@ final class AppEnvironment: ObservableObject {
     let persistenceService: PersistenceService
     
     // Shared ViewModels (singleton pattern for heavy operations)
-    private var quizViewModel: QuizSessionViewModel?
+    private var quizViewModel: QuizSessionViewModel?  // Changed to QuizSessionViewModel
     private var wordListViewModel: WordListViewModel?
     
     init() {
         self.persistenceService = PersistenceService()
-        self.dataService = DataService()  // This already loads sentences in init
+        self.dataService = DataService()
         self.speechService = DefaultSpeechService()
         self.gamificationService = GamificationService(persistence: persistenceService)
     }
     
     // Factory methods for ViewModels with caching
-    func makeQuizViewModel(appState: AppState) -> QuizSessionViewModel {
+    func makeQuizViewModel(appState: AppState) -> QuizSessionViewModel {  // Changed return type
         if let existing = quizViewModel {
             existing.reset()
             return existing
         }
-        let vm = QuizSessionViewModel()
+        let vm = QuizSessionViewModel()  // Changed to QuizSessionViewModel
         vm.configure(appState: appState, environment: self)
         quizViewModel = vm
         return vm

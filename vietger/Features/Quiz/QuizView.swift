@@ -5,7 +5,7 @@ struct QuizView: View {
     @EnvironmentObject var environment: AppEnvironment
     @StateObject private var viewModel: QuizSessionViewModel
     @State private var showSetup = true
-    @State private var reviewWords: [Word]? = nil
+    @State private var reviewWords: [Word]? = nil // ADD THIS NEW LINE
     
     init() {
         _viewModel = StateObject(wrappedValue: QuizSessionViewModel())
@@ -20,6 +20,7 @@ struct QuizView: View {
                 QuizSetupView(
                     reviewWords: reviewWords,
                     onStart: { config in
+                        // REPLACE THE onStart CLOSURE WITH THIS:
                         if let words = reviewWords {
                             viewModel.startReviewSession(with: config, words: words, appState: appState)
                         } else {
@@ -59,72 +60,55 @@ struct QuizView: View {
 struct QuizSessionView: View {
     @ObservedObject var viewModel: QuizSessionViewModel
     @State private var shakeAmount: CGFloat = 0
-    @State private var showSentenceModal = false
     
     var body: some View {
-        ZStack {
-            VStack(spacing: Theme.Spacing.m) {
-                QuizProgressHeader(viewModel: viewModel)
-                    .padding(.horizontal)
-                
-                ScrollView {
-                    VStack(spacing: Theme.Spacing.l) {
-                        if let word = viewModel.currentWord {
-                            QuizCard(
-                                word: word,
-                                direction: viewModel.session.configuration.direction,
-                                reveal: viewModel.reveal,
-                                isCorrect: viewModel.isCorrect,
-                                isLearned: viewModel.isWordLearned(word),
-                                onReveal: { viewModel.reveal = true },
-                                onSpeakSource: { text in
-                                    viewModel.speak(text, isSource: true)
-                                },
-                                onSpeakTarget: { text in
-                                    viewModel.speak(text, isSource: false)
-                                },
-                                onShowSentence: {
-                                    showSentenceModal = true
-                                }
-                            )
-                            .shake(times: shakeAmount)
-                            
-                            answerField
-                            actionButtons
-                            
-                            // Finish early button
-                            Button {
-                                viewModel.completeSession()
-                            } label: {
-                                HStack {
-                                    Image(systemName: "flag.checkered")
-                                    Text("Finish & Review")
-                                }
-                                .font(Theme.Typography.headline)
-                                .foregroundColor(Theme.Colors.primary)
-                                .frame(maxWidth: .infinity)
-                                .padding(Theme.Spacing.m)
-                                .background(
-                                    RoundedRectangle(cornerRadius: Theme.Radius.button)
-                                        .fill(Theme.Colors.primary.opacity(0.1))
-                                )
-                            }
-                            .padding(.top, Theme.Spacing.s)
-                        }
-                    }
-                    .padding(Theme.Spacing.m)
-                }
-            }
+        VStack(spacing: Theme.Spacing.m) {
+            QuizProgressHeader(viewModel: viewModel)
+                .padding(.horizontal)
             
-            // Example sentence modal overlay - Always show when button clicked
-            if showSentenceModal, let word = viewModel.currentWord {
-                ExampleSentenceModal(
-                    word: word,
-                    sentence: viewModel.getSentence(for: word),  // Can be nil
-                    direction: viewModel.session.configuration.direction,
-                    isPresented: $showSentenceModal
-                )
-                .animation(.spring(response: 0.4, dampingFraction: 0.8), value: showSentenceModal)
+            ScrollView {
+                VStack(spacing: Theme.Spacing.l) {
+                    if let word = viewModel.currentWord {
+                        QuizCard(
+                            word: word,
+                            direction: viewModel.session.configuration.direction,
+                            reveal: viewModel.reveal,
+                            isCorrect: viewModel.isCorrect,
+                            isLearned: viewModel.isWordLearned(word),
+                            onReveal: { viewModel.reveal = true },
+                            onSpeakSource: { text in
+                                viewModel.speak(text, isSource: true)
+                            },
+                            onSpeakTarget: { text in
+                                viewModel.speak(text, isSource: false)
+                            }
+                        )
+                        .shake(times: shakeAmount)
+                        
+                        answerField
+                        actionButtons
+                        
+                        // Finish early button
+                        Button {
+                            viewModel.completeSession()
+                        } label: {
+                            HStack {
+                                Image(systemName: "flag.checkered")
+                                Text("Finish & Review")
+                            }
+                            .font(Theme.Typography.headline)
+                            .foregroundColor(Theme.Colors.primary)
+                            .frame(maxWidth: .infinity)
+                            .padding(Theme.Spacing.m)
+                            .background(
+                                RoundedRectangle(cornerRadius: Theme.Radius.button)
+                                    .fill(Theme.Colors.primary.opacity(0.1))
+                            )
+                        }
+                        .padding(.top, Theme.Spacing.s)
+                    }
+                }
+                .padding(Theme.Spacing.m)
             }
         }
     }
@@ -153,6 +137,7 @@ struct QuizSessionView: View {
                         checkAnswer()
                     }
                     .onChange(of: viewModel.answer) { _, newValue in
+                        // Auto-check as user types
                         if !newValue.isEmpty {
                             viewModel.evaluateRealtime()
                         } else {
@@ -175,6 +160,7 @@ struct QuizSessionView: View {
     
     private var actionButtons: some View {
         HStack(spacing: Theme.Spacing.m) {
+            // Back button
             Button {
                 viewModel.goBack()
                 shakeAmount = 0
@@ -185,6 +171,7 @@ struct QuizSessionView: View {
             .frame(width: 100)
             .disabled(viewModel.session.currentIndex == 0)
             
+            // Mark as learned (if not already learned)
             if let word = viewModel.currentWord, !viewModel.isWordLearned(word) {
                 Button {
                     viewModel.markAsLearned(word)
@@ -195,6 +182,7 @@ struct QuizSessionView: View {
                 .buttonStyle(SuccessButtonStyle())
             }
             
+            // Next button
             Button {
                 viewModel.advance()
                 shakeAmount = 0
@@ -219,9 +207,11 @@ struct QuizSessionView: View {
             withAnimation(.default) {
                 shakeAmount += 1
             }
+            // Haptic feedback
             let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
             impactFeedback.impactOccurred()
         } else if viewModel.isCorrect == true {
+            // Success haptic
             let notificationFeedback = UINotificationFeedbackGenerator()
             notificationFeedback.notificationOccurred(.success)
         }
