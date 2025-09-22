@@ -29,35 +29,9 @@
 		D56152AC2E45E8A3002B0C3E /* vietgerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vietgerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D5539D752E7D770500CDE75A /* Exceptions for "vietger" folder in "vietger" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Resources/sentences_vyvu.json,
-				Resources/sentences_words.json,
-			);
-			target = D56152932E45E8A1002B0C3E /* vietger */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		D5539D762E7D770500CDE75A /* Exceptions for "vietger" folder in "Compile Sources" phase from "vietger" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = D56152902E45E8A1002B0C3E /* Sources */;
-			membershipExceptions = (
-				Resources/sentences_vyvu.json,
-				Resources/sentences_words.json,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D56152962E45E8A1002B0C3E /* vietger */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D5539D752E7D770500CDE75A /* Exceptions for "vietger" folder in "vietger" target */,
-				D5539D762E7D770500CDE75A /* Exceptions for "vietger" folder in "Compile Sources" phase from "vietger" target */,
-			);
 			path = vietger;
 			sourceTree = "<group>";
 		};

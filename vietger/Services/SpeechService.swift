@@ -1,31 +1,7 @@
 import Foundation
 import AVFoundation
 
-enum SpeechLanguage {
-    case german
-    case vietnamese
-
-    var bcp47: String {
-        switch self {
-        case .german: return "de-DE"
-        case .vietnamese: return "vi-VN"
-        }
-    }
-
-    var fallbackBCP47: String {
-        switch self {
-        case .german: return "de-DE"
-        case .vietnamese: return "vi-VN"
-        }
-    }
-
-    var label: String {
-        switch self {
-        case .german: return "DE"
-        case .vietnamese: return "VI"
-        }
-    }
-}
+// SpeechLanguage enum is now in DomainModels.swift
 
 protocol SpeechService {
     func speak(_ text: String, lang: SpeechLanguage, rate: Float)

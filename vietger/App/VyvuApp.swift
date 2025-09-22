@@ -2,7 +2,6 @@ import SwiftUI
 
 @main
 struct VyvuApp: App {
-    @StateObject private var appState = AppState()
     @StateObject private var appEnvironment = AppEnvironment()
     
     init() {
@@ -12,14 +11,12 @@ struct VyvuApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environmentObject(appState)
                 .environmentObject(appEnvironment)
                 .preferredColorScheme(.light)
         }
     }
 }
 
-// MARK: - UI Configuration
 enum UIConfiguration {
     static func configure() {
         configureNavigationBar()

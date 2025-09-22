@@ -1,15 +1,21 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var appState: AppState
     @EnvironmentObject var environment: AppEnvironment
-    @StateObject private var viewModel = HomeViewModel()
+    @State private var dailyTip = ""
+    
+    private let tips = [
+        "Practice 5 minutes daily to maintain your streak!",
+        "Review difficult words before bed for better retention.",
+        "Use spaced repetition for long-term memory.",
+        "Try speaking words out loud to improve pronunciation.",
+        "Focus on one category at a time for better results."
+    ]
     
     var body: some View {
         NavigationStack {
             ZStack {
-                Theme.Colors.primaryGradient
-                    .ignoresSafeArea()
+                Theme.Colors.primaryGradient.ignoresSafeArea()
                 
                 ScrollView {
                     LazyVStack(spacing: Theme.Spacing.l) {
@@ -17,14 +23,14 @@ struct HomeView: View {
                         welcomeCard
                         progressOverview
                         actionSection
-                        dailyTip
+                        dailyTipCard
                     }
                     .padding(.horizontal, Theme.Spacing.m)
                     .padding(.bottom, Theme.Spacing.xxl)
                 }
             }
             .onAppear {
-                viewModel.loadStats(from: appState)
+                dailyTip = tips.randomElement() ?? tips[0]
             }
         }
     }
@@ -37,8 +43,8 @@ struct HomeView: View {
                 .shadow(radius: 4)
             
             HStack(spacing: Theme.Spacing.m) {
-                StreakBadge(days: viewModel.streak)
-                XPBadge(xp: viewModel.totalXP)
+                StreakBadge(days: environment.statistics.currentStreak)
+                XPBadge(xp: environment.statistics.totalXP)
             }
         }
         .padding(.top, Theme.Spacing.m)
@@ -64,14 +70,14 @@ struct HomeView: View {
         HStack(spacing: Theme.Spacing.m) {
             StatCard(
                 icon: "checkmark.circle.fill",
-                value: "\(viewModel.learnedWords)",
+                value: "\(environment.statistics.learnedWords)",
                 label: "Learned",
                 color: Theme.Colors.success
             )
             
             StatCard(
                 icon: "book.fill",
-                value: "\(viewModel.unlearnedWords)",
+                value: "\(environment.statistics.unlearnedWords)",
                 label: "To Learn",
                 color: Theme.Colors.primary
             )
@@ -104,7 +110,7 @@ struct HomeView: View {
         }
     }
     
-    private var dailyTip: some View {
+    private var dailyTipCard: some View {
         VStack(alignment: .leading, spacing: Theme.Spacing.s) {
             HStack {
                 Image(systemName: "lightbulb.fill")
@@ -114,7 +120,7 @@ struct HomeView: View {
                     .foregroundColor(Theme.Colors.textSecondary)
             }
             
-            Text(viewModel.dailyTip)
+            Text(dailyTip)
                 .font(Theme.Typography.body)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -123,15 +129,10 @@ struct HomeView: View {
         .background(
             RoundedRectangle(cornerRadius: Theme.Radius.card)
                 .fill(Theme.Colors.warning.opacity(0.1))
-                .overlay(
-                    RoundedRectangle(cornerRadius: Theme.Radius.card)
-                        .stroke(Theme.Colors.warning.opacity(0.3), lineWidth: 1)
-                )
         )
     }
 }
 
-// New NavigationActionCard without Button wrapper
 struct NavigationActionCard: View {
     let title: String
     let subtitle: String
@@ -181,11 +182,6 @@ struct NavigationActionCard: View {
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(Theme.Colors.textSecondary)
         }
-        .padding(Theme.Spacing.m)
-        .background(Theme.Colors.card)
-        .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
-        .shadow(color: Theme.Shadow.card.color,
-               radius: Theme.Shadow.card.radius,
-               x: 0, y: Theme.Shadow.card.y)
+        .cardStyle()
     }
 }

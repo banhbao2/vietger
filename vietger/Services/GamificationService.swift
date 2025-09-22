@@ -1,26 +1,21 @@
 import SwiftUI
 
 final class GamificationService: ObservableObject {
-    private let persistence: PersistenceService
+    private let dataManager: DataManager
     
     @Published var currentStreak: Int = 0
     @Published var totalXP: Int = 0
     @Published var longestStreak: Int = 0
     
-    init(persistence: PersistenceService) {
-        self.persistence = persistence
+    init(dataManager: DataManager) {
+        self.dataManager = dataManager
         loadStats()
     }
     
     func loadStats() {
-        currentStreak = persistence.userStreak
-        totalXP = persistence.totalXP
-        longestStreak = persistence.longestStreak
-    }
-    
-    func awardXP(_ points: Int) {
-        totalXP += points
-        persistence.totalXP = totalXP
+        currentStreak = dataManager.userStreak
+        totalXP = dataManager.totalXP
+        longestStreak = dataManager.longestStreak
     }
     
     func completeSession(correctWords: Int, totalWords: Int) -> SessionRewards {
@@ -28,7 +23,8 @@ final class GamificationService: ObservableObject {
         let bonusXP = calculateBonus(correctWords: correctWords, totalWords: totalWords)
         let totalXP = baseXP + bonusXP
         
-        awardXP(totalXP)
+        self.totalXP += totalXP
+        dataManager.totalXP = self.totalXP
         updateStreak()
         
         return SessionRewards(
@@ -44,15 +40,9 @@ final class GamificationService: ObservableObject {
         let accuracy = Double(correctWords) / Double(totalWords)
         
         var bonus = 0
-        if accuracy == 1.0 && totalWords >= 5 {
-            bonus += 50 // Perfect session
-        }
-        if totalWords >= 20 {
-            bonus += 30 // Long session
-        }
-        if currentStreak >= 7 {
-            bonus += 20 // Week streak
-        }
+        if accuracy == 1.0 && totalWords >= 5 { bonus += 50 }
+        if totalWords >= 20 { bonus += 30 }
+        if currentStreak >= 7 { bonus += 20 }
         return bonus
     }
     
@@ -60,35 +50,26 @@ final class GamificationService: ObservableObject {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
         
-        if let lastDate = persistence.getLastSessionDate() {
+        if let lastDate = dataManager.getLastSessionDate() {
             let lastDay = calendar.startOfDay(for: lastDate)
             let daysDiff = calendar.dateComponents([.day], from: lastDay, to: today).day ?? 0
             
             if daysDiff == 0 {
-                return // Already completed today
+                return
             } else if daysDiff == 1 {
                 currentStreak += 1
-                persistence.userStreak = currentStreak
                 if currentStreak > longestStreak {
                     longestStreak = currentStreak
-                    persistence.longestStreak = longestStreak
+                    dataManager.longestStreak = longestStreak
                 }
             } else {
                 currentStreak = 1
-                persistence.userStreak = 1
             }
         } else {
             currentStreak = 1
-            persistence.userStreak = 1
         }
         
-        persistence.updateLastSessionDate()
+        dataManager.userStreak = currentStreak
+        dataManager.updateLastSessionDate()
     }
-}
-
-struct SessionRewards {
-    let baseXP: Int
-    let bonusXP: Int
-    let totalXP: Int
-    let newStreak: Int
 }

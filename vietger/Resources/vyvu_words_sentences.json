@@ -1,0 +1,5091 @@
+{
+    "dataModelVersion": 2,
+    "metadata": {
+        "sourceLanguage": "german",
+        "targetLanguage": "vietnamese",
+        "level": "A1",
+        "totalEntries": 247,
+        "lastUpdated": "2025-01-20"
+    },
+    "entries": [
+        {
+            "id": "der_taxifahrer",
+            "german": {
+                "main": "der Taxifahrer",
+                "alternatives": [
+                    "Taxifahrer"
+                ]
+            },
+            "vietnamese": {
+                "main": "tài xế taxi",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Taxifahrer fährt das Auto.",
+                "vietnamese": "Người lái taxi lái xe."
+            }
+        },
+        {
+            "id": "der_lehrer",
+            "german": {
+                "main": "der Lehrer",
+                "alternatives": [
+                    "Lehrer"
+                ]
+            },
+            "vietnamese": {
+                "main": "giáo viên (nam)",
+                "alternatives": [
+                    "giáo viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Lehrer erklärt die Aufgabe.",
+                "vietnamese": "Thầy giáo giải thích bài tập."
+            }
+        },
+        {
+            "id": "die_lehrerin",
+            "german": {
+                "main": "die Lehrerin",
+                "alternatives": [
+                    "Lehrerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "giáo viên (nữ)",
+                "alternatives": [
+                    "giáo viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Lehrerin liest das Buch.",
+                "vietnamese": "Cô giáo đọc sách."
+            }
+        },
+        {
+            "id": "der_architekt",
+            "german": {
+                "main": "der Architekt",
+                "alternatives": [
+                    "Architekt"
+                ]
+            },
+            "vietnamese": {
+                "main": "kiến trúc sư (nam)",
+                "alternatives": [
+                    "kiến trúc sư"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Architekt plant ein Haus.",
+                "vietnamese": "Kiến trúc sư nam thiết kế một ngôi nhà."
+            }
+        },
+        {
+            "id": "die_architektin",
+            "german": {
+                "main": "die Architektin",
+                "alternatives": [
+                    "Architektin"
+                ]
+            },
+            "vietnamese": {
+                "main": "kiến trúc sư (nữ)",
+                "alternatives": [
+                    "kiến trúc sư"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Architektin zeichnet einen Plan.",
+                "vietnamese": "Kiến trúc sư nữ vẽ bản thiết kế."
+            }
+        },
+        {
+            "id": "der_mechatroniker",
+            "german": {
+                "main": "der Mechatroniker",
+                "alternatives": [
+                    "Mechatroniker"
+                ]
+            },
+            "vietnamese": {
+                "main": "kỹ thuật viên cơ điện tử",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Mechatroniker repariert die Maschine.",
+                "vietnamese": "Kỹ thuật viên cơ điện tử sửa máy."
+            }
+        },
+        {
+            "id": "der_schauspieler",
+            "german": {
+                "main": "der Schauspieler",
+                "alternatives": [
+                    "Schauspieler"
+                ]
+            },
+            "vietnamese": {
+                "main": "diễn viên (nam)",
+                "alternatives": [
+                    "diễn viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Schauspieler spielt im Film.",
+                "vietnamese": "Diễn viên nam đóng trong phim."
+            }
+        },
+        {
+            "id": "die_schauspielerin",
+            "german": {
+                "main": "die Schauspielerin",
+                "alternatives": [
+                    "Schauspielerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "diễn viên (nữ)",
+                "alternatives": [
+                    "diễn viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Schauspielerin ist sehr bekannt.",
+                "vietnamese": "Diễn viên nữ rất nổi tiếng."
+            }
+        },
+        {
+            "id": "die_sekretaerin",
+            "german": {
+                "main": "die Sekretärin",
+                "alternatives": [
+                    "Sekretärin"
+                ]
+            },
+            "vietnamese": {
+                "main": "thư ký",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Sekretärin schreibt eine E-Mail.",
+                "vietnamese": "Thư ký viết một email."
+            }
+        },
+        {
+            "id": "der_ingenieur",
+            "german": {
+                "main": "der Ingenieur",
+                "alternatives": [
+                    "Ingenieur"
+                ]
+            },
+            "vietnamese": {
+                "main": "kỹ sư",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Ingenieur baut eine Brücke.",
+                "vietnamese": "Kỹ sư xây một cây cầu."
+            }
+        },
+        {
+            "id": "der_saenger",
+            "german": {
+                "main": "der Sänger",
+                "alternatives": [
+                    "Sänger"
+                ]
+            },
+            "vietnamese": {
+                "main": "ca sĩ (nam)",
+                "alternatives": [
+                    "ca sĩ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Sänger singt ein Lied.",
+                "vietnamese": "Ca sĩ nam hát một bài hát."
+            }
+        },
+        {
+            "id": "die_saengerin",
+            "german": {
+                "main": "die Sängerin",
+                "alternatives": [
+                    "Sängerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "ca sĩ (nữ)",
+                "alternatives": [
+                    "ca sĩ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Sängerin singt sehr schön.",
+                "vietnamese": "Ca sĩ nữ hát rất hay."
+            }
+        },
+        {
+            "id": "die_aerztin",
+            "german": {
+                "main": "die Ärztin",
+                "alternatives": [
+                    "Ärztin"
+                ]
+            },
+            "vietnamese": {
+                "main": "bác sĩ (nữ)",
+                "alternatives": [
+                    "bác sĩ",
+                    "bác sĩ nữ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Ärztin hilft dem Patienten.",
+                "vietnamese": "Bác sĩ nữ giúp bệnh nhân."
+            }
+        },
+        {
+            "id": "der_arzt",
+            "german": {
+                "main": "der Arzt",
+                "alternatives": [
+                    "Arzt"
+                ]
+            },
+            "vietnamese": {
+                "main": "bác sĩ (nam)",
+                "alternatives": [
+                    "bác sĩ",
+                    "bác sĩ nam"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Arzt arbeitet im Krankenhaus.",
+                "vietnamese": "Bác sĩ nam làm việc ở bệnh viện."
+            }
+        },
+        {
+            "id": "der_fussballspieler",
+            "german": {
+                "main": "der Fußballspieler",
+                "alternatives": [
+                    "Fußballspieler"
+                ]
+            },
+            "vietnamese": {
+                "main": "cầu thủ bóng đá",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Fußballspieler schießt ein Tor.",
+                "vietnamese": "Cầu thủ bóng đá ghi một bàn thắng."
+            }
+        },
+        {
+            "id": "der_student",
+            "german": {
+                "main": "der Student",
+                "alternatives": [
+                    "Student"
+                ]
+            },
+            "vietnamese": {
+                "main": "sinh viên (nam)",
+                "alternatives": [
+                    "sinh viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Student lernt Deutsch.",
+                "vietnamese": "Sinh viên nam học tiếng Đức."
+            }
+        },
+        {
+            "id": "die_studentin",
+            "german": {
+                "main": "die Studentin",
+                "alternatives": [
+                    "Studentin"
+                ]
+            },
+            "vietnamese": {
+                "main": "sinh viên (nữ)",
+                "alternatives": [
+                    "sinh viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Studentin schreibt einen Aufsatz.",
+                "vietnamese": "Sinh viên nữ viết một bài luận."
+            }
+        },
+        {
+            "id": "der_journalist",
+            "german": {
+                "main": "der Journalist",
+                "alternatives": [
+                    "Journalist"
+                ]
+            },
+            "vietnamese": {
+                "main": "nhà báo / phóng viên (nam)",
+                "alternatives": [
+                    "nhà báo",
+                    "phóng viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Journalist schreibt einen Artikel.",
+                "vietnamese": "Nhà báo nam viết một bài báo."
+            }
+        },
+        {
+            "id": "die_journalistin",
+            "german": {
+                "main": "die Journalistin",
+                "alternatives": [
+                    "Journalistin"
+                ]
+            },
+            "vietnamese": {
+                "main": "nhà báo / phóng viên (nữ)",
+                "alternatives": [
+                    "nhà báo",
+                    "phóng viên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Journalistin macht ein Interview.",
+                "vietnamese": "Nhà báo nữ thực hiện một cuộc phỏng vấn."
+            }
+        },
+        {
+            "id": "die_kellnerin",
+            "german": {
+                "main": "die Kellnerin",
+                "alternatives": [
+                    "Kellnerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "nhân viên phục vụ (nữ)",
+                "alternatives": [
+                    "phục vụ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Kellnerin bringt das Essen.",
+                "vietnamese": "Nhân viên phục vụ nữ mang đồ ăn."
+            }
+        },
+        {
+            "id": "der_kellner",
+            "german": {
+                "main": "der Kellner",
+                "alternatives": [
+                    "Kellner"
+                ]
+            },
+            "vietnamese": {
+                "main": "nhân viên phục vụ (nam)",
+                "alternatives": [
+                    "phục vụ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Kellner serviert Getränke.",
+                "vietnamese": "Nhân viên phục vụ nam mang đồ uống."
+            }
+        },
+        {
+            "id": "die_krankenpflegerin",
+            "german": {
+                "main": "die Krankenpflegerin",
+                "alternatives": [
+                    "Krankenpflegerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "y tá / điều dưỡng (nữ)",
+                "alternatives": [
+                    "điều dưỡng"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Krankenpflegerin hilft dem Arzt.",
+                "vietnamese": "Điều dưỡng nữ giúp bác sĩ."
+            }
+        },
+        {
+            "id": "der_krankenpfleger",
+            "german": {
+                "main": "der Krankenpfleger",
+                "alternatives": [
+                    "Krankenpfleger"
+                ]
+            },
+            "vietnamese": {
+                "main": "điều dưỡng (nam)",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Krankenpfleger arbeitet im Krankenhaus.",
+                "vietnamese": "Điều dưỡng nam làm việc ở bệnh viện."
+            }
+        },
+        {
+            "id": "der_schueler",
+            "german": {
+                "main": "der Schüler",
+                "alternatives": [
+                    "Schüler"
+                ]
+            },
+            "vietnamese": {
+                "main": "học sinh (nam)",
+                "alternatives": [
+                    "học sinh",
+                    "học trò"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Schüler liest ein Buch.",
+                "vietnamese": "Học sinh nam đọc sách."
+            }
+        },
+        {
+            "id": "die_schuelerin",
+            "german": {
+                "main": "die Schülerin",
+                "alternatives": [
+                    "Schülerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "học sinh (nữ)",
+                "alternatives": [
+                    "học sinh",
+                    "học trò"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Schülerin schreibt einen Satz.",
+                "vietnamese": "Học sinh nữ viết một câu."
+            }
+        },
+        {
+            "id": "der_verkaeufer",
+            "german": {
+                "main": "der Verkäufer",
+                "alternatives": [
+                    "Verkäufer"
+                ]
+            },
+            "vietnamese": {
+                "main": "người bán hàng (nam)",
+                "alternatives": [
+                    "người bán hàng"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Verkäufer arbeitet im Geschäft.",
+                "vietnamese": "Người bán hàng nam làm việc trong cửa hàng."
+            }
+        },
+        {
+            "id": "die_verkaeuferin",
+            "german": {
+                "main": "die Verkäuferin",
+                "alternatives": [
+                    "Verkäuferin"
+                ]
+            },
+            "vietnamese": {
+                "main": "người bán hàng (nữ)",
+                "alternatives": [
+                    "người bán hàng"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Verkäuferin verkauft Obst.",
+                "vietnamese": "Người bán hàng nữ bán trái cây."
+            }
+        },
+        {
+            "id": "die_historikerin",
+            "german": {
+                "main": "die Historikerin",
+                "alternatives": [
+                    "Historikerin"
+                ]
+            },
+            "vietnamese": {
+                "main": "nhà sử học (nữ)",
+                "alternatives": [
+                    "nhà sử học"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Historikerin liest ein altes Buch.",
+                "vietnamese": "Nhà sử học nữ đọc một cuốn sách cũ."
+            }
+        },
+        {
+            "id": "die_friseurin",
+            "german": {
+                "main": "die Friseurin",
+                "alternatives": [
+                    "Friseurin"
+                ]
+            },
+            "vietnamese": {
+                "main": "thợ cắt tóc (nữ)",
+                "alternatives": [
+                    "thợ cắt tóc"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Friseurin schneidet die Haare.",
+                "vietnamese": "Thợ cắt tóc nữ cắt tóc."
+            }
+        },
+        {
+            "id": "das_praktikum",
+            "german": {
+                "main": "das Praktikum",
+                "alternatives": [
+                    "Praktikum"
+                ]
+            },
+            "vietnamese": {
+                "main": "thực tập",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich mache ein Praktikum in Berlin.",
+                "vietnamese": "Tôi thực tập ở Berlin."
+            }
+        },
+        {
+            "id": "die_ausbildung",
+            "german": {
+                "main": "die Ausbildung",
+                "alternatives": [
+                    "Ausbildung"
+                ]
+            },
+            "vietnamese": {
+                "main": "học nghề / đào tạo",
+                "alternatives": [
+                    "học nghề",
+                    "học tập",
+                    "đào tạo nghề"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Er macht eine Ausbildung als Koch.",
+                "vietnamese": "Anh ấy học nghề làm đầu bếp."
+            }
+        },
+        {
+            "id": "arbeiten",
+            "german": {
+                "main": "arbeiten",
+                "alternatives": [
+                    "arbeitest",
+                    "arbeite",
+                    "arbeitet"
+                ]
+            },
+            "vietnamese": {
+                "main": "làm việc",
+                "alternatives": [
+                    "công tác",
+                    "lao động"
+                ]
+            },
+            "category": "coreVerbs",
+            "exampleSentence": {
+                "german": "Ich arbeite jeden Tag.",
+                "vietnamese": "Tôi làm việc mỗi ngày."
+            }
+        },
+        {
+            "id": "machen",
+            "german": {
+                "main": "machen",
+                "alternatives": [
+                    "mache",
+                    "machst",
+                    "macht"
+                ]
+            },
+            "vietnamese": {
+                "main": "làm",
+                "alternatives": [
+                    "chế tạo",
+                    "thực hiện"
+                ]
+            },
+            "category": "coreVerbs",
+            "exampleSentence": {
+                "german": "Wir machen die Hausaufgaben.",
+                "vietnamese": "Chúng tôi làm bài tập về nhà."
+            }
+        },
+        {
+            "id": "bei",
+            "german": {
+                "main": "bei",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "tại / ở (chỗ)",
+                "alternatives": [
+                    "tại"
+                ]
+            },
+            "category": "prepositions",
+            "exampleSentence": {
+                "german": "Ich bin bei der Schule.",
+                "vietnamese": "Tôi ở tại trường học."
+            }
+        },
+        {
+            "id": "als",
+            "german": {
+                "main": "als",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "như là / với vai trò",
+                "alternatives": [
+                    "như là"
+                ]
+            },
+            "category": "connectors",
+            "exampleSentence": {
+                "german": "Er arbeitet als Lehrer.",
+                "vietnamese": "Anh ấy làm việc như là giáo viên."
+            }
+        },
+        {
+            "id": "der_it_spezialist",
+            "german": {
+                "main": "der IT-Spezialist",
+                "alternatives": [
+                    "IT-Spezialist"
+                ]
+            },
+            "vietnamese": {
+                "main": "chuyên gia CNTT",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der IT-Spezialist repariert den Computer.",
+                "vietnamese": "Chuyên gia CNTT sửa máy tính."
+            }
+        },
+        {
+            "id": "zurzeit_arbeitslos",
+            "german": {
+                "main": "zurzeit arbeitslos",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "hiện tại thất nghiệp",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Er ist zurzeit arbeitslos.",
+                "vietnamese": "Hiện tại anh ấy thất nghiệp."
+            }
+        },
+        {
+            "id": "der_moderator",
+            "german": {
+                "main": "der Moderator",
+                "alternatives": [
+                    "Moderator"
+                ]
+            },
+            "vietnamese": {
+                "main": "người dẫn chương trình (nam)",
+                "alternatives": [
+                    "MC"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Moderator spricht im Fernsehen.",
+                "vietnamese": "Người dẫn chương trình nam nói trên truyền hình."
+            }
+        },
+        {
+            "id": "die_moderatorin",
+            "german": {
+                "main": "die Moderatorin",
+                "alternatives": [
+                    "Moderatorin"
+                ]
+            },
+            "vietnamese": {
+                "main": "người dẫn chương trình (nữ)",
+                "alternatives": [
+                    "MC"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Moderatorin stellt Fragen.",
+                "vietnamese": "Người dẫn chương trình nữ đặt câu hỏi."
+            }
+        },
+        {
+            "id": "geschieden",
+            "german": {
+                "main": "geschieden",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "ly hôn",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Meine Eltern sind geschieden.",
+                "vietnamese": "Bố mẹ tôi đã ly hôn."
+            }
+        },
+        {
+            "id": "verheiratet",
+            "german": {
+                "main": "verheiratet",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "kết hôn",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Sie sind seit zehn Jahren verheiratet.",
+                "vietnamese": "Họ đã kết hôn được mười năm."
+            }
+        },
+        {
+            "id": "ein_kind",
+            "german": {
+                "main": "ein Kind",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "một đứa con",
+                "alternatives": [
+                    "1 con",
+                    "1 đứa con",
+                    "một người con"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Sie haben ein Kind.",
+                "vietnamese": "Họ có một đứa con."
+            }
+        },
+        {
+            "id": "keine_kinder",
+            "german": {
+                "main": "keine Kinder",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "không có con",
+                "alternatives": [
+                    "không con cái"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Wir haben keine Kinder.",
+                "vietnamese": "Chúng tôi không có con."
+            }
+        },
+        {
+            "id": "single",
+            "german": {
+                "main": "Single",
+                "alternatives": [
+                    "allein"
+                ]
+            },
+            "vietnamese": {
+                "main": "độc thân",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Er ist Single.",
+                "vietnamese": "Anh ấy độc thân."
+            }
+        },
+        {
+            "id": "nicht_verheiratet",
+            "german": {
+                "main": "nicht verheiratet",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "chưa kết hôn",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Ich bin nicht verheiratet.",
+                "vietnamese": "Tôi chưa kết hôn."
+            }
+        },
+        {
+            "id": "zusammen",
+            "german": {
+                "main": "zusammen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cùng nhau",
+                "alternatives": [
+                    "cùng nhau",
+                    "sống chung",
+                    "ở cùng nhau"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Wir wohnen zusammen.",
+                "vietnamese": "Chúng tôi sống chung."
+            }
+        },
+        {
+            "id": "die_familie",
+            "german": {
+                "main": "die Familie",
+                "alternatives": [
+                    "Familie"
+                ]
+            },
+            "vietnamese": {
+                "main": "gia đình",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Familie wohnt in Berlin.",
+                "vietnamese": "Gia đình tôi sống ở Berlin."
+            }
+        },
+        {
+            "id": "der_grossvater",
+            "german": {
+                "main": "der Großvater",
+                "alternatives": [
+                    "Opa"
+                ]
+            },
+            "vietnamese": {
+                "main": "ông",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Großvater ist alt.",
+                "vietnamese": "Ông tôi đã già."
+            }
+        },
+        {
+            "id": "die_grossmutter",
+            "german": {
+                "main": "die Großmutter",
+                "alternatives": [
+                    "Oma"
+                ]
+            },
+            "vietnamese": {
+                "main": "bà",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Großmutter kocht gerne.",
+                "vietnamese": "Bà tôi thích nấu ăn."
+            }
+        },
+        {
+            "id": "der_ehemann",
+            "german": {
+                "main": "der (Ehe)Mann",
+                "alternatives": [
+                    "der Mann",
+                    "Ehemann"
+                ]
+            },
+            "vietnamese": {
+                "main": "chồng",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Mann arbeitet viel.",
+                "vietnamese": "Chồng tôi làm việc nhiều."
+            }
+        },
+        {
+            "id": "die_ehefrau",
+            "german": {
+                "main": "die (Ehe)Frau",
+                "alternatives": [
+                    "die Frau",
+                    "Ehefrau"
+                ]
+            },
+            "vietnamese": {
+                "main": "vợ",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Frau ist Lehrerin.",
+                "vietnamese": "Vợ tôi là giáo viên."
+            }
+        },
+        {
+            "id": "die_mutter",
+            "german": {
+                "main": "die Mutter",
+                "alternatives": [
+                    "Mutter"
+                ]
+            },
+            "vietnamese": {
+                "main": "mẹ",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Mutter backt einen Kuchen.",
+                "vietnamese": "Mẹ tôi nướng một cái bánh."
+            }
+        },
+        {
+            "id": "der_vater",
+            "german": {
+                "main": "der Vater",
+                "alternatives": [
+                    "Vater"
+                ]
+            },
+            "vietnamese": {
+                "main": "bố",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Vater liest die Zeitung.",
+                "vietnamese": "Bố tôi đọc báo."
+            }
+        },
+        {
+            "id": "der_sohn",
+            "german": {
+                "main": "der Sohn",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "con trai",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Sohn spielt im Garten.",
+                "vietnamese": "Con trai chơi trong vườn."
+            }
+        },
+        {
+            "id": "die_tochter",
+            "german": {
+                "main": "die Tochter",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "con gái",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Tochter malt ein Bild.",
+                "vietnamese": "Con gái vẽ một bức tranh."
+            }
+        },
+        {
+            "id": "der_bruder",
+            "german": {
+                "main": "der Bruder",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "anh trai",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Bruder ist Student.",
+                "vietnamese": "Anh trai tôi là sinh viên."
+            }
+        },
+        {
+            "id": "die_schwester",
+            "german": {
+                "main": "die Schwester",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "em gái / chị gái",
+                "alternatives": [
+                    "chị gái",
+                    "em gái"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Schwester hört Musik.",
+                "vietnamese": "Em gái tôi nghe nhạc."
+            }
+        },
+        {
+            "id": "die_eltern",
+            "german": {
+                "main": "die Eltern",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bố mẹ",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Eltern wohnen in Hanoi.",
+                "vietnamese": "Bố mẹ tôi sống ở Hà Nội."
+            }
+        },
+        {
+            "id": "die_grosseltern",
+            "german": {
+                "main": "die Großeltern",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "ông bà",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Großeltern besuchen uns.",
+                "vietnamese": "Ông bà đến thăm chúng tôi."
+            }
+        },
+        {
+            "id": "die_geschwister",
+            "german": {
+                "main": "die Geschwister",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "anh chị em",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich habe zwei Geschwister.",
+                "vietnamese": "Tôi có hai anh chị em."
+            }
+        },
+        {
+            "id": "die_enkelin",
+            "german": {
+                "main": "die Enkelin",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cháu gái (của ông/bà)",
+                "alternatives": [
+                    "cháu gái"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Enkelin besucht die Oma.",
+                "vietnamese": "Cháu gái đến thăm bà."
+            }
+        },
+        {
+            "id": "der_enkel",
+            "german": {
+                "main": "der Enkel",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cháu trai (của ông/bà)",
+                "alternatives": [
+                    "cháu trai"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Enkel spielt mit dem Opa.",
+                "vietnamese": "Cháu trai chơi với ông."
+            }
+        },
+        {
+            "id": "die_stiefmutter",
+            "german": {
+                "main": "die Stiefmutter",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "mẹ kế",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Stiefmutter ist nett.",
+                "vietnamese": "Mẹ kế rất tốt."
+            }
+        },
+        {
+            "id": "der_stiefvater",
+            "german": {
+                "main": "der Stiefvater",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bố dượng",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Stiefvater hilft im Garten.",
+                "vietnamese": "Bố dượng giúp việc trong vườn."
+            }
+        },
+        {
+            "id": "die_enkelkinder",
+            "german": {
+                "main": "die Enkelkinder",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "các cháu",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Enkelkinder spielen im Park.",
+                "vietnamese": "Các cháu chơi trong công viên."
+            }
+        },
+        {
+            "id": "die_kinder",
+            "german": {
+                "main": "die Kinder",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "các con",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Kinder laufen im Hof.",
+                "vietnamese": "Các con chạy trong sân."
+            }
+        },
+        {
+            "id": "das_baby",
+            "german": {
+                "main": "das Baby",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "em bé",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Baby schläft.",
+                "vietnamese": "Em bé đang ngủ."
+            }
+        },
+        {
+            "id": "die_tante",
+            "german": {
+                "main": "die Tante",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cô / dì / mợ",
+                "alternatives": [
+                    "cô",
+                    "dì",
+                    "mợ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Tante wohnt in Hamburg.",
+                "vietnamese": "Cô tôi sống ở Hamburg."
+            }
+        },
+        {
+            "id": "der_onkel",
+            "german": {
+                "main": "der Onkel",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bác / chú / cậu",
+                "alternatives": [
+                    "bác",
+                    "chú",
+                    "cậu"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Onkel fährt ein Auto.",
+                "vietnamese": "Chú tôi lái một chiếc xe."
+            }
+        },
+        {
+            "id": "die_nichte",
+            "german": {
+                "main": "die Nichte",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cháu gái (con anh/chị/em)",
+                "alternatives": [
+                    "cháu gái"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Nichte malt gern.",
+                "vietnamese": "Cháu gái thích vẽ."
+            }
+        },
+        {
+            "id": "der_neffe",
+            "german": {
+                "main": "der Neffe",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cháu trai (con anh/chị/em)",
+                "alternatives": [
+                    "cháu trai"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Neffe spielt Fußball.",
+                "vietnamese": "Cháu trai chơi bóng đá."
+            }
+        },
+        {
+            "id": "der_cousin",
+            "german": {
+                "main": "der Cousin",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "anh/chị/em họ (nam)",
+                "alternatives": [
+                    "anh họ",
+                    "em họ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Cousin kommt morgen.",
+                "vietnamese": "Anh họ tôi sẽ đến ngày mai."
+            }
+        },
+        {
+            "id": "die_cousine",
+            "german": {
+                "main": "die Cousine",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "anh/chị/em họ (nữ)",
+                "alternatives": [
+                    "chị họ",
+                    "em họ"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Cousine studiert in Berlin.",
+                "vietnamese": "Chị họ tôi học ở Berlin."
+            }
+        },
+        {
+            "id": "der_freund",
+            "german": {
+                "main": "der Freund",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bạn trai / bạn",
+                "alternatives": [
+                    "bạn trai"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Freund heißt Paul.",
+                "vietnamese": "Bạn trai tôi tên là Paul."
+            }
+        },
+        {
+            "id": "die_freundin",
+            "german": {
+                "main": "die Freundin",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bạn gái / bạn (nữ)",
+                "alternatives": [
+                    "bạn gái"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Meine Freundin kommt heute.",
+                "vietnamese": "Bạn gái tôi đến hôm nay."
+            }
+        },
+        {
+            "id": "das_bett",
+            "german": {
+                "main": "das Bett",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "giường",
+                "alternatives": []
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Das Bett ist groß.",
+                "vietnamese": "Cái giường to."
+            }
+        },
+        {
+            "id": "das_bild",
+            "german": {
+                "main": "das Bild",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "ảnh / bức tranh",
+                "alternatives": [
+                    "bức tranh",
+                    "bức ảnh",
+                    "tấm hình"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Das Bild hängt an der Wand.",
+                "vietnamese": "Bức tranh treo trên tường."
+            }
+        },
+        {
+            "id": "das_buecherregal",
+            "german": {
+                "main": "das Bücherregal",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "kệ sách",
+                "alternatives": []
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Das Bücherregal ist voll.",
+                "vietnamese": "Kệ sách đầy."
+            }
+        },
+        {
+            "id": "der_sessel",
+            "german": {
+                "main": "der Sessel",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "ghế bành",
+                "alternatives": []
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Der Sessel ist bequem.",
+                "vietnamese": "Ghế bành thoải mái."
+            }
+        },
+        {
+            "id": "der_stuhl",
+            "german": {
+                "main": "der Stuhl",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cái ghế",
+                "alternatives": [
+                    "ghế"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Der Stuhl ist klein.",
+                "vietnamese": "Cái ghế nhỏ."
+            }
+        },
+        {
+            "id": "der_tisch",
+            "german": {
+                "main": "der Tisch",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cái bàn",
+                "alternatives": [
+                    "bàn"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Der Tisch ist neu.",
+                "vietnamese": "Cái bàn mới."
+            }
+        },
+        {
+            "id": "der_schrank",
+            "german": {
+                "main": "der Schrank",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cái tủ",
+                "alternatives": [
+                    "tủ"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Der Schrank ist groß.",
+                "vietnamese": "Cái tủ to."
+            }
+        },
+        {
+            "id": "der_teppich",
+            "german": {
+                "main": "der Teppich",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "tấm thảm",
+                "alternatives": [
+                    "thảm"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Der Teppich ist bunt.",
+                "vietnamese": "Tấm thảm nhiều màu sắc."
+            }
+        },
+        {
+            "id": "die_lampe",
+            "german": {
+                "main": "die Lampe",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cái đèn",
+                "alternatives": [
+                    "đèn"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Die Lampe ist hell.",
+                "vietnamese": "Cái đèn sáng."
+            }
+        },
+        {
+            "id": "die_couch",
+            "german": {
+                "main": "die Couch",
+                "alternatives": [
+                    "das Sofa"
+                ]
+            },
+            "vietnamese": {
+                "main": "ghế sô-pha",
+                "alternatives": [
+                    "sofa",
+                    "trường kỷ"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Die Kinder sitzen auf der Couch.",
+                "vietnamese": "Bọn trẻ ngồi trên ghế sô-pha."
+            }
+        },
+        {
+            "id": "gross",
+            "german": {
+                "main": "groß",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "to / lớn",
+                "alternatives": [
+                    "lớn",
+                    "to"
+                ]
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Haus ist groß.",
+                "vietnamese": "Ngôi nhà to."
+            }
+        },
+        {
+            "id": "klein",
+            "german": {
+                "main": "klein",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "nhỏ",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Zimmer ist klein.",
+                "vietnamese": "Căn phòng nhỏ."
+            }
+        },
+        {
+            "id": "zu_gross",
+            "german": {
+                "main": "zu groß",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "quá to",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Der Pullover ist zu groß.",
+                "vietnamese": "Chiếc áo len quá to."
+            }
+        },
+        {
+            "id": "schlecht",
+            "german": {
+                "main": "schlecht",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "tệ / xấu",
+                "alternatives": [
+                    "xấu"
+                ]
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Wetter ist schlecht.",
+                "vietnamese": "Thời tiết xấu."
+            }
+        },
+        {
+            "id": "gut",
+            "german": {
+                "main": "gut",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "tốt",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Essen ist gut.",
+                "vietnamese": "Đồ ăn ngon."
+            }
+        },
+        {
+            "id": "schoen",
+            "german": {
+                "main": "schön",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "đẹp",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Der Park ist schön.",
+                "vietnamese": "Công viên đẹp."
+            }
+        },
+        {
+            "id": "trinken",
+            "german": {
+                "main": "trinken",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "uống",
+                "alternatives": []
+            },
+            "category": "verbs",
+            "exampleSentence": {
+                "german": "Ich trinke Wasser.",
+                "vietnamese": "Tôi uống nước."
+            }
+        },
+        {
+            "id": "kochen",
+            "german": {
+                "main": "kochen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "nấu",
+                "alternatives": []
+            },
+            "category": "verbs",
+            "exampleSentence": {
+                "german": "Meine Mutter kocht Suppe.",
+                "vietnamese": "Mẹ tôi nấu canh."
+            }
+        },
+        {
+            "id": "der_kaese",
+            "german": {
+                "main": "der Käse",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "phô mai",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Käse ist gelb.",
+                "vietnamese": "Phô mai màu vàng."
+            }
+        },
+        {
+            "id": "das_fleisch",
+            "german": {
+                "main": "das Fleisch",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "thịt",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Fleisch ist frisch.",
+                "vietnamese": "Thịt tươi."
+            }
+        },
+        {
+            "id": "das_gemuese",
+            "german": {
+                "main": "das Gemüse",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "rau",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Gemüse ist gesund.",
+                "vietnamese": "Rau tốt cho sức khỏe."
+            }
+        },
+        {
+            "id": "das_obst",
+            "german": {
+                "main": "das Obst",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "hoa quả",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Obst ist süß.",
+                "vietnamese": "Hoa quả ngọt."
+            }
+        },
+        {
+            "id": "die_kartoffel",
+            "german": {
+                "main": "die Kartoffel",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "khoai tây",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Kartoffel ist braun.",
+                "vietnamese": "Khoai tây màu nâu."
+            }
+        },
+        {
+            "id": "der_apfel",
+            "german": {
+                "main": "der Apfel",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "quả táo",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Apfel ist rot.",
+                "vietnamese": "Quả táo màu đỏ."
+            }
+        },
+        {
+            "id": "die_orange",
+            "german": {
+                "main": "die Orange",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "quả cam",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Orange ist süß.",
+                "vietnamese": "Quả cam ngọt."
+            }
+        },
+        {
+            "id": "die_tomate",
+            "german": {
+                "main": "die Tomate",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "quả cà chua",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Tomate ist rund.",
+                "vietnamese": "Quả cà chua tròn."
+            }
+        },
+        {
+            "id": "das_brot",
+            "german": {
+                "main": "das Brot",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bánh mì",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Brot ist frisch.",
+                "vietnamese": "Bánh mì tươi."
+            }
+        },
+        {
+            "id": "das_broetchen",
+            "german": {
+                "main": "das Brötchen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bánh mì nhỏ",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich esse ein Brötchen.",
+                "vietnamese": "Tôi ăn một cái bánh mì nhỏ."
+            }
+        },
+        {
+            "id": "die_suppe",
+            "german": {
+                "main": "die Suppe",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "canh",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Suppe ist heiß.",
+                "vietnamese": "Canh nóng."
+            }
+        },
+        {
+            "id": "der_salat",
+            "german": {
+                "main": "der Salat",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "rau xà lách",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Salat ist grün.",
+                "vietnamese": "Rau xà lách màu xanh."
+            }
+        },
+        {
+            "id": "der_fisch",
+            "german": {
+                "main": "der Fisch",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cá",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Fisch ist frisch.",
+                "vietnamese": "Cá tươi."
+            }
+        },
+        {
+            "id": "die_pizza",
+            "german": {
+                "main": "die Pizza",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "pizza",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Pizza ist lecker.",
+                "vietnamese": "Pizza ngon."
+            }
+        },
+        {
+            "id": "der_hamburger",
+            "german": {
+                "main": "der Hamburger",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bánh hamburger",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Hamburger ist groß.",
+                "vietnamese": "Bánh hamburger to."
+            }
+        },
+        {
+            "id": "der_reis",
+            "german": {
+                "main": "der Reis",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cơm",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Reis ist weiß.",
+                "vietnamese": "Cơm màu trắng."
+            }
+        },
+        {
+            "id": "der_tee",
+            "german": {
+                "main": "der Tee",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "trà",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Tee ist heiß.",
+                "vietnamese": "Trà nóng."
+            }
+        },
+        {
+            "id": "der_kaffee",
+            "german": {
+                "main": "der Kaffee",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "cà phê",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Kaffee ist stark.",
+                "vietnamese": "Cà phê đậm."
+            }
+        },
+        {
+            "id": "das_wasser",
+            "german": {
+                "main": "das Wasser",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "nước",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Wasser ist kalt.",
+                "vietnamese": "Nước lạnh."
+            }
+        },
+        {
+            "id": "die_milch",
+            "german": {
+                "main": "die Milch",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "sữa",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Milch ist frisch.",
+                "vietnamese": "Sữa tươi."
+            }
+        },
+        {
+            "id": "der_saft",
+            "german": {
+                "main": "der Saft",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "nước ép",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Saft ist süß.",
+                "vietnamese": "Nước ép ngọt."
+            }
+        },
+        {
+            "id": "das_bier",
+            "german": {
+                "main": "das Bier",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bia",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Bier ist kalt.",
+                "vietnamese": "Bia lạnh."
+            }
+        },
+        {
+            "id": "der_wein",
+            "german": {
+                "main": "der Wein",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "rượu vang",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Wein ist rot.",
+                "vietnamese": "Rượu vang đỏ."
+            }
+        },
+        {
+            "id": "die_speisekarte",
+            "german": {
+                "main": "die Speisekarte",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "thực đơn",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Speisekarte ist lang.",
+                "vietnamese": "Thực đơn dài."
+            }
+        },
+        {
+            "id": "die_rechnung_bitte",
+            "german": {
+                "main": "die Rechnung bitte",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "xin vui lòng đưa hóa đơn",
+                "alternatives": []
+            },
+            "category": "phrases",
+            "exampleSentence": {
+                "german": "Die Rechnung bitte.",
+                "vietnamese": "Xin vui lòng đưa hóa đơn."
+            }
+        },
+        {
+            "id": "das_restaurant",
+            "german": {
+                "main": "das Restaurant",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "nhà hàng",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Restaurant ist teuer.",
+                "vietnamese": "Nhà hàng đắt tiền."
+            }
+        },
+        {
+            "id": "der_gast",
+            "german": {
+                "main": "der Gast",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "vị khách",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Gast bestellt ein Getränk.",
+                "vietnamese": "Vị khách gọi một đồ uống."
+            }
+        },
+        {
+            "id": "bestellen",
+            "german": {
+                "main": "bestellen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "gọi món",
+                "alternatives": []
+            },
+            "category": "verbs",
+            "exampleSentence": {
+                "german": "Ich bestelle eine Pizza.",
+                "vietnamese": "Tôi gọi một cái pizza."
+            }
+        },
+        {
+            "id": "zahlen",
+            "german": {
+                "main": "zahlen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "trả tiền",
+                "alternatives": []
+            },
+            "category": "verbs",
+            "exampleSentence": {
+                "german": "Ich zahle mit Karte.",
+                "vietnamese": "Tôi trả bằng thẻ."
+            }
+        },
+        {
+            "id": "kochen_koennen",
+            "german": {
+                "main": "kochen können",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "có thể nấu ăn",
+                "alternatives": []
+            },
+            "category": "phrases",
+            "exampleSentence": {
+                "german": "Ich kann gut kochen.",
+                "vietnamese": "Tôi nấu ăn giỏi."
+            }
+        },
+        {
+            "id": "der_hunger",
+            "german": {
+                "main": "der Hunger",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "đói",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich habe Hunger.",
+                "vietnamese": "Tôi đói."
+            }
+        },
+        {
+            "id": "der_durst",
+            "german": {
+                "main": "der Durst",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "khát",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich habe Durst.",
+                "vietnamese": "Tôi khát."
+            }
+        },
+        {
+            "id": "lecker",
+            "german": {
+                "main": "lecker",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "ngon",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Essen ist lecker.",
+                "vietnamese": "Đồ ăn ngon."
+            }
+        },
+        {
+            "id": "schmecken",
+            "german": {
+                "main": "schmecken",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "có vị ngon",
+                "alternatives": []
+            },
+            "category": "verbs",
+            "exampleSentence": {
+                "german": "Der Kuchen schmeckt gut.",
+                "vietnamese": "Bánh ngon."
+            }
+        },
+        {
+            "id": "das_salz",
+            "german": {
+                "main": "das Salz",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "muối",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Salz ist weiß.",
+                "vietnamese": "Muối màu trắng."
+            }
+        },
+        {
+            "id": "der_pfeffer",
+            "german": {
+                "main": "der Pfeffer",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "hạt tiêu",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Pfeffer ist schwarz.",
+                "vietnamese": "Hạt tiêu màu đen."
+            }
+        },
+        {
+            "id": "der_zucker",
+            "german": {
+                "main": "der Zucker",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "đường",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Zucker ist süß.",
+                "vietnamese": "Đường ngọt."
+            }
+        },
+        {
+            "id": "die_butter",
+            "german": {
+                "main": "die Butter",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bơ",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Die Butter ist weich.",
+                "vietnamese": "Bơ mềm."
+            }
+        },
+        {
+            "id": "das_ei",
+            "german": {
+                "main": "das Ei",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "trứng",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Ei ist hart.",
+                "vietnamese": "Trứng cứng."
+            }
+        },
+        {
+            "id": "das_fruehstueck",
+            "german": {
+                "main": "das Frühstück",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bữa sáng",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Frühstück ist fertig.",
+                "vietnamese": "Bữa sáng đã sẵn sàng."
+            }
+        },
+        {
+            "id": "das_abendessen",
+            "german": {
+                "main": "das Abendessen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "bữa tối",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Abendessen ist lecker.",
+                "vietnamese": "Bữa tối ngon."
+            }
+        },
+        {
+            "id": "der_stift",
+            "german": {
+                "main": "der Stift",
+                "alternatives": [
+                    "Stift"
+                ]
+            },
+            "vietnamese": {
+                "main": "cây bút",
+                "alternatives": [
+                    "bút",
+                    "bút viết"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Stift liegt auf dem Tisch.",
+                "vietnamese": "Cây bút nằm trên bàn."
+            }
+        },
+        {
+            "id": "das_notizbuch",
+            "german": {
+                "main": "das Notizbuch",
+                "alternatives": [
+                    "Notizbuch"
+                ]
+            },
+            "vietnamese": {
+                "main": "sổ tay",
+                "alternatives": [
+                    "quyển sổ",
+                    "sổ ghi chú"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Das Notizbuch ist neu.",
+                "vietnamese": "Cuốn sổ tay mới."
+            }
+        },
+        {
+            "id": "der_kalender",
+            "german": {
+                "main": "der Kalender",
+                "alternatives": [
+                    "Kalender"
+                ]
+            },
+            "vietnamese": {
+                "main": "lịch",
+                "alternatives": [
+                    "lịch treo tường",
+                    "lịch bàn"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Kalender hängt an der Wand.",
+                "vietnamese": "Lịch treo trên tường."
+            }
+        },
+        {
+            "id": "der_bildschirm",
+            "german": {
+                "main": "der Bildschirm",
+                "alternatives": [
+                    "Bildschirm",
+                    "Monitor"
+                ]
+            },
+            "vietnamese": {
+                "main": "màn hình",
+                "alternatives": [
+                    "màn hình máy tính",
+                    "màn hình hiển thị"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Bildschirm ist groß.",
+                "vietnamese": "Màn hình lớn."
+            }
+        },
+        {
+            "id": "der_termin",
+            "german": {
+                "main": "der Termin",
+                "alternatives": [
+                    "Termin",
+                    "Verabredung"
+                ]
+            },
+            "vietnamese": {
+                "main": "cuộc hẹn",
+                "alternatives": [
+                    "lịch hẹn",
+                    "hẹn gặp"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich habe einen Termin beim Arzt.",
+                "vietnamese": "Tôi có một cuộc hẹn với bác sĩ."
+            }
+        },
+        {
+            "id": "wollen",
+            "german": {
+                "main": "wollen",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "muốn",
+                "alternatives": [
+                    "mong muốn",
+                    "ước muốn"
+                ]
+            },
+            "category": "verbs",
+            "exampleSentence": {
+                "german": "Ich will ein Eis essen.",
+                "vietnamese": "Tôi muốn ăn kem."
+            }
+        },
+        {
+            "id": "der_arbeitsplatz",
+            "german": {
+                "main": "der Arbeitsplatz",
+                "alternatives": [
+                    "Arbeitsplatz",
+                    "Büroplatz"
+                ]
+            },
+            "vietnamese": {
+                "main": "nơi làm việc",
+                "alternatives": [
+                    "chỗ làm",
+                    "văn phòng"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Mein Arbeitsplatz ist im Büro.",
+                "vietnamese": "Nơi làm việc của tôi ở văn phòng."
+            }
+        },
+        {
+            "id": "der_chef",
+            "german": {
+                "main": "der Chef",
+                "alternatives": [
+                    "Chef",
+                    "Vorgesetzter"
+                ]
+            },
+            "vietnamese": {
+                "main": "sếp",
+                "alternatives": [
+                    "ông chủ",
+                    "cấp trên"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Der Chef spricht mit den Mitarbeitern.",
+                "vietnamese": "Sếp nói chuyện với nhân viên."
+            }
+        },
+        {
+            "id": "die_zeit",
+            "german": {
+                "main": "die Zeit",
+                "alternatives": [
+                    "Zeit"
+                ]
+            },
+            "vietnamese": {
+                "main": "thời gian",
+                "alternatives": [
+                    "giờ giấc",
+                    "thời khắc"
+                ]
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich habe keine Zeit.",
+                "vietnamese": "Tôi không có thời gian."
+            }
+        },
+        {
+            "id": "huebsch",
+            "german": {
+                "main": "hübsch",
+                "alternatives": [
+                    "schön",
+                    "nett"
+                ]
+            },
+            "vietnamese": {
+                "main": "xinh đẹp",
+                "alternatives": [
+                    "dễ thương",
+                    "đáng yêu"
+                ]
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Mädchen ist hübsch.",
+                "vietnamese": "Cô bé xinh đẹp."
+            }
+        },
+        {
+            "id": "die_hilfe",
+            "german": {
+                "main": "die Hilfe",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "sự giúp đỡ",
+                "alternatives": []
+            },
+            "category": "nouns",
+            "exampleSentence": {
+                "german": "Ich brauche Hilfe.",
+                "vietnamese": "Tôi cần sự giúp đỡ."
+            }
+        },
+        {
+            "id": "finden",
+            "german": {
+                "main": "finden",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "tìm / thấy",
+                "alternatives": [
+                    "tìm thấy"
+                ]
+            },
+            "category": "coreVerbs",
+            "exampleSentence": {
+                "german": "Ich finde den Schlüssel nicht.",
+                "vietnamese": "Tôi không tìm thấy chìa khóa."
+            }
+        },
+        {
+            "id": "kosten",
+            "german": {
+                "main": "kosten",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "có giá / tốn",
+                "alternatives": [
+                    "giá"
+                ]
+            },
+            "category": "coreVerbs",
+            "exampleSentence": {
+                "german": "Das Buch kostet zehn Euro.",
+                "vietnamese": "Cuốn sách có giá mười euro."
+            }
+        },
+        {
+            "id": "billig",
+            "german": {
+                "main": "billig",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "rẻ",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Die Äpfel sind billig.",
+                "vietnamese": "Táo rẻ."
+            }
+        },
+        {
+            "id": "guenstig",
+            "german": {
+                "main": "günstig",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "giá tốt / phải chăng",
+                "alternatives": [
+                    "giá hợp lý",
+                    "phải chăng",
+                    "rẻ"
+                ]
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das ist ein günstiger Preis.",
+                "vietnamese": "Đó là một mức giá hợp lý."
+            }
+        },
+        {
+            "id": "teuer",
+            "german": {
+                "main": "teuer",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "đắt",
+                "alternatives": []
+            },
+            "category": "adjectives",
+            "exampleSentence": {
+                "german": "Das Auto ist teuer.",
+                "vietnamese": "Chiếc xe đắt."
+            }
+        },
+        {
+            "id": "sehr",
+            "german": {
+                "main": "sehr",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "rất",
+                "alternatives": []
+            },
+            "category": "adverbsFillers",
+            "exampleSentence": {
+                "german": "Das Essen ist sehr gut.",
+                "vietnamese": "Đồ ăn rất ngon."
+            }
+        },
+        {
+            "id": "sonderangebot",
+            "german": {
+                "main": "Sonderangebot",
+                "alternatives": [
+                    "das Sonderangebot"
+                ]
+            },
+            "vietnamese": {
+                "main": "chương trình giảm giá / khuyến mãi",
+                "alternatives": [
+                    "giảm giá"
+                ]
+            },
+            "category": "commonThings",
+            "exampleSentence": {
+                "german": "Das ist ein Sonderangebot.",
+                "vietnamese": "Đó là một chương trình khuyến mãi."
+            }
+        },
+        {
+            "id": "wirklich",
+            "german": {
+                "main": "wirklich",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "thật sự / thực sự",
+                "alternatives": [
+                    "thực sự"
+                ]
+            },
+            "category": "adverbsFillers",
+            "exampleSentence": {
+                "german": "Das ist wirklich schön.",
+                "vietnamese": "Điều đó thật sự đẹp."
+            }
+        },
+        {
+            "id": "wirklich_sehr_schoen",
+            "german": {
+                "main": "wirklich sehr schön",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "thực sự rất đẹp",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das Bild ist wirklich sehr schön.",
+                "vietnamese": "Bức tranh thực sự rất đẹp."
+            }
+        },
+        {
+            "id": "hundert",
+            "german": {
+                "main": "hundert",
+                "alternatives": [
+                    "einhundert"
+                ]
+            },
+            "vietnamese": {
+                "main": "trăm (100)",
+                "alternatives": [
+                    "một trăm"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Hundert ist eine große Zahl.",
+                "vietnamese": "Một trăm là một con số lớn."
+            }
+        },
+        {
+            "id": "tausend",
+            "german": {
+                "main": "tausend",
+                "alternatives": [
+                    "eintausend"
+                ]
+            },
+            "vietnamese": {
+                "main": "nghìn (1000)",
+                "alternatives": [
+                    "một nghìn"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Tausend Menschen leben hier.",
+                "vietnamese": "Một nghìn người sống ở đây."
+            }
+        },
+        {
+            "id": "eine_million",
+            "german": {
+                "main": "eine Million",
+                "alternatives": [
+                    "Million"
+                ]
+            },
+            "vietnamese": {
+                "main": "một triệu (1.000.000)",
+                "alternatives": [
+                    "triệu"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Eine Million ist sehr viel.",
+                "vietnamese": "Một triệu là rất nhiều."
+            }
+        },
+        {
+            "id": "eine_milliarde",
+            "german": {
+                "main": "eine Milliarde",
+                "alternatives": [
+                    "Milliarde"
+                ]
+            },
+            "vietnamese": {
+                "main": "một tỷ (1.000.000.000)",
+                "alternatives": [
+                    "tỷ"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Eine Milliarde ist eine sehr große Zahl.",
+                "vietnamese": "Một tỷ là một con số rất lớn."
+            }
+        },
+        {
+            "id": "eine_billion",
+            "german": {
+                "main": "eine Billion",
+                "alternatives": [
+                    "Billion"
+                ]
+            },
+            "vietnamese": {
+                "main": "một nghìn tỷ (10^12)",
+                "alternatives": [
+                    "tỉ tỷ"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Eine Billion ist unvorstellbar groß.",
+                "vietnamese": "Một nghìn tỷ là không thể tưởng tượng được."
+            }
+        },
+        {
+            "id": "mein",
+            "german": {
+                "main": "mein",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "của tôi",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist mein Buch.",
+                "vietnamese": "Đó là cuốn sách của tôi."
+            }
+        },
+        {
+            "id": "dein",
+            "german": {
+                "main": "dein",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "của bạn (một người)",
+                "alternatives": [
+                    "của bạn"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist dein Auto.",
+                "vietnamese": "Đó là xe của bạn."
+            }
+        },
+        {
+            "id": "sein",
+            "german": {
+                "main": "sein",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "của anh ấy / của nó",
+                "alternatives": [
+                    "của anh ấy",
+                    "của nó"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist sein Haus.",
+                "vietnamese": "Đó là nhà của anh ấy."
+            }
+        },
+        {
+            "id": "ihr",
+            "german": {
+                "main": "ihr",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "của cô ấy / của họ",
+                "alternatives": [
+                    "của cô ấy",
+                    "của họ"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist ihr Kind.",
+                "vietnamese": "Đó là con của cô ấy."
+            }
+        },
+        {
+            "id": "unser",
+            "german": {
+                "main": "unser",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "của chúng tôi",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist unser Garten.",
+                "vietnamese": "Đó là vườn của chúng tôi."
+            }
+        },
+        {
+            "id": "eure",
+            "german": {
+                "main": "eure",
+                "alternatives": [
+                    "euer"
+                ]
+            },
+            "vietnamese": {
+                "main": "của các bạn",
+                "alternatives": []
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist eure Schule.",
+                "vietnamese": "Đó là trường của các bạn."
+            }
+        },
+        {
+            "id": "ihr_formal",
+            "german": {
+                "main": "Ihr",
+                "alternatives": []
+            },
+            "vietnamese": {
+                "main": "của Ngài / của Quý vị (lịch sự)",
+                "alternatives": [
+                    "của Ông/Bà"
+                ]
+            },
+            "category": "other",
+            "exampleSentence": {
+                "german": "Das ist Ihr Platz, Herr Müller.",
+                "vietnamese": "Đó là chỗ của Ông, ông Müller."
+            }
+        },
+        {
+            "id": "lang",
+                        "german": {
+                            "main": "lang",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "dài",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Der Tisch ist sehr lang.",
+                            "vietnamese": "Cái bàn rất dài."
+                        }
+                    },
+                    {
+                        "id": "kurz",
+                        "german": {
+                            "main": "kurz",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "ngắn",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das Kleid ist kurz.",
+                            "vietnamese": "Cái váy ngắn."
+                        }
+                    },
+                    {
+                        "id": "schwer",
+                        "german": {
+                            "main": "schwer",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "khó",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Die Aufgabe ist schwer.",
+                            "vietnamese": "Bài tập khó."
+                        }
+                    },
+                    {
+                        "id": "leicht",
+                        "german": {
+                            "main": "leicht",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "dễ",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das ist leicht.",
+                            "vietnamese": "Cái đó dễ."
+                        }
+                    },
+                    {
+                        "id": "modern",
+                        "german": {
+                            "main": "modern",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hiện đại",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das Auto ist modern.",
+                            "vietnamese": "Chiếc xe hơi hiện đại."
+                        }
+                    },
+                    {
+                        "id": "altmodisch",
+                        "german": {
+                            "main": "altmodisch",
+                            "alternatives": [
+                                "unmodern"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "lỗi thời",
+                            "alternatives": [
+                                "không hiện đại"
+                            ]
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Der Stuhl ist altmodisch.",
+                            "vietnamese": "Cái ghế lỗi thời."
+                        }
+                    },
+                    {
+                        "id": "beschreiben",
+                        "german": {
+                            "main": "beschreiben",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "miêu tả",
+                            "alternatives": []
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Kannst du das Bild beschreiben?",
+                            "vietnamese": "Bạn có thể miêu tả bức tranh không?"
+                        }
+                    },
+                    {
+                        "id": "sehen",
+                        "german": {
+                            "main": "sehen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "nhìn thấy",
+                            "alternatives": [
+                                "thấy"
+                            ]
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Ich sehe einen Vogel.",
+                            "vietnamese": "Tôi nhìn thấy một con chim."
+                        }
+                    },
+                    {
+                        "id": "glauben",
+                        "german": {
+                            "main": "glauben",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tin",
+                            "alternatives": [
+                                "tin tưởng"
+                            ]
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Ich glaube dir.",
+                            "vietnamese": "Tôi tin bạn."
+                        }
+                    },
+                    {
+                        "id": "vielleicht",
+                        "german": {
+                            "main": "vielleicht",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "có thể",
+                            "alternatives": [
+                                "có lẽ"
+                            ]
+                        },
+                        "category": "adverbs",
+                        "exampleSentence": {
+                            "german": "Vielleicht regnet es morgen.",
+                            "vietnamese": "Có thể ngày mai trời mưa."
+                        }
+                    },
+                    {
+                        "id": "der_augenarzt",
+                        "german": {
+                            "main": "der Augenarzt",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bác sĩ nhãn khoa",
+                            "alternatives": [
+                                "bác sĩ mắt"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Augenarzt hilft mir.",
+                            "vietnamese": "Bác sĩ nhãn khoa giúp tôi."
+                        }
+                    },
+                    {
+                        "id": "die_brille",
+                        "german": {
+                            "main": "die Brille",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cái kính",
+                            "alternatives": [
+                                "kính mắt"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Meine Brille ist neu.",
+                            "vietnamese": "Kính của tôi mới."
+                        }
+                    },
+                    {
+                        "id": "der_gegenstand",
+                        "german": {
+                            "main": "der Gegenstand",
+                            "alternatives": [
+                                "die Gegenstände"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "đồ vật",
+                            "alternatives": [
+                                "vật dụng"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Das ist ein wichtiger Gegenstand.",
+                            "vietnamese": "Đây là một đồ vật quan trọng."
+                        }
+                    },
+                    {
+                        "id": "die_tasche",
+                        "german": {
+                            "main": "die Tasche",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "túi xách",
+                            "alternatives": [
+                                "cái túi",
+                                "cái túi xách",
+                                "túi"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Meine Tasche ist schwer.",
+                            "vietnamese": "Túi xách của tôi nặng."
+                        }
+                    },
+                    {
+                        "id": "der_kugelschreiber",
+                        "german": {
+                            "main": "der Kugelschreiber",
+                            "alternatives": [
+                                "Kuli"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "bút bi",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Kugelschreiber schreibt gut.",
+                            "vietnamese": "Bút bi viết tốt."
+                        }
+                    },
+                    {
+                        "id": "der_textmarker",
+                        "german": {
+                            "main": "der Textmarker",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bút dạ quang",
+                            "alternatives": [
+                                "bút highlight"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Ich markiere mit dem Textmarker.",
+                            "vietnamese": "Tôi đánh dấu bằng bút dạ quang."
+                        }
+                    },
+                    {
+                        "id": "die_kette",
+                        "german": {
+                            "main": "die Kette",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "dây chuyền",
+                            "alternatives": [
+                                "vòng"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Kette ist aus Gold.",
+                            "vietnamese": "Dây chuyền làm bằng vàng."
+                        }
+                    },
+                    {
+                        "id": "interessant",
+                        "german": {
+                            "main": "interessant",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "thú vị",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das Buch ist interessant.",
+                            "vietnamese": "Quyển sách thú vị."
+                        }
+                    },
+                    {
+                        "id": "langweilig",
+                        "german": {
+                            "main": "langweilig",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "chán",
+                            "alternatives": [
+                                "nhàm chán"
+                            ]
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Der Film ist langweilig.",
+                            "vietnamese": "Bộ phim chán."
+                        }
+                    },
+                    {
+                        "id": "der_becher",
+                        "german": {
+                            "main": "der Becher",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cái cốc",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Becher ist voll.",
+                            "vietnamese": "Cái cốc đầy."
+                        }
+                    },
+                    {
+                        "id": "das_federmaeppchen",
+                        "german": {
+                            "main": "das Federmäppchen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "túi đựng bút",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Mein Federmäppchen ist bunt.",
+                            "vietnamese": "Túi đựng bút của tôi nhiều màu."
+                        }
+                    },
+                    {
+                        "id": "der_schluessel",
+                        "german": {
+                            "main": "der Schlüssel",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "chìa khóa",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Schlüssel ist für die Tür.",
+                            "vietnamese": "Chìa khóa dành cho cửa."
+                        }
+                    },
+                    {
+                        "id": "das_buch",
+                        "german": {
+                            "main": "das Buch",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "quyển sách",
+                            "alternatives": [
+                                "sách"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Das Buch ist interessant.",
+                            "vietnamese": "Quyển sách thú vị."
+                        }
+                    },
+                    {
+                        "id": "die_jacke",
+                        "german": {
+                            "main": "die Jacke",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "áo khoác",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Jacke ist warm.",
+                            "vietnamese": "Áo khoác ấm."
+                        }
+                    },
+                    {
+                        "id": "der_bleistift",
+                        "german": {
+                            "main": "der Bleistift",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bút chì",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Bleistift ist spitz.",
+                            "vietnamese": "Bút chì nhọn."
+                        }
+                    },
+                    {
+                        "id": "die_schuhe",
+                        "german": {
+                            "main": "die Schuhe",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đôi giày",
+                            "alternatives": [
+                                "giày"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Schuhe sind neu.",
+                            "vietnamese": "Đôi giày mới."
+                        }
+                    },
+                    {
+                        "id": "das_post_it",
+                        "german": {
+                            "main": "das Post-it",
+                            "alternatives": [
+                                "Notizzettel"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "giấy nhớ",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Ich schreibe auf das Post-it.",
+                            "vietnamese": "Tôi viết trên giấy nhớ."
+                        }
+                    },
+                    {
+                        "id": "der_laptop",
+                        "german": {
+                            "main": "der Laptop",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "máy tính xách tay",
+                            "alternatives": [
+                                "laptop"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Laptop ist klein.",
+                            "vietnamese": "Máy tính xách tay nhỏ."
+                        }
+                    },
+                    {
+                        "id": "die_tasse",
+                        "german": {
+                            "main": "die Tasse",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cái tách",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Tasse ist aus Porzellan.",
+                            "vietnamese": "Cái tách làm bằng sứ."
+                        }
+                    },
+                    {
+                        "id": "die_e_mail",
+                        "german": {
+                            "main": "die E-Mail",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "email",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Ich schreibe eine E-Mail.",
+                            "vietnamese": "Tôi viết một email."
+                        }
+                    },
+                    {
+                        "id": "das_feuerzeug",
+                        "german": {
+                            "main": "das Feuerzeug",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bật lửa",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Das Feuerzeug funktioniert nicht.",
+                            "vietnamese": "Bật lửa không hoạt động."
+                        }
+                    },
+                    {
+                        "id": "das_handy",
+                        "german": {
+                            "main": "das Handy",
+                            "alternatives": [
+                                "Mobiltelefon"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "điện thoại di động",
+                            "alternatives": [
+                                "điện thoại cầm tay"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Mein Handy ist neu.",
+                            "vietnamese": "Điện thoại di động của tôi mới."
+                        }
+                    },
+                    {
+                        "id": "die_flasche",
+                        "german": {
+                            "main": "die Flasche",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cái chai",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Flasche ist leer.",
+                            "vietnamese": "Cái chai rỗng."
+                        }
+                    },
+                    {
+                        "id": "die_sms",
+                        "german": {
+                            "main": "die SMS",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tin nhắn SMS",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Ich schreibe eine SMS.",
+                            "vietnamese": "Tôi viết một tin nhắn SMS."
+                        }
+                    },
+                    {
+                        "id": "der_fotoapparat",
+                        "german": {
+                            "main": "der Fotoapparat",
+                            "alternatives": [
+                                "die Kamera"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "máy ảnh",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Fotoapparat macht gute Bilder.",
+                            "vietnamese": "Máy ảnh chụp hình đẹp."
+                        }
+                    },
+                    {
+                        "id": "die_briefmarke",
+                        "german": {
+                            "main": "die Briefmarke",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tem thư",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Briefmarke ist schön.",
+                            "vietnamese": "Tem thư đẹp."
+                        }
+                    },
+                    {
+                        "id": "die_rechnung",
+                        "german": {
+                            "main": "die Rechnung",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hóa đơn",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Rechnung ist korrekt.",
+                            "vietnamese": "Hóa đơn chính xác."
+                        }
+                    },
+                    {
+                        "id": "das_telefon",
+                        "german": {
+                            "main": "das Telefon",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "điện thoại bàn",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Das Telefon klingelt.",
+                            "vietnamese": "Điện thoại bàn reo."
+                        }
+                    },
+                    {
+                        "id": "das_formular",
+                        "german": {
+                            "main": "das Formular",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "mẫu đơn",
+                            "alternatives": [
+                                "form"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Bitte füllen Sie das Formular aus.",
+                            "vietnamese": "Xin vui lòng điền mẫu đơn."
+                        }
+                    },
+                    {
+                        "id": "der_drucker",
+                        "german": {
+                            "main": "der Drucker",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "máy in",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Drucker druckt das Dokument.",
+                            "vietnamese": "Máy in in tài liệu."
+                        }
+                    },
+                    {
+                        "id": "die_maus",
+                        "german": {
+                            "main": "die Maus",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "chuột",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Maus ist für den Computer.",
+                            "vietnamese": "Chuột dành cho máy tính."
+                        }
+                    },
+                    {
+                        "id": "der_computer",
+                        "german": {
+                            "main": "der Computer",
+                            "alternatives": [
+                                "Rechner"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "máy tính",
+                            "alternatives": [
+                                "máy tính bàn"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Computer ist schnell.",
+                            "vietnamese": "Máy tính nhanh."
+                        }
+                    },
+                    {
+                        "id": "die_uhr",
+                        "german": {
+                            "main": "die Uhr",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đồng hồ",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Uhr zeigt zwei Uhr.",
+                            "vietnamese": "Đồng hồ chỉ hai giờ."
+                        }
+                    },
+                    {
+                        "id": "der_autor",
+                        "german": {
+                            "main": "der Autor",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "nhà văn",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Autor schreibt Bücher.",
+                            "vietnamese": "Nhà văn viết sách."
+                        }
+                    },
+                    {
+                        "id": "der_norden",
+                        "german": {
+                            "main": "der Norden",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "phía bắc",
+                            "alternatives": [
+                                "bắc"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Berlin ist im Norden.",
+                            "vietnamese": "Berlin ở phía bắc."
+                        }
+                    },
+                    {
+                        "id": "der_westen",
+                        "german": {
+                            "main": "der Westen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "phía tây",
+                            "alternatives": [
+                                "tây"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Köln ist im Westen.",
+                            "vietnamese": "Köln ở phía tây."
+                        }
+                    },
+                    {
+                        "id": "der_osten",
+                        "german": {
+                            "main": "der Osten",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "phía đông",
+                            "alternatives": [
+                                "đông"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Dresden ist im Osten.",
+                            "vietnamese": "Dresden ở phía đông."
+                        }
+                    },
+                    {
+                        "id": "der_sueden",
+                        "german": {
+                            "main": "der Süden",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "phía nam",
+                            "alternatives": [
+                                "nam"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "München ist im Süden.",
+                            "vietnamese": "München ở phía nam."
+                        }
+                    },
+                    {
+                        "id": "die_psychologie",
+                        "german": {
+                            "main": "die Psychologie",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "ngành tâm lý học",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Psychologie ist interessant.",
+                            "vietnamese": "Tâm lý học thú vị."
+                        }
+                    },
+                    {
+                        "id": "schon",
+                        "german": {
+                            "main": "schon",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đã",
+                            "alternatives": []
+                        },
+                        "category": "adverbs",
+                        "exampleSentence": {
+                            "german": "Ich bin schon da.",
+                            "vietnamese": "Tôi đã ở đây rồi."
+                        }
+                    },
+                    {
+                        "id": "die_maenner",
+                        "german": {
+                            "main": "die Männer",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đàn ông",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Männer arbeiten.",
+                            "vietnamese": "Đàn ông làm việc."
+                        }
+                    },
+                    {
+                        "id": "toll",
+                        "german": {
+                            "main": "toll",
+                            "alternatives": [
+                                "wunderbar"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "tuyệt vời",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das Konzert ist toll.",
+                            "vietnamese": "Buổi hòa nhạc tuyệt vời."
+                        }
+                    },
+                    {
+                        "id": "einfach",
+                        "german": {
+                            "main": "einfach",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đơn giản",
+                            "alternatives": [
+                                "dễ",
+                                "dễ dàng"
+                            ]
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Die Lösung ist einfach.",
+                            "vietnamese": "Giải pháp đơn giản."
+                        }
+                    },
+                    {
+                        "id": "der_flohmarkt",
+                        "german": {
+                            "main": "der Flohmarkt",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "chợ trời",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Am Samstag gehe ich zum Flohmarkt.",
+                            "vietnamese": "Thứ bảy tôi đi chợ trời."
+                        }
+                    },
+                    {
+                        "id": "der_markt",
+                        "german": {
+                            "main": "der Markt",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "chợ",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Auf dem Markt kaufe ich Obst.",
+                            "vietnamese": "Trên chợ tôi mua trái cây."
+                        }
+                    },
+                    {
+                        "id": "der_haendler",
+                        "german": {
+                            "main": "der Händler",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "người buôn bán",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Händler verkauft Gemüse.",
+                            "vietnamese": "Người buôn bán bán rau."
+                        }
+                    },
+                    {
+                        "id": "der_troedel",
+                        "german": {
+                            "main": "der Trödel",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đồ cũ",
+                            "alternatives": [
+                                "đồ linh tinh"
+                            ]
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Trödel ist billig.",
+                            "vietnamese": "Đồ cũ rẻ."
+                        }
+                    },
+                    {
+                        "id": "handeln",
+                        "german": {
+                            "main": "handeln",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "trả giá",
+                            "alternatives": [
+                                "mặc cả"
+                            ]
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Kann man hier handeln?",
+                            "vietnamese": "Ở đây có thể trả giá không?"
+                        }
+                    },
+                    {
+                        "id": "stoebern",
+                        "german": {
+                            "main": "stöbern",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "lục tìm",
+                            "alternatives": [
+                                "tìm kiếm"
+                            ]
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Ich stöbere in den Büchern.",
+                            "vietnamese": "Tôi lục tìm trong sách."
+                        }
+                    },
+                    {
+                        "id": "der_besucher",
+                        "german": {
+                            "main": "der Besucher",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "người tham quan",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Besucher kommt aus Berlin.",
+                            "vietnamese": "Người tham quan đến từ Berlin."
+                        }
+                    },
+                    {
+                        "id": "alles",
+                        "german": {
+                            "main": "alles",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tất cả",
+                            "alternatives": []
+                        },
+                        "category": "pronouns",
+                        "exampleSentence": {
+                            "german": "Alles ist gut.",
+                            "vietnamese": "Tất cả đều tốt."
+                        }
+                    },
+                    {
+                        "id": "die_moebel",
+                        "german": {
+                            "main": "die Möbel",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đồ nội thất",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Möbel sind teuer.",
+                            "vietnamese": "Đồ nội thất đắt."
+                        }
+                    },
+                    {
+                        "id": "die_kleidung",
+                        "german": {
+                            "main": "die Kleidung",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "quần áo",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Kleidung ist sauber.",
+                            "vietnamese": "Quần áo sạch."
+                        }
+                    },
+                    {
+                        "id": "die_ware",
+                        "german": {
+                            "main": "die Ware",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hàng hóa",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Die Ware ist gut.",
+                            "vietnamese": "Hàng hóa tốt."
+                        }
+                    },
+                    {
+                        "id": "der_aufbau",
+                        "german": {
+                            "main": "der Aufbau",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "dựng (lều, rạp)",
+                            "alternatives": []
+                        },
+                        "category": "nouns",
+                        "exampleSentence": {
+                            "german": "Der Aufbau dauert lange.",
+                            "vietnamese": "Việc dựng lều mất nhiều thời gian."
+                        }
+                    },
+                    {
+                        "id": "geoeffnet",
+                        "german": {
+                            "main": "geöffnet",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "mở cửa",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das Geschäft ist geöffnet.",
+                            "vietnamese": "Cửa hàng mở cửa."
+                        }
+                    },
+                    {
+                        "id": "geschlossen",
+                        "german": {
+                            "main": "geschlossen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đóng cửa",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Die Bank ist geschlossen.",
+                            "vietnamese": "Ngân hàng đóng cửa."
+                        }
+                    },
+                    {
+                        "id": "neu",
+                        "german": {
+                            "main": "neu",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "mới",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Das Haus ist neu.",
+                            "vietnamese": "Ngôi nhà mới."
+                        }
+                    },
+                    {
+                        "id": "alt",
+                        "german": {
+                            "main": "alt",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cũ",
+                            "alternatives": []
+                        },
+                        "category": "adjectives",
+                        "exampleSentence": {
+                            "german": "Der Stuhl ist alt.",
+                            "vietnamese": "Cái ghế cũ."
+                        }
+                    },
+                    {
+                        "id": "stinken",
+                        "german": {
+                            "main": "stinken",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hôi",
+                            "alternatives": []
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Der Fisch stinkt.",
+                            "vietnamese": "Cá hôi."
+                        }
+                    },
+                    {
+                        "id": "essen",
+                        "german": {
+                            "main": "essen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "ăn",
+                            "alternatives": []
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Ich esse Brot.",
+                            "vietnamese": "Tôi ăn bánh mì."
+                        }
+                    },
+                    {
+                        "id": "eckig",
+                        "german": {
+                            "main": "eckig",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "góc cạnh",
+                            "alternatives": [
+                                "có góc",
+                                "cạnh vuông"
+                            ]
+                        },
+                        "category": "shapes",
+                        "exampleSentence": {
+                            "german": "Der Tisch ist eckig.",
+                            "vietnamese": "Cái bàn có góc cạnh."
+                        }
+                    },
+                    {
+                        "id": "rund",
+                        "german": {
+                            "main": "rund",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tròn",
+                            "alternatives": []
+                        },
+                        "category": "shapes",
+                        "exampleSentence": {
+                            "german": "Der Ball ist rund.",
+                            "vietnamese": "Quả bóng tròn."
+                        }
+                    },
+                    {
+                        "id": "rechteckig",
+                        "german": {
+                            "main": "rechteckig",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hình chữ nhật",
+                            "alternatives": []
+                        },
+                        "category": "shapes",
+                        "exampleSentence": {
+                            "german": "Das Buch ist rechteckig.",
+                            "vietnamese": "Quyển sách hình chữ nhật."
+                        }
+                    },
+                    {
+                        "id": "gerade",
+                        "german": {
+                            "main": "gerade",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "thẳng",
+                            "alternatives": []
+                        },
+                        "category": "shapes",
+                        "exampleSentence": {
+                            "german": "Die Linie ist gerade.",
+                            "vietnamese": "Đường thẳng."
+                        }
+                    },
+                    {
+                        "id": "gekruemmt",
+                        "german": {
+                            "main": "gekrümmt",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cong",
+                            "alternatives": []
+                        },
+                        "category": "shapes",
+                        "exampleSentence": {
+                            "german": "Die Banane ist gekrümmt.",
+                            "vietnamese": "Quả chuối cong."
+                        }
+                    },
+                    {
+                        "id": "oval",
+                        "german": {
+                            "main": "oval",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bầu dục",
+                            "alternatives": []
+                        },
+                        "category": "shapes",
+                        "exampleSentence": {
+                            "german": "Der Spiegel ist oval.",
+                            "vietnamese": "Cái gương hình bầu dục."
+                        }
+                    },
+                    {
+                        "id": "mitbringen",
+                        "german": {
+                            "main": "mitbringen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "mang theo",
+                            "alternatives": []
+                        },
+                        "category": "verbs",
+                        "exampleSentence": {
+                            "german": "Kannst du Wasser mitbringen?",
+                            "vietnamese": "Bạn có thể mang theo nước không?"
+                        }
+                    },
+                    {
+                        "id": "rot",
+                        "german": {
+                            "main": "rot",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đỏ",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Der Apfel ist rot.",
+                            "vietnamese": "Quả táo đỏ."
+                        }
+                    },
+                    {
+                        "id": "weiss",
+                        "german": {
+                            "main": "weiß",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "trắng",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Papier ist weiß.",
+                            "vietnamese": "Tờ giấy trắng."
+                        }
+                    },
+                    {
+                        "id": "blau",
+                        "german": {
+                            "main": "blau",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "xanh dương",
+                            "alternatives": [
+                                "xanh nước biển"
+                            ]
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Der Himmel ist blau.",
+                            "vietnamese": "Bầu trời xanh dương."
+                        }
+                    },
+                    {
+                        "id": "grau",
+                        "german": {
+                            "main": "grau",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "xám",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Wolke ist grau.",
+                            "vietnamese": "Đám mây xám."
+                        }
+                    },
+                    {
+                        "id": "gruen",
+                        "german": {
+                            "main": "grün",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "xanh lá",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Gras ist grün.",
+                            "vietnamese": "Cỏ xanh lá."
+                        }
+                    },
+                    {
+                        "id": "braun",
+                        "german": {
+                            "main": "braun",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "nâu",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Der Tisch ist braun.",
+                            "vietnamese": "Cái bàn màu nâu."
+                        }
+                    },
+                    {
+                        "id": "gelb",
+                        "german": {
+                            "main": "gelb",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "vàng",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Sonne ist gelb.",
+                            "vietnamese": "Mặt trời màu vàng."
+                        }
+                    },
+                    {
+                        "id": "orange",
+                        "german": {
+                            "main": "orange",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cam",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Orange ist orange.",
+                            "vietnamese": "Quả cam màu cam."
+                        }
+                    },
+                    {
+                        "id": "schwarz",
+                        "german": {
+                            "main": "schwarz",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đen",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Nacht ist schwarz.",
+                            "vietnamese": "Ban đêm màu đen."
+                        }
+                    },
+                    {
+                        "id": "rosa",
+                        "german": {
+                            "main": "rosa",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hồng nhạt",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Blume ist rosa.",
+                            "vietnamese": "Bông hoa màu hồng nhạt."
+                        }
+                    },
+                    {
+                        "id": "lila",
+                        "german": {
+                            "main": "lila",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tím nhạt",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Kleid ist lila.",
+                            "vietnamese": "Cái váy màu tím nhạt."
+                        }
+                    },
+                    {
+                        "id": "pink",
+                        "german": {
+                            "main": "pink",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "hồng đậm",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Hemd ist pink.",
+                            "vietnamese": "Cái áo sơ mi màu hồng đậm."
+                        }
+                    },
+                    {
+                        "id": "violett",
+                        "german": {
+                            "main": "violett",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "tím đậm",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Traube ist violett.",
+                            "vietnamese": "Quả nho màu tím đậm."
+                        }
+                    },
+                    {
+                        "id": "beige",
+                        "german": {
+                            "main": "beige",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "màu be",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Wand ist beige.",
+                            "vietnamese": "Bức tường màu be."
+                        }
+                    },
+                    {
+                        "id": "himmelblau",
+                        "german": {
+                            "main": "himmelblau",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "xanh da trời",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Meer ist himmelblau.",
+                            "vietnamese": "Biển xanh da trời."
+                        }
+                    },
+                    {
+                        "id": "tuerkis",
+                        "german": {
+                            "main": "türkis",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "xanh ngọc",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Der Stein ist türkis.",
+                            "vietnamese": "Viên đá màu xanh ngọc."
+                        }
+                    },
+                    {
+                        "id": "weinrot",
+                        "german": {
+                            "main": "weinrot",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đỏ rượu vang",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Der Wein ist weinrot.",
+                            "vietnamese": "Rượu vang màu đỏ rượu vang."
+                        }
+                    },
+                    {
+                        "id": "silber",
+                        "german": {
+                            "main": "silber",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bạc",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Auto ist silber.",
+                            "vietnamese": "Chiếc xe màu bạc."
+                        }
+                    },
+                    {
+                        "id": "gold",
+                        "german": {
+                            "main": "gold",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "vàng kim",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Der Ring ist gold.",
+                            "vietnamese": "Chiếc nhẫn màu vàng kim."
+                        }
+                    },
+                    {
+                        "id": "cremefarben",
+                        "german": {
+                            "main": "cremefarben",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "màu kem",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Die Creme ist cremefarben.",
+                            "vietnamese": "Kem màu kem."
+                        }
+                    },
+                    {
+                        "id": "olivgruen",
+                        "german": {
+                            "main": "olivgrün",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "xanh ô liu",
+                            "alternatives": []
+                        },
+                        "category": "colors",
+                        "exampleSentence": {
+                            "german": "Das Hemd ist olivgrün.",
+                            "vietnamese": "Cái áo sơ mi màu xanh ô liu."
+                        }
+                    },
+                    {
+                        "id": "das_holz",
+                        "german": {
+                            "main": "das Holz",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "gỗ",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Der Tisch ist aus Holz.",
+                            "vietnamese": "Cái bàn làm bằng gỗ."
+                        }
+                    },
+                    {
+                        "id": "das_glas",
+                        "german": {
+                            "main": "das Glas",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "thủy tinh",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Das Fenster ist aus Glas.",
+                            "vietnamese": "Cửa sổ làm bằng thủy tinh."
+                        }
+                    },
+                    {
+                        "id": "das_metall",
+                        "german": {
+                            "main": "das Metall",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "kim loại",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Der Löffel ist aus Metall.",
+                            "vietnamese": "Cái thìa làm bằng kim loại."
+                        }
+                    },
+                    {
+                        "id": "das_papier",
+                        "german": {
+                            "main": "das Papier",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "giấy",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Das Buch ist aus Papier.",
+                            "vietnamese": "Quyển sách làm bằng giấy."
+                        }
+                    },
+                    {
+                        "id": "der_stein",
+                        "german": {
+                            "main": "der Stein",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đá",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Mauer ist aus Stein.",
+                            "vietnamese": "Bức tường làm bằng đá."
+                        }
+                    },
+                    {
+                        "id": "der_kunststoff",
+                        "german": {
+                            "main": "der Kunststoff",
+                            "alternatives": [
+                                "das Plastik"
+                            ]
+                        },
+                        "vietnamese": {
+                            "main": "nhựa",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Flasche ist aus Kunststoff.",
+                            "vietnamese": "Cái chai làm bằng nhựa."
+                        }
+                    },
+                    {
+                        "id": "das_eisen",
+                        "german": {
+                            "main": "das Eisen",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "sắt",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Der Nagel ist aus Eisen.",
+                            "vietnamese": "Cái đinh làm bằng sắt."
+                        }
+                    },
+                    {
+                        "id": "das_silber",
+                        "german": {
+                            "main": "das Silber",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bạc",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Der Ring ist aus Silber.",
+                            "vietnamese": "Chiếc nhẫn làm bằng bạc."
+                        }
+                    },
+                    {
+                        "id": "der_stahl",
+                        "german": {
+                            "main": "der Stahl",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "thép",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Das Messer ist aus Stahl.",
+                            "vietnamese": "Con dao làm bằng thép."
+                        }
+                    },
+                    {
+                        "id": "das_gold",
+                        "german": {
+                            "main": "das Gold",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "vàng",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Kette ist aus Gold.",
+                            "vietnamese": "Dây chuyền làm bằng vàng."
+                        }
+                    },
+                    {
+                        "id": "das_kupfer",
+                        "german": {
+                            "main": "das Kupfer",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "đồng",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Münze ist aus Kupfer.",
+                            "vietnamese": "Đồng xu làm bằng đồng."
+                        }
+                    },
+                    {
+                        "id": "das_aluminium",
+                        "german": {
+                            "main": "das Aluminium",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "nhôm",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Dose ist aus Aluminium.",
+                            "vietnamese": "Cái lon làm bằng nhôm."
+                        }
+                    },
+                    {
+                        "id": "die_baumwolle",
+                        "german": {
+                            "main": "die Baumwolle",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bông",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Das T-Shirt ist aus Baumwolle.",
+                            "vietnamese": "Áo thun làm bằng bông."
+                        }
+                    },
+                    {
+                        "id": "die_wolle",
+                        "german": {
+                            "main": "die Wolle",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "len",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Der Pullover ist aus Wolle.",
+                            "vietnamese": "Áo len làm bằng len."
+                        }
+                    },
+                    {
+                        "id": "die_seide",
+                        "german": {
+                            "main": "die Seide",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "lụa",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Das Kleid ist aus Seide.",
+                            "vietnamese": "Cái váy làm bằng lụa."
+                        }
+                    },
+                    {
+                        "id": "der_stoff",
+                        "german": {
+                            "main": "der Stoff",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "vải",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Hose ist aus Stoff.",
+                            "vietnamese": "Cái quần làm bằng vải."
+                        }
+                    },
+                    {
+                        "id": "das_leder",
+                        "german": {
+                            "main": "das Leder",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "da",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Tasche ist aus Leder.",
+                            "vietnamese": "Cái túi làm bằng da."
+                        }
+                    },
+                    {
+                        "id": "die_keramik",
+                        "german": {
+                            "main": "die Keramik",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "gốm",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Vase ist aus Keramik.",
+                            "vietnamese": "Cái bình làm bằng gốm."
+                        }
+                    },
+                    {
+                        "id": "das_porzellan",
+                        "german": {
+                            "main": "das Porzellan",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "sứ",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Die Tasse ist aus Porzellan.",
+                            "vietnamese": "Cái tách làm bằng sứ."
+                        }
+                    },
+                    {
+                        "id": "der_beton",
+                        "german": {
+                            "main": "der Beton",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "bê tông",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Das Haus ist aus Beton.",
+                            "vietnamese": "Ngôi nhà làm bằng bê tông."
+                        }
+                    },
+                    {
+                        "id": "der_gummi",
+                        "german": {
+                            "main": "der Gummi",
+                            "alternatives": []
+                        },
+                        "vietnamese": {
+                            "main": "cao su",
+                            "alternatives": []
+                        },
+                        "category": "materials",
+                        "exampleSentence": {
+                            "german": "Der Reifen ist aus Gummi.",
+                            "vietnamese": "Lốp xe làm bằng cao su."
+                        }
+                    },
+                    {
+                        "id": "der_schirm",
+                              "german": {
+                                "main": "der Schirm",
+                                "alternatives": [
+                                  "Schirm"
+                                ]
+                              },
+                              "vietnamese": {
+                                "main": "cái ô",
+                                "alternatives": [
+                                  "cái dù",
+                                  "ô"
+                                ]
+                              },
+                              "category": "nouns",
+                              "exampleSentence": {
+                                "german": "Ich nehme den Schirm mit, weil es regnet.",
+                                "vietnamese": "Tôi mang theo cái ô vì trời mưa.",
+                                "alternativeTranslations": [
+                                  "Tôi cầm ô theo vì trời đang mưa."
+                                ]
+                              }
+                            },
+                            {
+                              "id": "die_seife",
+                              "german": {
+                                "main": "die Seife",
+                                "alternatives": [
+                                  "Seife"
+                                ]
+                              },
+                              "vietnamese": {
+                                "main": "xà phòng",
+                                "alternatives": [
+                                  "bánh xà phòng",
+                                  "xà bông"
+                                ]
+                              },
+                              "category": "nouns",
+                              "exampleSentence": {
+                                "german": "Die Seife riecht gut.",
+                                "vietnamese": "Xà phòng thơm.",
+                                "alternativeTranslations": [
+                                  "Xà phòng có mùi thơm.",
+                                  "Xà bông thơm."
+                                ]
+                              }
+                            },
+                            {
+                              "id": "das_streichholz",
+                              "german": {
+                                "main": "das Streichholz",
+                                "alternatives": [
+                                  "Streichholz",
+                                  "Zündholz"
+                                ]
+                              },
+                              "vietnamese": {
+                                "main": "diêm",
+                                "alternatives": [
+                                  "que diêm",
+                                  "hộp diêm"
+                                ]
+                              },
+                              "category": "nouns",
+                              "exampleSentence": {
+                                "german": "Kannst du mir ein Streichholz geben?",
+                                "vietnamese": "Bạn có thể cho tôi một que diêm không?",
+                                "alternativeTranslations": [
+                                  "Bạn có thể đưa tôi diêm không?",
+                                  "Cho tôi mượn diêm được không?"
+                                ]
+                              }
+                            },
+                            {
+                              "id": "der_geldbeutel",
+                              "german": {
+                                "main": "der Geldbeutel",
+                                "alternatives": [
+                                  "die Geldbörse",
+                                  "das Portemonnaie"
+                                ]
+                              },
+                              "vietnamese": {
+                                "main": "ví tiền",
+                                "alternatives": [
+                                  "ví",
+                                  "bóp"
+                                ]
+                              },
+                              "category": "nouns",
+                              "exampleSentence": {
+                                "german": "Mein Geldbeutel ist neu.",
+                                "vietnamese": "Ví tiền của tôi mới.",
+                                "alternativeTranslations": [
+                                  "Cái ví của tôi mới.",
+                                  "Ví của tôi mới mua."
+                                ]
+                              }
+                            }
+                          ]
+                        }
