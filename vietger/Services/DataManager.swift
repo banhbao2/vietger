@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 final class DataManager: ObservableObject {
-    // MARK: - Keys
+    // MARK: - Constants
     private enum Keys {
         static let learnedIDsCore = "learnedIDs_core"
         static let learnedIDsVyvu = "learnedIDs_vyvu"
@@ -14,6 +14,11 @@ final class DataManager: ObservableObject {
         static let settings = "settings"
     }
     
+    private enum FileNames {
+        static let core = "words_sentences"
+        static let vyvu = "vyvu_words_sentences"
+    }
+    
     // MARK: - Properties
     @AppStorage(Keys.userStreak) var userStreak: Int = 0
     @AppStorage(Keys.totalXP) var totalXP: Int = 0
@@ -22,14 +27,11 @@ final class DataManager: ObservableObject {
     @Published var settings: Settings
     
     private let decoder = JSONDecoder()
+    private let encoder = JSONEncoder()
+    private let dateFormatter = ISO8601DateFormatter()
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: Keys.settings),
-           let decoded = try? JSONDecoder().decode(Settings.self, from: data) {
-            self.settings = decoded
-        } else {
-            self.settings = Settings()
-        }
+        self.settings = Self.loadSettings() ?? Settings()
     }
     
     // MARK: - Data Loading
@@ -40,21 +42,20 @@ final class DataManager: ObservableObject {
     }
     
     private func loadWords(for deck: DeckType) async -> [Word] {
-        // Use the correct file names
-        let resource = deck == .core ? "words_sentences" : "vyvu_words_sentences"
-        guard let url = Bundle.main.url(forResource: resource, withExtension: "json"),
+        let fileName = deck == .core ? FileNames.core : FileNames.vyvu
+        
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
-            print("⚠️ Failed to load \(resource).json")
+            print("⚠️ Failed to load \(fileName).json")
             return []
         }
         
-        // Parse the new JSON structure
         do {
             let file = try decoder.decode(WordsDataFile.self, from: data)
-            print("✅ Loaded \(file.entries.count) words from \(resource).json")
+            print("✅ Loaded \(file.entries.count) words from \(fileName).json")
             return file.entries
         } catch {
-            print("⚠️ Failed to decode \(resource).json: \(error)")
+            print("⚠️ Failed to decode \(fileName).json: \(error)")
             return []
         }
     }
@@ -63,7 +64,7 @@ final class DataManager: ObservableObject {
     func loadLearnedIDs(for deck: DeckType) -> Set<String> {
         let key = deck == .core ? Keys.learnedIDsCore : Keys.learnedIDsVyvu
         guard let data = UserDefaults.standard.data(forKey: key),
-              let ids = try? JSONDecoder().decode([String].self, from: data) else {
+              let ids = try? decoder.decode([String].self, from: data) else {
             return []
         }
         return Set(ids)
@@ -71,31 +72,37 @@ final class DataManager: ObservableObject {
     
     func saveLearnedIDs(_ ids: Set<String>, for deck: DeckType) {
         let key = deck == .core ? Keys.learnedIDsCore : Keys.learnedIDsVyvu
-        if let data = try? JSONEncoder().encode(Array(ids)) {
-            UserDefaults.standard.set(data, forKey: key)
-        }
+        guard let data = try? encoder.encode(Array(ids)) else { return }
+        UserDefaults.standard.set(data, forKey: key)
     }
     
     func updateLastSessionDate() {
-        UserDefaults.standard.set(ISO8601DateFormatter().string(from: Date()),
-                                  forKey: Keys.lastSessionDate)
+        UserDefaults.standard.set(dateFormatter.string(from: Date()), forKey: Keys.lastSessionDate)
     }
     
     func getLastSessionDate() -> Date? {
         guard let dateString = UserDefaults.standard.string(forKey: Keys.lastSessionDate) else {
             return nil
         }
-        return ISO8601DateFormatter().date(from: dateString)
+        return dateFormatter.date(from: dateString)
     }
     
     func saveSettings() {
-        if let encoded = try? JSONEncoder().encode(settings) {
-            UserDefaults.standard.set(encoded, forKey: Keys.settings)
+        guard let encoded = try? encoder.encode(settings) else { return }
+        UserDefaults.standard.set(encoded, forKey: Keys.settings)
+    }
+    
+    // MARK: - Private Helpers
+    private static func loadSettings() -> Settings? {
+        guard let data = UserDefaults.standard.data(forKey: Keys.settings),
+              let settings = try? JSONDecoder().decode(Settings.self, from: data) else {
+            return nil
         }
+        return settings
     }
 }
 
-// MARK: - Data Models for JSON parsing
+// MARK: - Data Models
 struct WordsDataFile: Codable {
     let dataModelVersion: Int
     let metadata: Metadata?

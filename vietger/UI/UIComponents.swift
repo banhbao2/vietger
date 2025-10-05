@@ -6,16 +6,11 @@ struct PrimaryButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Theme.Typography.headline)
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity)  // Full width
-            .frame(height: 48)
-            .background(
-                RoundedRectangle(cornerRadius: Theme.Radius.button)
-                    .fill(isEnabled ? Theme.Colors.primary : Theme.Colors.disabled)
+            .buttonBase(
+                background: isEnabled ? Theme.Colors.primary : Theme.Colors.disabled,
+                foreground: .white,
+                isPressed: configuration.isPressed
             )
-            .scaleEffect(configuration.isPressed ? 0.96 : 1)
-            .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.button))  // Fix hitbox
     }
 }
 
@@ -24,32 +19,23 @@ struct SecondaryButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Theme.Typography.headline)
-            .foregroundColor(isEnabled ? Theme.Colors.primary : Theme.Colors.disabled)
-            .frame(maxWidth: .infinity)
-            .frame(height: 48)
-            .background(
-                RoundedRectangle(cornerRadius: Theme.Radius.button)
-                    .stroke(isEnabled ? Theme.Colors.primary : Theme.Colors.disabled, lineWidth: 2)
+            .buttonBase(
+                background: .clear,
+                foreground: isEnabled ? Theme.Colors.primary : Theme.Colors.disabled,
+                border: isEnabled ? Theme.Colors.primary : Theme.Colors.disabled,
+                isPressed: configuration.isPressed
             )
-            .scaleEffect(configuration.isPressed ? 0.96 : 1)
-            .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.button))  // Fix hitbox
     }
 }
 
 struct SuccessButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(Theme.Typography.headline)
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity)
-            .frame(height: 48)
-            .background(
-                RoundedRectangle(cornerRadius: Theme.Radius.button)
-                    .fill(Theme.Colors.success)
+            .buttonBase(
+                background: Theme.Colors.success,
+                foreground: .white,
+                isPressed: configuration.isPressed
             )
-            .scaleEffect(configuration.isPressed ? 0.96 : 1)
-            .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.button))  // Fix hitbox
     }
 }
 
@@ -63,7 +49,7 @@ struct StatCard: View {
     var body: some View {
         VStack(spacing: Theme.Spacing.s) {
             Image(systemName: icon)
-                .font(.system(size: 24))
+                .font(.system(size: Theme.Constants.iconSize))
                 .foregroundColor(color)
             
             Text(value)
@@ -84,6 +70,13 @@ struct StatCard: View {
 struct ProgressRing: View {
     let progress: Double
     let size: CGFloat
+    let color: Color
+    
+    init(progress: Double, size: CGFloat = 120, color: Color = Theme.Colors.primary) {
+        self.progress = progress
+        self.size = size
+        self.color = color
+    }
     
     var body: some View {
         ZStack {
@@ -92,8 +85,7 @@ struct ProgressRing: View {
             
             Circle()
                 .trim(from: 0, to: progress)
-                .stroke(Theme.Colors.primary,
-                       style: StrokeStyle(lineWidth: 4, lineCap: .round))
+                .stroke(color, style: StrokeStyle(lineWidth: 4, lineCap: .round))
                 .rotationEffect(.degrees(-90))
             
             Text("\(Int(progress * 100))%")
@@ -105,17 +97,22 @@ struct ProgressRing: View {
 
 struct LinearProgress: View {
     let progress: Double
+    let color: Color
+    
+    init(progress: Double, color: Color = Theme.Colors.primary) {
+        self.progress = progress
+        self.color = color
+    }
     
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 6)
                     .fill(Theme.Colors.disabled.opacity(0.3))
-                    .frame(height: 6)
                 
                 RoundedRectangle(cornerRadius: 6)
-                    .fill(Theme.Colors.primary)
-                    .frame(width: geometry.size.width * progress, height: 6)
+                    .fill(color)
+                    .frame(width: geometry.size.width * progress)
             }
         }
         .frame(height: 6)
@@ -127,17 +124,10 @@ struct StreakBadge: View {
     let days: Int
     
     var body: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "flame.fill")
-                .foregroundColor(Theme.Colors.warning)
-            Text("\(days)")
-                .font(Theme.Typography.headline)
-        }
-        .padding(.horizontal, Theme.Spacing.s)
-        .padding(.vertical, Theme.Spacing.xs)
-        .background(
-            Capsule()
-                .fill(Theme.Colors.warning.opacity(0.2))
+        BadgeView(
+            icon: "flame.fill",
+            text: "\(days)",
+            color: Theme.Colors.warning
         )
     }
 }
@@ -146,46 +136,80 @@ struct XPBadge: View {
     let xp: Int
     
     var body: some View {
+        BadgeView(
+            icon: "star.fill",
+            text: "\(xp) XP",
+            color: Theme.Colors.warning,
+            iconSize: 12
+        )
+    }
+}
+
+private struct BadgeView: View {
+    let icon: String
+    let text: String
+    let color: Color
+    let iconSize: CGFloat
+    
+    init(icon: String, text: String, color: Color, iconSize: CGFloat = 16) {
+        self.icon = icon
+        self.text = text
+        self.color = color
+        self.iconSize = iconSize
+    }
+    
+    var body: some View {
         HStack(spacing: 4) {
-            Image(systemName: "star.fill")
-                .foregroundColor(Theme.Colors.warning)
-                .font(.system(size: 12))
-            Text("\(xp) XP")
-                .font(Theme.Typography.caption)
+            Image(systemName: icon)
+                .foregroundColor(color)
+                .font(.system(size: iconSize))
+            Text(text)
+                .font(iconSize == 12 ? Theme.Typography.caption : Theme.Typography.headline)
         }
         .padding(.horizontal, Theme.Spacing.s)
         .padding(.vertical, Theme.Spacing.xs)
-        .background(
-            Capsule()
-                .fill(Theme.Colors.warning.opacity(0.15))
-        )
+        .background(Capsule().fill(color.opacity(0.2)))
     }
 }
 
-// MARK: - Extensions
-extension Color {
-    init(hex: String) {
-        let scanner = Scanner(string: hex.replacingOccurrences(of: "#", with: ""))
-        var rgb: UInt64 = 0
-        scanner.scanHexInt64(&rgb)
-        
-        self.init(
-            red: Double((rgb >> 16) & 0xFF) / 255,
-            green: Double((rgb >> 8) & 0xFF) / 255,
-            blue: Double(rgb & 0xFF) / 255
-        )
-    }
-}
-
+// MARK: - View Extensions
 extension View {
     func cardStyle(padding: CGFloat = Theme.Spacing.m) -> some View {
         self
             .padding(padding)
             .background(Theme.Colors.card)
             .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card))
-            .shadow(color: Theme.Shadow.card.color,
-                   radius: Theme.Shadow.card.radius,
-                   x: 0, y: Theme.Shadow.card.y)
+            .shadow(
+                color: Theme.Shadow.card.color,
+                radius: Theme.Shadow.card.radius,
+                x: 0,
+                y: Theme.Shadow.card.y
+            )
+    }
+    
+    func buttonBase(
+        background: Color,
+        foreground: Color,
+        border: Color? = nil,
+        isPressed: Bool = false
+    ) -> some View {
+        self
+            .font(Theme.Typography.headline)
+            .foregroundColor(foreground)
+            .frame(maxWidth: .infinity)
+            .frame(height: Theme.Constants.buttonHeight)
+            .background(
+                RoundedRectangle(cornerRadius: Theme.Radius.button)
+                    .fill(background)
+                    .overlay(
+                        border.map { color in
+                            RoundedRectangle(cornerRadius: Theme.Radius.button)
+                                .stroke(color, lineWidth: 2)
+                        }
+                    )
+            )
+            .scaleEffect(isPressed ? 0.96 : 1)
+            .contentShape(RoundedRectangle(cornerRadius: Theme.Radius.button))
     }
     
     func shake(times: CGFloat) -> some View {
@@ -193,6 +217,7 @@ extension View {
     }
 }
 
+// MARK: - Effects
 struct ShakeEffect: GeometryEffect {
     var animatableData: CGFloat
     

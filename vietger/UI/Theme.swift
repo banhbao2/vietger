@@ -30,9 +30,9 @@ enum Theme {
     }
     
     enum Radius {
+        static let small: CGFloat = 8
         static let button: CGFloat = 12
         static let card: CGFloat = 16
-        static let small: CGFloat = 8
     }
     
     enum Shadow {
@@ -50,5 +50,26 @@ enum Theme {
         static let callout = Font.system(size: 15)
         static let caption = Font.system(size: 14)
         static let caption2 = Font.system(size: 12)
+    }
+    
+    enum Constants {
+        static let buttonHeight: CGFloat = 48
+        static let iconSize: CGFloat = 24
+        static let smallIconSize: CGFloat = 16
+    }
+}
+
+// MARK: - Extensions
+extension Color {
+    init(hex: String) {
+        let scanner = Scanner(string: hex.replacingOccurrences(of: "#", with: ""))
+        var rgb: UInt64 = 0
+        scanner.scanHexInt64(&rgb)
+        
+        self.init(
+            red: Double((rgb >> 16) & 0xFF) / 255,
+            green: Double((rgb >> 8) & 0xFF) / 255,
+            blue: Double(rgb & 0xFF) / 255
+        )
     }
 }

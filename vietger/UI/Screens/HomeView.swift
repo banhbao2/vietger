@@ -21,7 +21,7 @@ struct HomeView: View {
                     LazyVStack(spacing: Theme.Spacing.l) {
                         headerSection
                         welcomeCard
-                        progressOverview
+                        progressSection
                         actionSection
                         dailyTipCard
                     }
@@ -29,12 +29,11 @@ struct HomeView: View {
                     .padding(.bottom, Theme.Spacing.xxl)
                 }
             }
-            .onAppear {
-                dailyTip = tips.randomElement() ?? tips[0]
-            }
+            .onAppear { selectRandomTip() }
         }
     }
     
+    // MARK: - View Components
     private var headerSection: some View {
         VStack(spacing: Theme.Spacing.m) {
             Text("Vyvu")
@@ -66,7 +65,7 @@ struct HomeView: View {
         .cardStyle()
     }
     
-    private var progressOverview: some View {
+    private var progressSection: some View {
         HStack(spacing: Theme.Spacing.m) {
             StatCard(
                 icon: "checkmark.circle.fill",
@@ -86,27 +85,23 @@ struct HomeView: View {
     
     private var actionSection: some View {
         VStack(spacing: Theme.Spacing.m) {
-            NavigationLink(destination: QuizView()) {
-                NavigationActionCard(
-                    title: "Start Quiz",
-                    subtitle: "Test your knowledge",
-                    icon: "play.circle.fill",
-                    iconColor: Theme.Colors.success,
-                    isRecommended: true
-                )
-            }
-            .buttonStyle(PlainButtonStyle())
+            NavigationActionCard(
+                title: "Start Quiz",
+                subtitle: "Test your knowledge",
+                icon: "play.circle.fill",
+                iconColor: Theme.Colors.success,
+                destination: QuizView(),
+                isRecommended: true
+            )
             
-            NavigationLink(destination: WordListView()) {
-                NavigationActionCard(
-                    title: "Word List",
-                    subtitle: "Browse vocabulary",
-                    icon: "list.bullet.rectangle",
-                    iconColor: Theme.Colors.primary,
-                    isRecommended: false
-                )
-            }
-            .buttonStyle(PlainButtonStyle())
+            NavigationActionCard(
+                title: "Word List",
+                subtitle: "Browse vocabulary",
+                icon: "list.bullet.rectangle",
+                iconColor: Theme.Colors.primary,
+                destination: WordListView(),
+                isRecommended: false
+            )
         }
     }
     
@@ -131,57 +126,79 @@ struct HomeView: View {
                 .fill(Theme.Colors.warning.opacity(0.1))
         )
     }
+    
+    // MARK: - Private Methods
+    private func selectRandomTip() {
+        dailyTip = tips.randomElement() ?? tips[0]
+    }
 }
 
-struct NavigationActionCard: View {
+// MARK: - Supporting Views
+struct NavigationActionCard<Destination: View>: View {
     let title: String
     let subtitle: String
     let icon: String
     let iconColor: Color
+    let destination: Destination
     let isRecommended: Bool
     
     var body: some View {
-        HStack(spacing: Theme.Spacing.m) {
-            ZStack {
-                Circle()
-                    .fill(iconColor.opacity(0.15))
-                    .frame(width: 56, height: 56)
-                
-                Image(systemName: icon)
-                    .font(.system(size: 26))
-                    .foregroundColor(iconColor)
+        NavigationLink(destination: destination) {
+            HStack(spacing: Theme.Spacing.m) {
+                iconSection
+                textSection
+                Spacer()
+                chevron
             }
+            .cardStyle()
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+    
+    private var iconSection: some View {
+        ZStack {
+            Circle()
+                .fill(iconColor.opacity(0.15))
+                .frame(width: 56, height: 56)
             
-            VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
-                HStack(spacing: Theme.Spacing.s) {
-                    Text(title)
-                        .font(Theme.Typography.headline)
-                        .foregroundColor(Theme.Colors.text)
-                    
-                    if isRecommended {
-                        Text("RECOMMENDED")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(Theme.Colors.success)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 2)
-                            .background(
-                                Capsule()
-                                    .fill(Theme.Colors.success.opacity(0.15))
-                            )
-                    }
+            Image(systemName: icon)
+                .font(.system(size: 26))
+                .foregroundColor(iconColor)
+        }
+    }
+    
+    private var textSection: some View {
+        VStack(alignment: .leading, spacing: Theme.Spacing.xs) {
+            HStack(spacing: Theme.Spacing.s) {
+                Text(title)
+                    .font(Theme.Typography.headline)
+                    .foregroundColor(Theme.Colors.text)
+                
+                if isRecommended {
+                    recommendedBadge
                 }
-                
-                Text(subtitle)
-                    .font(Theme.Typography.caption)
-                    .foregroundColor(Theme.Colors.textSecondary)
             }
             
-            Spacer()
-            
-            Image(systemName: "chevron.right")
-                .font(.system(size: 14, weight: .semibold))
+            Text(subtitle)
+                .font(Theme.Typography.caption)
                 .foregroundColor(Theme.Colors.textSecondary)
         }
-        .cardStyle()
+    }
+    
+    private var recommendedBadge: some View {
+        Text("RECOMMENDED")
+            .font(.system(size: 10, weight: .bold))
+            .foregroundColor(Theme.Colors.success)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 2)
+            .background(
+                Capsule().fill(Theme.Colors.success.opacity(0.15))
+            )
+    }
+    
+    private var chevron: some View {
+        Image(systemName: "chevron.right")
+            .font(.system(size: 14, weight: .semibold))
+            .foregroundColor(Theme.Colors.textSecondary)
     }
 }

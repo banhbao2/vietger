@@ -14,7 +14,6 @@ final class AppEnvironment: ObservableObject {
     let speechService: SpeechService
     let gamificationService: GamificationService
     
-    
     // MARK: - Computed Properties
     var statistics: AppStatistics {
         AppStatistics(
@@ -23,8 +22,8 @@ final class AppEnvironment: ObservableObject {
             currentStreak: dataManager.userStreak,
             longestStreak: dataManager.longestStreak,
             totalXP: dataManager.totalXP,
-            coreProgress: coreWords.isEmpty ? 0 : Double(learnedIDsCore.count) / Double(coreWords.count),
-            vyvuProgress: vyvuWords.isEmpty ? 0 : Double(learnedIDsVyvu.count) / Double(vyvuWords.count)
+            coreProgress: calculateProgress(learned: learnedIDsCore, total: coreWords),
+            vyvuProgress: calculateProgress(learned: learnedIDsVyvu, total: vyvuWords)
         )
     }
     
@@ -39,7 +38,6 @@ final class AppEnvironment: ObservableObject {
     }
     
     // MARK: - Data Management
-    @MainActor
     private func loadData() async {
         let data = await dataManager.preloadAllData()
         coreWords = data.core
@@ -53,34 +51,21 @@ final class AppEnvironment: ObservableObject {
     }
     
     func unlearnedWords(for deck: DeckType) -> [Word] {
-        let words = self.words(for: deck)
-        let learnedSet = deck == .core ? learnedIDsCore : learnedIDsVyvu
-        return words.filter { !learnedSet.contains($0.id) }
+        let allWords = words(for: deck)
+        let learnedSet = learnedIDs(for: deck)
+        return allWords.filter { !learnedSet.contains($0.id) }
     }
     
     func isLearned(_ word: Word, deck: DeckType) -> Bool {
-        let learnedSet = deck == .core ? learnedIDsCore : learnedIDsVyvu
-        return learnedSet.contains(word.id)
+        learnedIDs(for: deck).contains(word.id)
     }
     
     func markLearned(_ word: Word, deck: DeckType) {
-        if deck == .core {
-            learnedIDsCore.insert(word.id)
-        } else {
-            learnedIDsVyvu.insert(word.id)
-        }
-        dataManager.saveLearnedIDs(deck == .core ? learnedIDsCore : learnedIDsVyvu, for: deck)
-        dataManager.totalWordsLearned = learnedIDsCore.count + learnedIDsVyvu.count
+        updateLearnedStatus(word: word, deck: deck, isLearned: true)
     }
     
     func markUnlearned(_ word: Word, deck: DeckType) {
-        if deck == .core {
-            learnedIDsCore.remove(word.id)
-        } else {
-            learnedIDsVyvu.remove(word.id)
-        }
-        dataManager.saveLearnedIDs(deck == .core ? learnedIDsCore : learnedIDsVyvu, for: deck)
-        dataManager.totalWordsLearned = learnedIDsCore.count + learnedIDsVyvu.count
+        updateLearnedStatus(word: word, deck: deck, isLearned: false)
     }
     
     func resetProgress(for deck: DeckType) {
@@ -90,6 +75,38 @@ final class AppEnvironment: ObservableObject {
             learnedIDsVyvu.removeAll()
         }
         dataManager.saveLearnedIDs([], for: deck)
+        updateTotalWordsLearned()
+    }
+    
+    // MARK: - Private Helpers
+    private func learnedIDs(for deck: DeckType) -> Set<String> {
+        deck == .core ? learnedIDsCore : learnedIDsVyvu
+    }
+    
+    private func updateLearnedStatus(word: Word, deck: DeckType, isLearned: Bool) {
+        if deck == .core {
+            if isLearned {
+                learnedIDsCore.insert(word.id)
+            } else {
+                learnedIDsCore.remove(word.id)
+            }
+            dataManager.saveLearnedIDs(learnedIDsCore, for: deck)
+        } else {
+            if isLearned {
+                learnedIDsVyvu.insert(word.id)
+            } else {
+                learnedIDsVyvu.remove(word.id)
+            }
+            dataManager.saveLearnedIDs(learnedIDsVyvu, for: deck)
+        }
+        updateTotalWordsLearned()
+    }
+    
+    private func updateTotalWordsLearned() {
         dataManager.totalWordsLearned = learnedIDsCore.count + learnedIDsVyvu.count
+    }
+    
+    private func calculateProgress(learned: Set<String>, total: [Word]) -> Double {
+        total.isEmpty ? 0 : Double(learned.count) / Double(total.count)
     }
 }

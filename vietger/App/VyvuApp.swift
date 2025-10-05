@@ -17,7 +17,8 @@ struct VyvuApp: App {
     }
 }
 
-enum UIConfiguration {
+// MARK: - UI Configuration
+private enum UIConfiguration {
     static func configure() {
         configureNavigationBar()
         configureUIElements()

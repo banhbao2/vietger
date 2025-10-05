@@ -8,22 +8,11 @@ struct Word: Identifiable, Hashable, Codable {
     let category: Category
     let exampleSentence: ExampleSentence?
     
-    // Computed properties for compatibility with existing code
-    var allGerman: [String] {
-        [german.main] + german.alternatives
-    }
-    
-    var allVietnamese: [String] {
-        [vietnamese.main] + vietnamese.alternatives
-    }
-    
-    // For display in UI
+    // Computed properties for compatibility
+    var allGerman: [String] { [german.main] + german.alternatives }
+    var allVietnamese: [String] { [vietnamese.main] + vietnamese.alternatives }
     var displayGerman: String { german.main }
     var displayVietnamese: String { vietnamese.main }
-    
-    // Legacy compatibility properties (if needed elsewhere in your code)
-    var germanAlt: [String] { german.alternatives }
-    var vietnameseAlt: [String] { vietnamese.alternatives }
 }
 
 struct Translation: Codable, Hashable {
@@ -36,13 +25,7 @@ struct ExampleSentence: Codable, Hashable {
     let vietnamese: String
 }
 
-// Keep this if it's still used elsewhere, otherwise can be removed
-struct Sentence: Codable {
-    let wordId: String
-    let german: String
-    let vietnamese: String
-}
-
+// MARK: - Enums
 enum Category: String, CaseIterable, Hashable, Codable {
     case pronouns, coreVerbs, nouns, commonThings, adjectives
     case questionWords, timeFrequency, prepositions, connectors
@@ -76,22 +59,10 @@ enum Category: String, CaseIterable, Hashable, Codable {
 enum DeckType: String, CaseIterable, Codable {
     case core, vyvu
     
-    var title: String {
-        switch self {
-        case .core: return "Common Words"
-        case .vyvu: return "Vyvu Study"
-        }
-    }
-    
-    var icon: String {
-        switch self {
-        case .core: return "📚"
-        case .vyvu: return "🎓"
-        }
-    }
+    var title: String { self == .core ? "Common Words" : "Vyvu Study" }
+    var icon: String { self == .core ? "📚" : "🎓" }
 }
 
-// MARK: - Quiz Models
 enum QuizDirection: String, CaseIterable, Identifiable, Codable {
     case deToVi = "German → Vietnamese"
     case viToDe = "Vietnamese → German"
@@ -102,12 +73,19 @@ enum QuizDirection: String, CaseIterable, Identifiable, Codable {
     var targetFlag: String { isGermanToVietnamese ? "🇻🇳" : "🇩🇪" }
 }
 
-enum QuizStage {
-    case setup
-    case inQuiz
-    case summary
+enum QuizStage: CaseIterable {
+    case setup, inQuiz, summary
 }
 
+enum SpeechLanguage {
+    case german, vietnamese
+
+    var bcp47: String { self == .german ? "de-DE" : "vi-VN" }
+    var fallbackBCP47: String { bcp47 }
+    var label: String { self == .german ? "DE" : "VI" }
+}
+
+// MARK: - Quiz Models
 struct QuizConfiguration {
     let deck: DeckType
     let direction: QuizDirection
@@ -122,17 +100,9 @@ struct QuizSession {
     var correctIDs: Set<String> = []
     var seenIDs: Set<String> = []
     
-    var current: Word? {
-        words.indices.contains(currentIndex) ? words[currentIndex] : nil
-    }
-    
-    var progress: Double {
-        words.isEmpty ? 0 : Double(currentIndex) / Double(words.count)
-    }
-    
-    var accuracy: Double {
-        seenIDs.isEmpty ? 0 : Double(correctIDs.count) / Double(seenIDs.count)
-    }
+    var current: Word? { words.indices.contains(currentIndex) ? words[currentIndex] : nil }
+    var progress: Double { words.isEmpty ? 0 : Double(currentIndex) / Double(words.count) }
+    var accuracy: Double { seenIDs.isEmpty ? 0 : Double(correctIDs.count) / Double(seenIDs.count) }
 }
 
 // MARK: - Statistics
@@ -147,8 +117,7 @@ struct AppStatistics {
     
     var unlearnedWords: Int { totalWords - learnedWords }
     var overallProgress: Double {
-        guard totalWords > 0 else { return 0 }
-        return Double(learnedWords) / Double(totalWords)
+        totalWords > 0 ? Double(learnedWords) / Double(totalWords) : 0
     }
 }
 
@@ -159,10 +128,14 @@ struct SessionStatistics {
     let xpEarned: Int
     
     var incorrectWords: Int { totalWords - correctWords }
-    var accuracy: Double {
-        guard totalWords > 0 else { return 0 }
-        return Double(correctWords) / Double(totalWords)
-    }
+    var accuracy: Double { totalWords > 0 ? Double(correctWords) / Double(totalWords) : 0 }
+}
+
+struct SessionRewards {
+    let baseXP: Int
+    let bonusXP: Int
+    let totalXP: Int
+    let newStreak: Int
 }
 
 // MARK: - Settings
@@ -173,38 +146,4 @@ struct Settings: Codable {
     var enableHaptics: Bool = true
     var preferredDeck: DeckType = .core
     var preferredDirection: QuizDirection = .deToVi
-}
-
-struct SessionRewards {
-    let baseXP: Int
-    let bonusXP: Int
-    let totalXP: Int
-    let newStreak: Int
-}
-
-// MARK: - Speech
-enum SpeechLanguage {
-    case german
-    case vietnamese
-
-    var bcp47: String {
-        switch self {
-        case .german: return "de-DE"
-        case .vietnamese: return "vi-VN"
-        }
-    }
-
-    var fallbackBCP47: String {
-        switch self {
-        case .german: return "de-DE"
-        case .vietnamese: return "vi-VN"
-        }
-    }
-
-    var label: String {
-        switch self {
-        case .german: return "DE"
-        case .vietnamese: return "VI"
-        }
-    }
 }
